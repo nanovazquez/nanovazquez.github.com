@@ -877,7 +877,7 @@ pre {
 	background-color: #E2E2DE;
 	float: left;
 	height: 100%;
-	width: 420px;
+	width: 30%;
 }
 
 .right-panel  .unit-info{
@@ -938,6 +938,7 @@ pre {
 .body .unit-body {
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   padding: 26px;
+  width: calc(100% - 420px);
 }
 
 /*
@@ -970,7 +971,7 @@ pre {
     height: 26px;
   }
   .the-header .unit-head .nav-global li a:hover {
-    background-color: #fff04a;
+    background-color: #FAFAFA;
     color: #474747;
   }
   .the-header .unit-head .nav-global li:nth-child(2) {
