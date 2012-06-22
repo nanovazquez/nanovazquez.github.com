@@ -54,18 +54,19 @@
 					</ul>
 				</div><!-- misc -->
 				<p class="licence">
-					Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
+					Theme: based on <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
 					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
 				</p>
+				<div class="older-posts">
+					<h4>older posts</h4>
+					<ul class="older-posts">
+					  {% for post in site.posts %}
+						<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+					  {% endfor %}
+					</ul>
+				</div>
 			</div><!-- unit-foot-inner -->
-		</div><!-- unit-foot -->
-		<div class="older-posts">
-			<ul class="older-posts">
-			  {% for post in site.posts %}
-				<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-			  {% endfor %}
-		</ul>
-		</div>
+		</div><!-- unit-foot -->		
 	</footer>
 </div><!-- page -->
 <script>
