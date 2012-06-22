@@ -874,23 +874,23 @@ pre {
 ----------------------------------------------- */
 .right-panel{
 	padding: 0px;
-	background-color: #fafafa;
+	background-color: #E2E2DE;
+	float: left;
 	height: 100%;
-	width: auto;
+	width: 420px;
 }
 
 .right-panel  .unit-info{
 	background-color: transparent;
-	margin-bottom: 20px;
-	padding-left: 26px;
+	padding: 0 0 26px 26px;
 }
 
 .right-panel li,.right-panel  p,.right-panel  span,.right-panel  div { 
 	font-size: 16px; 
 }
 
-.right-panel .unit-info.author-information{
-	background-color: #e2e2de;
+.right-panel .unit-info.blog-archives{
+	background-color: #FAFAFA;
 }
 
 .right-panel .unit-info .license, .right-panel .unit-info .license a{
