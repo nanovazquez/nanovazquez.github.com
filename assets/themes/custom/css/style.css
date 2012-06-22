@@ -869,11 +869,13 @@ pre {
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 /* ASIDE
 ----------------------------------------------- */
 .right-panel  .unit-info{
+	background-color: #fafafa;
 	margin-bottom: 30px;
-	padding-left: 26px;
+	padding: 26px;
 }
 
 .right-panel li,.right-panel  p,.right-panel  span,.right-panel  div { 
@@ -881,7 +883,6 @@ pre {
 }
 
 .right-panel .unit-info.author-information{
-	padding-top: 26px;
 	background-color: #e2e2de;
 }
 
@@ -931,28 +932,7 @@ pre {
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   padding: 26px;
 }
-.right-panel {
-  background-color: #1a1a1a;
-  background-color: rgba(21, 25, 25, 0.8);
-  color: #fafafa;
-  color: rgba(250, 250, 250, 0.8);
-  padding: 26px;
-}
-.right-panel a:link {
-  color: #c26164;
-  border: 0;
-}
-.right-panel a:visited {
-  color: #ad4346;
-  border: 0;
-}
-.right-panel a:hover {
-  color: #d08688;
-  border: 0;
-}
-.right-panel h4 {
-  margin-top: 0;
-}
+
 /*
  	IE
 */
