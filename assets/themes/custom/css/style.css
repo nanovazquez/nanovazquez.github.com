@@ -872,10 +872,21 @@ pre {
 /* ASIDE
 ----------------------------------------------- */
 .right-panel  .unit-info{
-		margin-bottom: 30px;
-}	
+	margin-bottom: 30px;
+	padding-left: 26px;
+}
+
 .right-panel li,.right-panel  p,.right-panel  span,.right-panel  div { 
 	font-size: 16px; 
+}
+
+.right-panel .unit-info.author-information{
+	padding-top: 26px;
+	background-color: #e2e2de;
+}
+
+.right-panel .license, .right-panel .license a{
+	font-size: 12px;
 }
 
 .right-panel a:link {
@@ -1020,7 +1031,6 @@ pre {
     padding: 26px 52px;
   }
   .right-panel {
-    background-color: transparent;
     color: #2d2d2d;
     position: relative;
     top: auto;
@@ -1091,14 +1101,14 @@ pre {
     top: auto;
     display: block;
     float: left;
-    padding: 26px 0 0 26px;
+    padding: 26px 0 0 0;
     width: 420px;
   }
   .right-panel h4 {
     font-size: 30px;
     line-height: 52px;
     margin-top: 0;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
   }
 }
 pre .c {
