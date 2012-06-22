@@ -612,6 +612,10 @@ pre {
 }
 /* MAIN
 --------------------------------------------------------------------------------- */
+section[role="main"]{
+	width: calc(100% - 420px);
+}
+
 .unit-article header {
   border-bottom: 5px solid rgba(21, 25, 25, 0.8);
   margin-bottom: 21px;
@@ -942,7 +946,6 @@ pre {
 .body .unit-body {
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   padding: 26px;
-  width: calc(100% - 420px);
 }
 
 /*
