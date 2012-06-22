@@ -551,7 +551,7 @@ html {
   background: url('/assets/themes/the-program/skin/100-90-5-monochrome.png');
   background-repeat: repeat;
   background-position: 0 0;
-  background-color: #e2e2de;
+  background-color: #FAFAFA;
 }
 .body .unit-body {
   background-color: #fafafa;
@@ -971,7 +971,7 @@ pre {
     height: 26px;
   }
   .the-header .unit-head .nav-global li a:hover {
-    background-color: #FAFAFA;
+    background-color: #E2E2DE;
     color: #474747;
   }
   .the-header .unit-head .nav-global li:nth-child(2) {
