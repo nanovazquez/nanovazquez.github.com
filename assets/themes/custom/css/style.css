@@ -872,10 +872,15 @@ pre {
 
 /* ASIDE
 ----------------------------------------------- */
-.right-panel  .unit-info{
-	background-color: #fafafa;
-	margin-bottom: 20px;
+.right-panel{
 	padding: 0px;
+	background-color: #fafafa;
+}
+
+.right-panel  .unit-info{
+	background-color: transparent;
+	margin-bottom: 20px;
+	padding-left: 26px;
 }
 
 .right-panel li,.right-panel  p,.right-panel  span,.right-panel  div { 
