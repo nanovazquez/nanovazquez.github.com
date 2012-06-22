@@ -777,18 +777,18 @@ pre {
 .unit-article .comment a {
   border-bottom: 0;
 }
-.unit-article .unit-foot {
+.unit-article .author-information {
   border-top: 5px solid rgba(21, 25, 25, 0.8);
   padding-top: 1.625em;
   position: relative;
 }
-.unit-article .unit-foot nav ul {
+.unit-article .author-information nav ul {
   list-style: none;
 }
-.unit-article .unit-foot nav ul li {
+.unit-article .author-information nav ul li {
   display: inline;
 }
-.unit-article .unit-foot .gotop {
+.unit-article .author-information .gotop {
   margin-bottom: 0;
 }
 /* post & page */
@@ -871,29 +871,29 @@ pre {
 }
 /* FOOTER
 ----------------------------------------------- */
-.the-footer a:link {
+.right-panel a:link {
   color: #c26164;
   border: 0;
 }
-.the-footer a:visited {
+.right-panel a:visited {
   color: #ad4346;
   border: 0;
 }
-.the-footer a:hover {
+.right-panel a:hover {
   color: #d08688;
   border: 0;
 }
-.the-footer ul {
+.right-panel ul {
   list-style: square;
   padding-left: 1em;
 }
-.the-footer address {
+.right-panel address {
   font-style: normal;
 }
-.the-footer .license {
+.right-panel .license {
   clear: both;
 }
-.the-footer .license p {
+.right-panel .license p {
   margin-bottom: 0;
 }
 .the-header .unit-head {
@@ -913,26 +913,26 @@ pre {
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   padding: 26px;
 }
-.the-footer {
+.right-panel {
   background-color: #1a1a1a;
   background-color: rgba(21, 25, 25, 0.8);
   color: #fafafa;
   color: rgba(250, 250, 250, 0.8);
   padding: 26px;
 }
-.the-footer a:link {
+.right-panel a:link {
   color: #c26164;
   border: 0;
 }
-.the-footer a:visited {
+.right-panel a:visited {
   color: #ad4346;
   border: 0;
 }
-.the-footer a:hover {
+.right-panel a:hover {
   color: #d08688;
   border: 0;
 }
-.the-footer h4 {
+.right-panel h4 {
   margin-top: 0;
 }
 /*
@@ -1012,7 +1012,7 @@ pre {
     margin-right: 450px;
     padding: 26px 52px;
   }
-  .the-footer {
+  .right-panel {
     background-color: transparent;
     color: #2d2d2d;
     position: relative;
@@ -1079,7 +1079,7 @@ pre {
     padding: 26px 52px;
     min-height: 1050px;
   }
-  .the-footer {
+  .right-panel {
     position: relative;
     top: auto;
     display: block;
@@ -1087,7 +1087,7 @@ pre {
     padding: 26px 0 0 26px;
     width: 420px;
   }
-  .the-footer h4 {
+  .right-panel h4 {
     font-size: 30px;
     line-height: 52px;
     margin-top: 0;
