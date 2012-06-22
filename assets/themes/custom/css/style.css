@@ -589,6 +589,10 @@ pre {
 /* meta */
 /* HEADER
 --------------------------------------------------------------------------------- */
+.the-header{
+	background-color: #E2E2DE;
+}
+
 .the-header .logo {
   font-family: UbuntuMono-B, consolas, monaco, monospace;
   margin: 0;
