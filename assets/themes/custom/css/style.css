@@ -875,6 +875,8 @@ pre {
 .right-panel{
 	padding: 0px;
 	background-color: #fafafa;
+	height: 100%;
+	width: auto;
 }
 
 .right-panel  .unit-info{
