@@ -877,7 +877,7 @@ pre {
 /* CONTENT
 ----------------------------------------------- */
 
-.unit-body .content  > header{
+.unit-body article.unit-article layout-page .content  > header{
 	display: none;
 }
 

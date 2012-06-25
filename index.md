@@ -15,7 +15,7 @@ tagline: Supporting tagline
 					<h1 class="h2 entry-title">{{ post.title }}</h1>
 				</header>
 				<div class="entry-content">
-					{{ post.description }}
+					{{ post.content }}
 				</div>
 				<footer>
 					<span>{{ post.date | date_to_string }}</span>
