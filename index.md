@@ -5,9 +5,7 @@ tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-<ul class="posts">
-  <h4>older posts</h4>
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+<span>{{ post.date | date_to_string }}</span> 
+<a href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
+{% endfor %}
