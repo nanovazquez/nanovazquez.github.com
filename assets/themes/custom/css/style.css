@@ -886,6 +886,7 @@ pre {
 
 .entry-content header .entry-title .title{
 	display: inline-block;
+	float: left;
 	overflow: auto;
 	white-space: normal;
 	width: 590px;
@@ -895,6 +896,7 @@ pre {
 .entry-content header  .entry-title .date{
 	display: inline-block;
 	float: right;
+	margin-top: 60px;
 	font-size: 16px;
 	text-align: right;
 	width: 200px;
