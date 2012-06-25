@@ -47,7 +47,7 @@ This is all the code you need to list the containers in your storage account, an
 
 Below is a sample result of what you may get. In this case, we listed only the blob names. Notice that the **listBlobs** operation is returning every blob within the container, using flat blob listing (more info about flat blob listing [here](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.blobrequestoptions.useflatbloblisting.aspx)).
 
-![](browsing-blobs-within-a-container-using-the-azure-node-sdk/simple-sample-result.png "Simple sample Result")
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/browsing-blobs-within-a-container-using-the-azure-node-sdk/simple-sample-result.png "Simple sample Result")
 
 There's nothing wrong with the code above, and it might be sufficient for you and your business needs (actually, it will work great if all your blobs are children of the container). But what happens if your containers have a considerable amount of blobs, organized in a logic way, and you want to retrieve them in a lazy manner? If that's the case you're facing, keep reading.
 

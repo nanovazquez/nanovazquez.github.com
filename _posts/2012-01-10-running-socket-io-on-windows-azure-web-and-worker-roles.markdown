@@ -92,7 +92,7 @@ To configure the transport, add the dollowing snippet to the `server.js` file wi
 
 If you don't add this fix, you will experience some initial delay in browsers that support WebSockets (like Chrome). That delay is generated because it will try to use WebSockets as first option.
 
-![](/running-socket-io-on-windows-azure-web-and-worker-roles/chrome-client-webrole.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/running-socket-io-on-windows-azure-web-and-worker-roles/chrome-client-webrole.png)
 
 Alternatively, you could configure an array of allowed methods (instead of one), using the following code:
 

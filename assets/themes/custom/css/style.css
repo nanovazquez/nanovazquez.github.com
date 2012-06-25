@@ -881,7 +881,7 @@ pre {
 .unit-article-inner > .content > header.show, .entry-content header.show, .entry-content header h1{
 	display: inline-block;
 	width: 100%;
-	height: auto;
+	height: 100px;
 }
 
 .entry-content header .entry-title .title{
@@ -898,13 +898,17 @@ pre {
 	font-size: 16px;
 	width: 200px;
 	height: 25px;
-	margin-top: 9px;
+	margin-top: 60px;
 	text-align: right;
 }
 
 .unit-body .article-footer{
 	margin-top: 0px;
 	margin-bottom: 30px;
+}
+
+.unit-article-inner ul, .unit-article-inner ol{
+	margin-left: 50px;
 }
 
 /* ASIDE
