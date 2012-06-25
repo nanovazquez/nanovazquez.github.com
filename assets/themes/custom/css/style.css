@@ -876,6 +876,20 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
+.entry-content .entry-title{
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.entry-content .entry-title .date{
+	display: inline-block;
+	float: right;
+}
+
 .unit-body .article-footer{
 	margin-bottom: 20px;
 }

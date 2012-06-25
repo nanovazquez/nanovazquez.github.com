@@ -42,8 +42,10 @@
 							<div class="unit-article-inner">
 								<div class="content">
 									<header>
-										<h1 class="h2 entry-title">{{ post.title }}</h1>
-										<span class="date">Posted on {{ post.date | date_to_string }}</span>
+										<h1 class="h2 entry-title">
+											<div class="title">{{ post.title }}</div>
+											<span class="date">Posted on {{ post.date | date_to_string }}</span>
+										</h1>
 									</header>
 									<div class="entry-content">
 										{{ post.content | truncatewords: 50 }}
