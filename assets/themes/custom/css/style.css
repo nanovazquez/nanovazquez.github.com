@@ -876,7 +876,11 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
-.entry-content .entry-title{
+.entry-content header{
+	width: 100%;
+}
+
+.entry-content header .entry-title{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
@@ -885,7 +889,7 @@ pre {
 	display: inline-block;
 }
 
-.entry-content .entry-title .date{
+.entry-content header  .entry-title .date{
 	display: inline-block;
 	float: right;
 	font-size: 16px;
