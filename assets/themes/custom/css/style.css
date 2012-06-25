@@ -878,7 +878,7 @@ pre {
 .unit-article-inner > .content > header{
 	display: none;
 }
-.entry-content header.show, .entry-content header h1{
+.unit-article-inner > .content > header.show, .entry-content header.show, .entry-content header h1{
 	display: inline-block;
 	width: 100%;
 	height: auto;
