@@ -551,7 +551,7 @@ html {
   background: url('/assets/themes/the-program/skin/100-90-5-monochrome.png');
   background-repeat: repeat;
   background-position: 0 0;
-  background-color: #e2e2de;
+  background-color: #fafafa;
 }
 .body .unit-body {
   background-color: #fafafa;
@@ -589,6 +589,10 @@ pre {
 /* meta */
 /* HEADER
 --------------------------------------------------------------------------------- */
+.the-header{
+	background-color: #e2e2de;
+}
+
 .the-header .logo {
   font-family: UbuntuMono-B, consolas, monaco, monospace;
   margin: 0;
@@ -893,6 +897,10 @@ pre {
 
 /* FOOTER
 ----------------------------------------------- */
+.the-footer{
+	background-color: #e2e2de;
+}
+
 .the-footer a:link {
   color: #c26164;
   border: 0;
