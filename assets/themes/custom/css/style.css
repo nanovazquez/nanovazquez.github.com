@@ -886,11 +886,9 @@ pre {
 }
 
 .entry-content header .entry-title .title{
-	overflow: hidden;
-	text-overflow: ellipsis;
-	-o-text-overflow: ellipsis;
-	white-space: nowrap;
-	width: calc (100% - 210px);
+	overflow: auto;
+	white-space: normal;
+	width: 590px;
 	display: inline-block;
 	height: auto;
 }
