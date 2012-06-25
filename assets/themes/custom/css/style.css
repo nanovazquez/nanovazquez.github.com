@@ -885,15 +885,15 @@ pre {
 }
 
 .entry-content header .entry-title .title{
+	display: inline-block;
 	overflow: auto;
 	white-space: normal;
 	width: 590px;
-	display: inline-block;
 	height: auto;
 }
 
 .entry-content header  .entry-title .date{
-	display: block;
+	display: inline-block;
 	float: right;
 	font-size: 16px;
 	text-align: right;
