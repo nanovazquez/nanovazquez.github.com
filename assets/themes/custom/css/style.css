@@ -872,10 +872,15 @@ pre {
 /* ASIDE
 ----------------------------------------------- */
 .right-panel{
-	padding: 26px;
+	padding: 0 0 0 26px;
 	width: 420px;
 	background-color: #FAFAFA;
 	float: right;
+}
+
+.right-panel ul {
+  list-style: square;
+  padding-left: 1em;
 }
 
 .right-panel span{
