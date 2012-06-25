@@ -877,8 +877,6 @@ pre {
 /* CONTENT
 ----------------------------------------------- */
 .entry-content .entry-title{
-	display: inline-block;
-	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
@@ -888,6 +886,7 @@ pre {
 .entry-content .entry-title .date{
 	display: inline-block;
 	float: right;
+	font-size: 1em;
 }
 
 .unit-body .article-footer{
