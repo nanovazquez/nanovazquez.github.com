@@ -731,8 +731,7 @@ pre {
 }
 .unit-article img {
   display: block;
-  margin-left: auto;
-  margin-left: auto;
+  margin-left: 0;
 }
 .unit-article img.left {
   margin-right: 16px;

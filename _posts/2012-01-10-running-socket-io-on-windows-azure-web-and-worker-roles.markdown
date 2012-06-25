@@ -4,8 +4,7 @@ title: Running socket.io on Windows Azure Web and Worker roles
 category : dev
 tags : [azure, node, socket-io]
 ---
-
-# Running socket.io on Windows Azure Web and Worker roles
+{% include JB/setup %}
 
 In this article, we are going to review how to configure a Node.js + [socket.io][] server both inside a web and a worker roles (if you are not familiar with what a web and worker role is, read the following [MSDN article](http://msdn.microsoft.com/en-us/library/gg432976.aspx)).
 
