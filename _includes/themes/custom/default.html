@@ -60,6 +60,18 @@
 			</div><!-- unit-foot-inner -->
 		</div><!-- unit-foot -->
 	</footer>
+	<aside class="right-panel">
+		<div class="older-posts">
+			<ul>
+				{% for post in site.posts %}
+					<li>
+						<span>{{ post.date | date_to_string }}</span> &raquo; 
+						<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</aside>
 </div><!-- page -->
 <script>
 	(function(d, s) {
