@@ -876,7 +876,7 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
-.entry-content header{
+.unit-article-inner > .content > header{
 	display: none;
 }
 .entry-content header.show, .entry-content header h1{
