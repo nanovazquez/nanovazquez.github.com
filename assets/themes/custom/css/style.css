@@ -876,19 +876,6 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
-
-.unit-body  .content  > header{
-	display: none;
-}
-
-.unit-body  .content .entry-content .entry-content  > header{
-	display: inline-block;
-}
-
-.unit-body .date{
-	float: right;
-}
-
 .unit-body .article-footer{
 	margin-bottom: 20px;
 }
