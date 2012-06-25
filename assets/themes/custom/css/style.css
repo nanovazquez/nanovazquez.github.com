@@ -877,8 +877,12 @@ pre {
 /* CONTENT
 ----------------------------------------------- */
 
-.unit-body article.unit-article .unit-inner.unit-article-inner .content  > header{
+.unit-body  .content  > header{
 	display: none;
+}
+
+.unit-body  .content .entry-content .entry-content  > header{
+	display: inline-block;
 }
 
 .unit-body .date{
