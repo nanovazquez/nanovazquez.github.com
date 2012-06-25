@@ -897,7 +897,8 @@ pre {
 	font-size: 16px;
 	width: 200px;
 	height: 25px;
-	margin-top: 15px;
+	margin-top: 10px;
+	text-align: right;
 }
 
 .unit-body .article-footer{
