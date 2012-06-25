@@ -9,7 +9,7 @@ tagline: Supporting tagline
 	<article class="unit-article layout-page">
 		<div class="unit-article-inner">
 			<div class="content">
-				<header>
+				<header class="show">
 					<h1 class="h2 entry-title">
 						<div class="title">{{ post.title }}</div>
 						<span class="date">Posted on {{ post.date | date_to_string }}</span>

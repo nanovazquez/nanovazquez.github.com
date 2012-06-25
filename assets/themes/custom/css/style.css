@@ -876,7 +876,11 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
-.entry-content header, .entry-content header h1{
+.entry-content header{
+	display: none;
+}
+.entry-content header.show, .entry-content header h1{
+	display: inline-block;
 	width: 100%;
 	height: 50px;
 }
@@ -902,7 +906,7 @@ pre {
 }
 
 .unit-body .article-footer{
-	margin-top: -20px;
+	margin-top: 0px;
 	margin-bottom: 30px;
 }
 
