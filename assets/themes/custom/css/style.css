@@ -1046,6 +1046,14 @@ pre {
     margin-right: 450px;
     padding: 26px 52px;
   }
+  .the-footer {
+    position: relative;
+    top: auto;
+    display: block;
+    float: left;
+    padding: 0 0 0 26px;
+    width: 420px;
+  }
 }
 /*
 	Huge-screen layout 
