@@ -881,12 +881,17 @@ pre {
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
 	white-space: nowrap;
+	width: calc (100% - 175px);
+	display: inline-block;
 }
 
 .entry-content .entry-title .date{
 	display: inline-block;
 	float: right;
-	font-size: 1em;
+	font-size: 16px;
+	width: 175px;
+	height: 25px;
+	margin-top: 15px;
 }
 
 .unit-body .article-footer{
