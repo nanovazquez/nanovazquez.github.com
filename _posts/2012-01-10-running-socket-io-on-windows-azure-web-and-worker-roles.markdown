@@ -36,7 +36,7 @@ Remember to specify the server URL and port.
 
 You should get back something like this:
 
-![](/running-socket-io-on-windows-azure-web-and-worker-roles/client-result.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/running-socket-io-on-windows-azure-web-and-worker-roles/client-result.png)
 
 Now, let's look at the server code.
 
@@ -71,9 +71,9 @@ The Worker role approach is fairly straightforward. You just need to install the
 There is nothing specific to Windows Azure as you can see.
 We deployed this to an extra small instance on Windows Azure and tested it with Internet Explorer 9 and Google Chrome. 
  
-![](/running-socket-io-on-windows-azure-web-and-worker-roles/ie-client-worker.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/running-socket-io-on-windows-azure-web-and-worker-roles/ie-client-worker.png)
 
-![](/running-socket-io-on-windows-azure-web-and-worker-roles/chrome-client-worker.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/running-socket-io-on-windows-azure-web-and-worker-roles/chrome-client-worker.png)
 
 Since Internet Explorer 9 does not have support for `WebSockets` (IE10 will), it will *degrade* the connection to `xhr-polling`. By default, [socket.io][] is configured to use the following transports (in this order): *websocket*, *htmlfile*, *xhr-polling* and *jsonp-polling*
 

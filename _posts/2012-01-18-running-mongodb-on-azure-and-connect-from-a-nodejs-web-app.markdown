@@ -77,6 +77,6 @@ And that's it! You can publish this app to Windows Azure and wait for the instan
 
 You can browse the node example app from [here](https://github.com/nanovazquez/common/tree/master/movies-app) (run `npm install` after you extract the code to download the necessary modules).
 
-![](/running-mongodb-on-azure-and-connect-from-a-nodejs-web-app/movies-app.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/running-mongodb-on-azure-and-connect-from-a-nodejs-web-app/movies-app.png)
 
 NOTE: The MongoDB nodes take some time to initialize. If you test the application in the local emulator, using the `-launch` option it's probably that you get a **no primary server found** error. If this happens, wait a few seconds and try again.

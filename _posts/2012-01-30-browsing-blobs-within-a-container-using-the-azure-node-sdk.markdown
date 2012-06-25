@@ -119,6 +119,6 @@ This is what we're doing in the lines above:
 
 We created this [sample](https://github.com/nanovazquez/common/tree/master/azure-blob-explorer-tree-view) to demonstrate how you can use all of this in a real-world scenario. It shows you how to correctly parse the JSON returned by the **listBlobs** operation, and how to use this information to populate a control in the View, like a [jQuery Treeview Plugin](https://github.com/jzaefferer/jquery-treeview).
 
-![](browsing-blobs-within-a-container-using-the-azure-node-sdk/treeview-sample-result.png "Showing the blobs in a TreeView")
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/browsing-blobs-within-a-container-using-the-azure-node-sdk/treeview-sample-result.png "Showing the blobs in a TreeView")
 
 Enjoy coding!

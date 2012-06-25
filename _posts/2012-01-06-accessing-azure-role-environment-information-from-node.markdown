@@ -92,4 +92,4 @@ And finally, below is the server.js file that writes the results in the response
 
 This is the result you get if you run the sample in the emulator:
 
-![Alt text](accessing-azure-role-environment-information-from-node/test-sample-task.png "Showing the Azure Role Information")
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/accessing-azure-role-environment-information-from-node/test-sample-task.png "Showing the Azure Role Information")
