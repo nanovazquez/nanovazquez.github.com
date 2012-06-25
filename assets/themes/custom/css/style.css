@@ -876,11 +876,11 @@ pre {
 
 /* CONTENT
 ----------------------------------------------- */
-.entry-content header{
+.entry-content header, .entry-content header h1{
 	width: 100%;
 }
 
-.entry-content header .entry-title{
+.entry-content header .entry-title .title{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
