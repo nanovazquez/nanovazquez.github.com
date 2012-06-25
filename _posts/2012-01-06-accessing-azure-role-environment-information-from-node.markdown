@@ -1,7 +1,7 @@
 ---
 layout: post
 category : dev
-tags : [azure] [node] [startup-task]
+tags : [azure, node, startup-tasks]
 ---
 {% include JB/setup %}
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 category : dev
-tags : [azure] [node] [azure-blobs]
+tags : [azure, node, azure-storage]
 ---
 The last couple of weeks we were working on a new, exciting project: a collaborative, real-time markdown editor that runs on a **NodeJS**  server, hosted on **Windows Azure** (you'll hear more about this soon). One of the features that this app will have is the ability to store the .markdown files in either your local disk or **Azure Blob Storage**. To achieve this, we investigated the best way to list the containers and blobs of a specific account, and navigate them like we were dealing with an hierarchical structure. We found out that this can be done, but is not as easy and it sounds (you have to use a combination of the **prefix** and **delimiter** options of the **listBlobs** operation, along with inspecting the **BlobPrefix** element returned in the Blobs REST API response). 
 
