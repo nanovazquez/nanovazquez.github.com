@@ -12,12 +12,15 @@ tagline: Supporting tagline
 		<div class="unit-inner unit-article-inner">
 			<div class="content">
 				<header>
-					<h1 class="h2 entry-title">post.title</h1>
+					<h1 class="h2 entry-title">{{ post.title }}</h1>
 				</header>
 				<div class="entry-content">
-					sarasa sarasa sarasa <span>{{ post.date | date_to_string }}</span> 
+					{{ post.description }}
 				</div>
-				<footer><a href="{{ BASE_PATH }}{{ post.url }}">Read more..</a></footer>
+				<footer>
+					<span>{{ post.date | date_to_string }}</span>
+					<a href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
+				</footer>
 			</div>
 		</div>
 	</article>
