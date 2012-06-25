@@ -43,10 +43,10 @@
 								<div class="content">
 									<header>
 										<h1 class="h2 entry-title">{{ post.title }}</h1>
+										<span class="date">Posted on {{ post.date | date_to_string }}</span>
 									</header>
-									<span class="date">Posted on {{ post.date | date_to_string }}</span>
 									<div class="entry-content">
-										<p class="content>{{ post.content | truncatewords: 50 }}</p>
+										{{ post.content | truncatewords: 50 }}
 									</div>
 									<footer class="article-footer">
 										<a class="read-more" href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
