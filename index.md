@@ -16,7 +16,9 @@ tagline: Supporting tagline
 					</h1>
 				</header>
 				<div class="entry-content">
-					{{ post.content | truncatewords: 50 }}
+					<p>
+						{{ post.content | truncatewords: 50 }}
+					</p>
 				</div>
 				<footer class="article-footer">
 					<a class="read-more" href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
