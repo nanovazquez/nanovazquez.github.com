@@ -551,7 +551,7 @@ html {
   background: url('/assets/themes/the-program/skin/100-90-5-monochrome.png');
   background-repeat: repeat;
   background-position: 0 0;
-  background-color: #FAFAFA;
+  background-color: #e2e2de;
 }
 .body .unit-body {
   background-color: #fafafa;
@@ -589,10 +589,6 @@ pre {
 /* meta */
 /* HEADER
 --------------------------------------------------------------------------------- */
-.the-header{
-	background-color: #E2E2DE;
-}
-
 .the-header .logo {
   font-family: UbuntuMono-B, consolas, monaco, monospace;
   margin: 0;
@@ -612,10 +608,6 @@ pre {
 }
 /* MAIN
 --------------------------------------------------------------------------------- */
-section[role="region"]{
-	width: calc(100% - 420px);
-}
-
 .unit-article header {
   border-bottom: 5px solid rgba(21, 25, 25, 0.8);
   margin-bottom: 21px;
@@ -785,18 +777,18 @@ section[role="region"]{
 .unit-article .comment a {
   border-bottom: 0;
 }
-.unit-article .author-information {
+.unit-article .unit-foot {
   border-top: 5px solid rgba(21, 25, 25, 0.8);
   padding-top: 1.625em;
   position: relative;
 }
-.unit-article .author-information nav ul {
+.unit-article .unit-foot nav ul {
   list-style: none;
 }
-.unit-article .author-information nav ul li {
+.unit-article .unit-foot nav ul li {
   display: inline;
 }
-.unit-article .author-information .gotop {
+.unit-article .unit-foot .gotop {
   margin-bottom: 0;
 }
 /* post & page */
@@ -877,57 +869,31 @@ section[role="region"]{
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-/* ASIDE
+/* FOOTER
 ----------------------------------------------- */
-.right-panel{
-	padding: 0px;
-	background-color: #E2E2DE;
-	float: left;
-	height: 100%;
-	width: 420px;
-}
-
-.right-panel  .unit-info{
-	background-color: transparent;
-	padding: 0 0 26px 26px;
-}
-
-.right-panel li,.right-panel  p,.right-panel  span,.right-panel  div { 
-	font-size: 16px; 
-}
-
-.right-panel .unit-info.blog-archives{
-	background-color: #FAFAFA;
-}
-
-.right-panel .unit-info .license, .right-panel .unit-info .license a{
-	font-size: 12px;
-}
-
-.right-panel a:link {
+.the-footer a:link {
   color: #c26164;
   border: 0;
 }
-.right-panel a:visited {
+.the-footer a:visited {
   color: #ad4346;
   border: 0;
 }
-.right-panel a:hover {
+.the-footer a:hover {
   color: #d08688;
   border: 0;
 }
-.right-panel ul {
+.the-footer ul {
   list-style: square;
   padding-left: 1em;
 }
-.right-panel address {
+.the-footer address {
   font-style: normal;
 }
-.right-panel .license {
+.the-footer .license {
   clear: both;
 }
-.right-panel .license p {
+.the-footer .license p {
   margin-bottom: 0;
 }
 .the-header .unit-head {
@@ -947,7 +913,28 @@ section[role="region"]{
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   padding: 26px;
 }
-
+.the-footer {
+  background-color: #1a1a1a;
+  background-color: rgba(21, 25, 25, 0.8);
+  color: #fafafa;
+  color: rgba(250, 250, 250, 0.8);
+  padding: 26px;
+}
+.the-footer a:link {
+  color: #c26164;
+  border: 0;
+}
+.the-footer a:visited {
+  color: #ad4346;
+  border: 0;
+}
+.the-footer a:hover {
+  color: #d08688;
+  border: 0;
+}
+.the-footer h4 {
+  margin-top: 0;
+}
 /*
  	IE
 */
@@ -978,7 +965,7 @@ section[role="region"]{
     height: 26px;
   }
   .the-header .unit-head .nav-global li a:hover {
-    background-color: #E2E2DE;
+    background-color: #fff04a;
     color: #474747;
   }
   .the-header .unit-head .nav-global li:nth-child(2) {
@@ -1024,6 +1011,16 @@ section[role="region"]{
     border-top: 0 none;
     margin-right: 450px;
     padding: 26px 52px;
+  }
+  .the-footer {
+    background-color: transparent;
+    color: #2d2d2d;
+    position: relative;
+    top: auto;
+    display: block;
+    float: left;
+    padding: 0 0 0 26px;
+    width: 420px;
   }
 }
 /*
@@ -1082,19 +1079,19 @@ section[role="region"]{
     padding: 26px 52px;
     min-height: 1050px;
   }
-  .right-panel {
+  .the-footer {
     position: relative;
     top: auto;
     display: block;
     float: left;
-    padding: 26px 0 0 0;
+    padding: 26px 0 0 26px;
     width: 420px;
   }
-  .right-panel h4 {
+  .the-footer h4 {
     font-size: 30px;
     line-height: 52px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 26px;
   }
 }
 pre .c {
