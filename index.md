@@ -14,7 +14,7 @@ tagline: Supporting tagline
 						<div class="title">
 							{{ post.title }}
 						</div>
-						<div class="date>
+						<div class="date">
 							Posted on {{ post.date | date_to_string }}
 						</div>
 					</h1>
