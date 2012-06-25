@@ -1,8 +1,12 @@
 ---
 layout: post
 category : dev
+title: Browsing Blobs within a container using the Windows Azure Node SDK
 tags : [azure, node, azure-storage]
 ---
+
+# Browsing Blobs within a container using the Windows Azure Node SDK
+
 The last couple of weeks we were working on a new, exciting project: a collaborative, real-time markdown editor that runs on a **NodeJS**  server, hosted on **Windows Azure** (you'll hear more about this soon). One of the features that this app will have is the ability to store the .markdown files in either your local disk or **Azure Blob Storage**. To achieve this, we investigated the best way to list the containers and blobs of a specific account, and navigate them like we were dealing with an hierarchical structure. We found out that this can be done, but is not as easy and it sounds (you have to use a combination of the **prefix** and **delimiter** options of the **listBlobs** operation, along with inspecting the **BlobPrefix** element returned in the Blobs REST API response). 
 
 In the next lines, we are going to explain how you can implement this functionality in your application. We start from showing the blobs in a simple, flat-list to demonstrate how to organize them in a more complex structure, like if you were navigating your local file system directories.

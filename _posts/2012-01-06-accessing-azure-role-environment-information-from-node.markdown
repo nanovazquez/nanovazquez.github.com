@@ -1,9 +1,12 @@
 ---
 layout: post
 category : dev
+title: Accessing Azure Role Environment information from NodeJS
 tags : [azure, node, startup-tasks]
 ---
 {% include JB/setup %}
+
+# Accessing Azure Role Environment information from NodeJS
 
 One of the things you may want to do while working on Azure is to obtain information about your role environment. The current role instance name, the DeploymentID or even know if the role instance is running or not. This can be tricky if you use NodeJS, because the [RoleEnvironment](http://msdn.microsoft.com/es-es/library/ee773173.aspx) class is managed .net code. In this article we'll going to explain how you can set up information of your running Azure role to be easily accessed from a NodeJS server. The trick is using environment variables and use startup tasks running PowerShell as the bridge.
 
