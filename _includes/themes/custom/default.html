@@ -32,49 +32,33 @@
 			</div><!-- unit-inner -->
 		</div><!-- unit-head -->
 	</header>
-	<section role="region">
-		<article>
-			<div class="body" role="main">
-				<div class="unit-body">
-					<div class="unit-inner unit-body-inner">
-						<div class="entry-content">
-							{{ content }}
-						</div>
-					</div><!-- unit-inner -->
-				</div><!-- unit-body -->
-		</div><!-- body -->
-		</article>
-	</section>
-	<aside class="right-panel">
-		<div class="unit-info author-information">
-			<div class="about">
-				<h4>about</h4>
-				<ul>
-					<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
-					<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
-					<li class="twitter"><a href="http://twitter.com/{{ site.author.twitter }}/" rel="me">twitter.com/{{ site.author.twitter }}</a></li>
-					<li class="rss"><a href="http://feeds.feedburner.com/{{ site.author.feedname }}">Subscribe to RSS Feed</a></li>
-				</ul>
-			</div>
-			<div class="licence">
-				Theme: based on <a href="http://themes.jekyllbootstrap.com/preview/the-program/">the-program</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
-				Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
-			</div>
-		</div>
-		<div class="unit-info blog-archives">
-			<div class="older-posts">
-				<h4>older posts</h4>
-				<ul class="older-posts">
-					{% for post in site.posts %}
-						<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-	</aside>
+	<div class="body" role="main">
+		<div class="unit-body">
+			<div class="unit-inner unit-body-inner">
+				<div class="entry-content">
+					{{ content }}
+				</div>
+			</div><!-- unit-inner -->
+		</div><!-- unit-body -->
+	</div><!-- body -->
 	<footer class="the-footer">
-		<div class="unit-foot">	
-		</div><!-- unit-foot -->		
+		<div class="unit-foot">
+			<div class="unit-inner unit-foot-inner">
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
+						<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
+						<li class="twitter"><a href="http://twitter.com/{{ site.author.twitter }}/" rel="me">twitter.com/{{ site.author.twitter }}</a></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/{{ site.author.feedname }}">Subscribe to RSS Feed</a></li>
+					</ul>
+				</div><!-- misc -->
+				<p class="licence">
+					Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
+					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+				</p>
+			</div><!-- unit-foot-inner -->
+		</div><!-- unit-foot -->
 	</footer>
 </div><!-- page -->
 <script>
