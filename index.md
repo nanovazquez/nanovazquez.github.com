@@ -11,8 +11,12 @@ tagline: Supporting tagline
 			<div class="content">
 				<header class="show">
 					<h1 class="h2 entry-title">
-						<div class="title">{{ post.title }}</div>
-						<span class="date">Posted on {{ post.date | date_to_string }}</span>
+						<div class="title">
+							{{ post.title }}
+						</div>
+						<div class="date>
+							Posted on {{ post.date | date_to_string }}
+						</div>
 					</h1>
 				</header>
 				<div class="entry-content">
