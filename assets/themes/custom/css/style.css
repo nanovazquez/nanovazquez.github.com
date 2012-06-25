@@ -872,7 +872,8 @@ pre {
 /* ASIDE
 ----------------------------------------------- */
 .right-panel{
-	width: 250px;
+	padding: 26px;
+	width: 420px;
 	background-color: #FAFAFA;
 }
 
@@ -933,6 +934,7 @@ pre {
   color: #fafafa;
   color: rgba(250, 250, 250, 0.8);
   padding: 26px;
+  width: 420px;
 }
 .the-footer a:link {
   color: #c26164;
