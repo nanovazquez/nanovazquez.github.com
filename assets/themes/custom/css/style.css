@@ -912,6 +912,19 @@ pre {
 	margin-left: 50px;
 }
 
+.unit-article-inner .title a:link {
+  color: #c26164;
+  border: 0;
+}
+.unit-article-inner .title a:visited {
+  color: #ad4346;
+  border: 0;
+}
+.unit-article-inner .title a:hover {
+  color: #d08688;
+  border: 0;
+}
+
 /* ASIDE
 ----------------------------------------------- */
 .right-panel{

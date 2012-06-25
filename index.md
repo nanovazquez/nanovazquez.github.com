@@ -12,7 +12,7 @@ tagline: Supporting tagline
 				<header class="show">
 					<h1 class="h2 entry-title">
 						<div class="title">
-							{{ post.title }}
+							<a href="{{ BASE_PATH }}{{ post.url }}" rel="{{ post.title }}">{{ post.title }}</a>
 						</div>
 						<div class="date">
 							Posted on {{ post.date | date_to_string }}
