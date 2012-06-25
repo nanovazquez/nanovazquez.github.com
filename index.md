@@ -15,11 +15,11 @@ tagline: Supporting tagline
 					<h1 class="h2 entry-title">{{ post.title }}</h1>
 				</header>
 				<div class="entry-content">
-					{{ post.content }}
+					{{ post.content | truncatewords: 50 }}
 				</div>
 				<footer>
-					<span>{{ post.date | date_to_string }}</span>
 					<a href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
+					<span class="date">{{ post.date | date_to_string }}</span>
 				</footer>
 			</div>
 		</div>
