@@ -881,6 +881,7 @@ pre {
 .unit-article-inner > .content > header.show, .entry-content header.show, .entry-content header h1{
 	display: inline-block;
 	width: 100%;
+	max-height: 100px;
 }
 
 .entry-content header .entry-title .title{
