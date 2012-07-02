@@ -1,6 +1,6 @@
 ---
 layout: page
-tagline: "asp.net, asp.net MVC, Azure, nodejs Windows 8 and so on (welcome to the jungle)"
+tagline: "asp.net, asp.net MVC, Azure, node.js, Windows 8, HTML/CSS SQL and so on .."
 ---
 {% include JB/setup %}
 
@@ -14,10 +14,10 @@ tagline: "asp.net, asp.net MVC, Azure, nodejs Windows 8 and so on (welcome to th
 						<div class="title">
 							<a href="{{ BASE_PATH }}{{ post.url }}" rel="{{ post.title }}">{{ post.title }}</a>
 						</div>
-						<div class="date">
-							Posted on {{ post.date | date_to_string }}
-						</div>
 					</h1>
+					<div class="date">
+						Posted on {{ post.date | date_to_string }}
+					</div>
 				</header>
 				<div class="entry-content">
 					{{ post.content | strip_html | truncatewords: 100 }}
