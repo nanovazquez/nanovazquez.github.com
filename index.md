@@ -1,6 +1,6 @@
 ---
 layout: page
-tagline: Supporting tagline
+tagline: welcome to the jungle
 ---
 {% include JB/setup %}
 
@@ -20,7 +20,7 @@ tagline: Supporting tagline
 					</h1>
 				</header>
 				<div class="entry-content">
-					{{ post.content | strip_html | truncatewords: 50 }}
+					{{ post.content | strip_html | truncatewords: 100 }}
 				</div>
 				<footer class="article-footer">
 					<a class="read-more" href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
