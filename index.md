@@ -1,6 +1,6 @@
 ---
 layout: page
-tagline: welcome to the jungle
+tagline: "asp.net, asp.net MVC, Azure, nodejs Windows 8 and so on (welcome to the jungle)"
 ---
 {% include JB/setup %}
 
