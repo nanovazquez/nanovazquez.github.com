@@ -1,6 +1,6 @@
 ---
 layout: page
-tagline: "asp.net, asp.net MVC, Azure, node.js, Windows 8, HTML/CSS SQL and so on .."
+tagline: "asp.net C# / MVC, WIndows Azure, node.js, Metro style apps, HTML5/CSS3 and so on .."
 ---
 {% include JB/setup %}
 
