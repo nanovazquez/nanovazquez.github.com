@@ -69,8 +69,13 @@ html, body {
 	color:#FFF;
 }
 
+.entry-content{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 .date{
-	font-size: 14px;
-	
+	font-size: 12px;
+	font-weight: bold;
 }
 	
