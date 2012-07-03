@@ -77,6 +77,29 @@ html, body {
 
 /* custom */
 
+div.container{
+	margin-left: 50px;
+	float: left;
+	width: 100%;
+}
+
+div.content{
+	width: 70%;
+	max-width: 940px;
+}
+
+.right-panel{
+	float: left;
+	width: 300px;
+	position: relative;
+	top: 70px;
+	left: 55px;
+}
+
+.right-panel ul{
+	margin: 5px 0 0 0;
+	list-style-type: none;
+}
 
 footer{
 	width: 100%;
