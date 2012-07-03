@@ -13,9 +13,9 @@ But, leaving the code aside, one of the most *exciting* challenges about Windows
 The guys up there seem to be aware of this and they developed some controls that can help us. In particular, I'm going to focus on the [WinJS.UI.ListView](http://msdn.microsoft.com/en-us/library/windows/apps/br211837.aspx) object. 
 First of all, you need to know that it's designed to work with *square* containers, named *Tiles*. You can find a set of [predefined templates](http://msdn.microsoft.com/en-us/library/windows/apps/hh465463.aspx) that fit some of the basic scenarios. But if you want something different, like multi-size tiles for example, you need to perform some adjustments in the ListView so it can render all of them properly.
 
-## ListView generator
+## ListView layout generator
 
-I've created a W8 metro app that can help you when you're designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following:
+I've created a W8 metro app that can help you when you're designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following features:
 
 * You can enable **multi-sized** items in the layout
 * You can modify the **max-rows** property
