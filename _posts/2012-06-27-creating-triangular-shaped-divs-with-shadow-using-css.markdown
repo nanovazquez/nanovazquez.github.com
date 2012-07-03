@@ -22,17 +22,17 @@ The HTML consist on two main divs, one for the image and another for the title a
 
 {% highlight html %}
 	<div class="item">
-	    <div class="item-image">
-	        <img src="http://t.wallpaperweb.org/wallpaper/space/1920x1200/38133_1920x1200.jpg" />                    
-	    </div>
-	    <div class="item-overlay">
-	        <div class="item-info">
-	            <div class="title">Shuttle mission</div>
-	        </div>
-	        <div class="polygon-right"></div>
-	        <div class="polygon-shadow-top-right"></div>
-	        <div class="polygon-shadow-bottom-right"></div>
-	    </div>    
+		<div class="item-image">
+			<img src="http://t.wallpaperweb.org/wallpaper/space/1920x1200/38133_1920x1200.jpg" />
+		</div>
+		<div class="item-overlay">
+			<div class="item-info">
+				<div class="title">Shuttle mission</div>
+			</div>
+			<div class="polygon-right"></div>
+			<div class="polygon-shadow-top-right"></div>
+			<div class="polygon-shadow-bottom-right"></div>
+		</div>    
 	</div>
 {% endhighlight %}
 
