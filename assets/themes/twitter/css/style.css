@@ -115,7 +115,11 @@ div.container{
 }
 
 .container .content  .tags{
-	margin-top: 5px
+	margin-top: 5px;
+}
+
+.container .content .tags h4{
+	margin: 0;
 }
 
 .right-panel{
