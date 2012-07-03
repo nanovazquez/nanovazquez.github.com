@@ -79,6 +79,7 @@ html, body {
 
 div.container{
 	margin-left: 50px;
+	float: left;
 }
 
 div.content{
