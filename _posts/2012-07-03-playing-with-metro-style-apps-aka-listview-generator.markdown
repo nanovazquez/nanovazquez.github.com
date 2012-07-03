@@ -35,5 +35,5 @@ Once the app is launched you'll see a page with several items, separated in thre
 
 ![some example of what you may get](https://github.com/nanovazquez/ListView-layout-generator/raw/master/sample.png)
 
-For now, you can play with the values and learn what they are for. In the next days, I'll write a new post explaining them in detail. Stay tuned!
+For now, you can play with the values and learn what they are for. In the few next days, I'll write a new post explaining them in detail. Stay tuned!
 
