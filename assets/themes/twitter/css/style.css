@@ -96,7 +96,7 @@ div.container{
 	padding-bottom: 25px;
 }
 
-.container .content .span8{
+.container .content .span8, .container .content .span4{
 	width: 98%;
 }
 
