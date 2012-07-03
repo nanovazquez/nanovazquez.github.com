@@ -77,6 +77,10 @@ html, body {
 
 /* custom */
 
+div.container{
+	margin-left: 50px;
+}
+
 div.content{
 	width: 70%;
 	max-width: 940px;
