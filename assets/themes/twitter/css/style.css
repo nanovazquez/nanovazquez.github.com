@@ -95,6 +95,10 @@ div.container{
 	padding-bottom: 25px;
 }
 
+.container .content .span8{
+	width: 100%;
+}
+
 .right-panel{
 	float: left;
 	width: 300px;
