@@ -88,6 +88,8 @@ html, body, html body, html body p{
 	line-height: 19px;
 }
 
+/* end override */
+
 div.container{
 	margin-left: 50px;
 	width: 100%;
@@ -202,4 +204,9 @@ blockquote > p:first-child {
 blockquote img {
 	margin-bottom:0;
 }
+
+/* images */
+img{
+	margin: 20px;
+} 
 	
