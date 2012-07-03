@@ -19,7 +19,7 @@ I've created a W8 metro app that can help you when you're designing ListView lay
 
 * You can enable **multi-sized** items in the layout
 * You can modify the **max-rows** property
-* You can set **custom width and height** for a particular group of items
+* You can set **custom width** and **height** for a particular group of items
 
 I'm going to be updating the app based on the feedback I received these days. I created a repo on [GitHub](https://github.com/nanovazquez/listview-layout-generator). Feel free to clone it, fork it and modify the content (whatever you want).
 
