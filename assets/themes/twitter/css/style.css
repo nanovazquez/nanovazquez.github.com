@@ -86,7 +86,7 @@ div.container{
 	float: left;
 	width: 70%;
 	max-width: 900px;
-	padding-right: 120px;
+	padding-right: 20px;
 }
 
 .container .unit-article-inner .content, .container .content .span12{
