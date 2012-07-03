@@ -80,7 +80,11 @@ html, body {
 div.container{
 	margin-left: 50px;
 	float: left;
-	width: 100%;
+}
+
+div.content{
+	width: 70%;
+	max-width: 940px;
 }
 
 .right-panel{
