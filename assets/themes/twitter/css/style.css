@@ -153,6 +153,21 @@ footer{
 
 /* headers */
 
+.post h1{
+	margin: 25px 0 10px 0;
+}
+
+.post h2{
+	margin: 20px 0 10px 0;
+}
+
+.post h3{
+	margin: 15px 0 10px 0;
+}
+
+.post h4{
+	margin: 10px 0 5px 0;
+}
 
 /* blockquotes */
 
