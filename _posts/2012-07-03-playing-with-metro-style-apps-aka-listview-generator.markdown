@@ -10,7 +10,7 @@ The past few months I've been working on metro style applications, using the Win
 
 But, leaving the code aside, one of the *most exciting challenges* about Windows 8 apps is the **UI/UX** (after all, we're creating touch-interactive applications). Furthermore, they have its own way of organizing and displaying the content. So you should be very meticulous on topics like what and how (much) to show (there are some useful guidelines about this on msdn, like [this one](http://msdn.microsoft.com/en-us/library/windows/apps/hh465424.aspx)). 
 
-The guys up there seem to be aware of this and they developed some controls that can help us with this (at least they try to). In particular, I'm going to focus on the [WinJS.UI.ListView](http://msdn.microsoft.com/en-us/library/windows/apps/br211837.aspx) object. 
+The guys up there seem to be aware of this and they developed some controls that can help us (at least they try to). In particular, I'm going to focus on the [WinJS.UI.ListView](http://msdn.microsoft.com/en-us/library/windows/apps/br211837.aspx) object. 
 First of all, you need to know that it's designed to work with *square* containers, named *Tiles*. You can find a set of [predefined templates](http://msdn.microsoft.com/en-us/library/windows/apps/hh465463.aspx) that fit some of the basic scenarios. But if you want something different, like multi-size tiles for example, you need to perform some adjustments in the ListView so it can render all of them properly.
 
 <br />
