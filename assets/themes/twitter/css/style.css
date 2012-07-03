@@ -77,9 +77,15 @@ html, body {
 
 /* custom */
 
+.navbar{
+	width: 100%;
+	float: left;
+}
+
 div.container{
 	margin-left: 50px;
 	float: left;
+	width: 100%;
 }
 
 div.content{
