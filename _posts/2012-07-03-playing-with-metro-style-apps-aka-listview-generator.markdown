@@ -26,7 +26,7 @@ I'm going to be updating the itp based on the feedback I received these days, an
 <br />
 Some new things I'll implement and you'll see soon are: an export button (so you can easily get the css code), a way to identify a particular item in the list, add several styles at one time, etc.
 
-### Basic usage
+## Basic usage
 
 Once the app is launched you'll see a page with several items, separated in three different groups. Each item contains a specific **css class**, so you can style it if you want using CSS. To avoid refreshing the app every time you update the styles, you edit the ListView by clicking the **Edit ListView** command in the appBar (right-click on the app to display it). A flyout will pop-up, where you can update the ListView settings and add styles for the items. Some key points here:
 
