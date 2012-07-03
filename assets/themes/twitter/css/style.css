@@ -79,10 +79,11 @@ html, body {
 
 div.container{
 	margin-left: 50px;
-	float: left;
+	width: 100%;
 }
 
 div.content{
+	float: left;
 	width: 70%;
 	max-width: 940px;
 }
