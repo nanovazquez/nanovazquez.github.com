@@ -100,6 +100,10 @@ div.container{
 	width: 98%;
 }
 
+.container .main.content .span12{
+	margin-bottom: -35px;
+}
+
 .container .content  .tags{
 	margin-top: 5px
 }
