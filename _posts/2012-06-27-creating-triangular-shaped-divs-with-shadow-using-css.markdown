@@ -20,7 +20,7 @@ You can use the code above if you want, feel free to modify it to suit your requ
 
 The HTML consist on two main divs, one for the image and another for the title and the triangle (with *item-overlay* class). Notice that the overlay is divided in three more divs, I'm going to explain why I need to do this this later, but basically you have an square element that contains the data (*item-info*) and a triangle at the top to **simulate** a polygonal shape (the one with *polygon* class, not much creativity in the names). The last two elements are for the shadow, and because in this case the triangle oriented to the right, I named the classes *polygon-shadow-top-left* and *polygon-shadow-bottom-right*.
 
-{% highlight html %}
+	{% highlight html %}
 	<div class="item">
 		<div class="item-image">
 			<img src="http://t.wallpaperweb.org/wallpaper/space/1920x1200/38133_1920x1200.jpg" />
@@ -34,7 +34,7 @@ The HTML consist on two main divs, one for the image and another for the title a
 			<div class="polygon-shadow-bottom-right"></div>
 		</div>    
 	</div>
-{% endhighlight %}
+	{% endhighlight %}
 
 I'm are not going to cover all styles applied, but know that I used **z-index** to position the image below the triangle. And the divs inside the overlay are placed right next each other using **absolute positioning** (in a future, we could achieve the same result using [CSS3 grid layout](http://dev.w3.org/csswg/css3-grid-layout/))
 
@@ -45,25 +45,25 @@ Now let's take a look at the styles to create a polygonal shape.
 To make this shape I used two divs: a square element (as usual) that contais the data (if any) and a triangular element. These two elements placed together simulates a polygonal shape:  
 
 {% highlight css %}
-	/* The square */
-	.item .item-overlay .item-info{
-		width: 140px;
-		height: 100%;
-		float: left;
-		background-color: #005482;
-	}
+/* The square */
+.item .item-overlay .item-info{
+	width: 140px;
+	height: 100%;
+	float: left;
+	background-color: #005482;
+}
 
-	/* The triangle */
-	.item .item-overlay .polygon-right{
-		width: 0;
-		height: 0;
-		float: left;
-		border-top: solid 70px transparent;
-		border-bottom: solid 130px transparent;
-		border-left: solid 20px #005482;
-		position: relative;
-		z-index: 2;
-	}
+/* The triangle */
+.item .item-overlay .polygon-right{
+	width: 0;
+	height: 0;
+	float: left;
+	border-top: solid 70px transparent;
+	border-bottom: solid 130px transparent;
+	border-left: solid 20px #005482;
+	position: relative;
+	z-index: 2;
+}
 {% endhighlight %}
 
 Notice that the width and the height are set to 0 in the triangle. This is because the borders take care of the final width and height of the element. You can play with these values to change the triangle's tip, in this case closer to the top.
