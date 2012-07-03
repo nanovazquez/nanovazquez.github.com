@@ -41,7 +41,7 @@ Now let's take a look at the styles to create a polygonal shape.
 ## The polygonal shape
 
 To make this shape I used two divs: a square element (as usual) that contais the data (if any) and a triangular element. These two elements placed together simulates a polygonal shape:  
-
+{% highlight ruby %}
 	/* The square */
 	.item .item-overlay .item-info{
 		width: 140px;
@@ -61,6 +61,7 @@ To make this shape I used two divs: a square element (as usual) that contais the
 		position: relative;
 		z-index: 2;
 	}
+{% endhighlight %}
 
 Notice that the width and the height are set to 0 in the triangle. This is because the borders take care of the final width and height of the element. You can play with these values to change the triangle's tip, in this case closer to the top.
 
