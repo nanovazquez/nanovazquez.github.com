@@ -90,6 +90,7 @@ div.container{
 
 .container .content, .container .content .span12{
 	width: 100%;
+	padding-right: 0;
 	height: 180px;
 }
 
