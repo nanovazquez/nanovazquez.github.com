@@ -83,11 +83,6 @@ div.container{
 	width: 100%;
 }
 
-div.content{
-	width: 70%;
-	max-width: 940px;
-}
-
 .right-panel{
 	float: left;
 	width: 300px;
