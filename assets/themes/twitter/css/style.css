@@ -2,6 +2,7 @@
 html, body {
   background-color: #eee;
 }
+
 .navbar {
   margin-bottom: 0;
 }
@@ -77,6 +78,15 @@ html, body {
 }
 
 /* custom */
+
+/* this overrides bootstrap settings */
+
+html, body, html body{
+	font-family: 'Segoe UI', 'Helvetica', Garuda', Arial, sans-serif;
+	color: #666;
+	font-size: 14px;
+	line-height: 19px;
+}
 
 div.container{
 	margin-left: 50px;
