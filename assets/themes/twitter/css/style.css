@@ -81,7 +81,7 @@ html, body {
 
 /* this overrides bootstrap settings */
 
-html, body, html body{
+html, body, html body, html body p{
 	font-family: 'Segoe UI', Helvetica, Garuda, Arial, sans-serif !important;
 	color: #666;
 	font-size: 14px;
@@ -102,7 +102,7 @@ div.container{
 
 .container .unit-article-inner .content, .container .content .span12{
 	width: 100%;
-	padding-right: 0;
+	padding-right: 20px;
 	padding-bottom: 25px;
 }
 
@@ -143,5 +143,39 @@ footer{
 .date{
 	font-size: 12px;
 	font-weight: bold;
+}
+
+/* code */
+
+.highlight{
+    margin: 15px 0 15px 0;	
+}
+
+/* headers */
+
+
+/* blockquotes */
+
+blockquote {
+background:#F7F7FF;
+border-bottom:1px solid #D5D5D3;
+color:#666;
+display:block;
+margin: 0px;
+}
+
+blockquote > p {
+display:block;
+margin-bottom:0;
+padding:7px 5px
+}
+
+blockquote > p:first-child {
+border-top:1px solid #C8CDDE;
+margin-top:0
+}
+
+blockquote img {
+margin-bottom:0
 }
 	
