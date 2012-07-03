@@ -26,11 +26,11 @@
   </div>
   
   <div class="span4">
-    <h4>Published {{ page.date | date_to_long_string }}</h4>
+    <h5>Published {{ page.date | date_to_long_string }}</h5>
   </div>
 
   {% unless page.tags == empty %}
-  <div class="span4">
+  <div class="tags span4">
     <h4>Tags</h4>
     <ul class="tag_box">
     {% assign tags_list = page.tags %}
