@@ -145,6 +145,10 @@ footer{
 	font-weight: bold;
 }
 
+.page.row{
+	margin-top: -10px;
+}
+
 /* code */
 
 .highlight{
@@ -153,19 +157,19 @@ footer{
 
 /* headers */
 
-.post h1, h1{
+.post h1{
 	margin: 30px 0 10px 0;
 }
 
-.post h2, h2{
+.post h2{
 	margin: 25px 0 10px 0;
 }
 
-.post h3, h3{
+.post h3, aside h3{
 	margin: 20px 0 5px 0;
 }
 
-.post h4, h4{
+.post h4{
 	margin: 15px 0 5px 0;
 }
 
