@@ -209,4 +209,21 @@ blockquote img {
 img{
 	margin: 20px;
 } 
+
+/* personal info & social icons */
+
+
+aside .about .author-name{
+	width: 100%;
+}
+
+aside .about li{
+	float: left;
+}
+
+aside .about li img{
+	width: 50px;
+	height: 50px;
+	margin: 0 10px 0 0;
+}
 	
