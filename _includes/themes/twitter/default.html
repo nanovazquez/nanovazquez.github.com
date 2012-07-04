@@ -48,9 +48,9 @@
 
 	  <aside class="right-panel">
 		<div class="older-posts">
-			<h3>older posts</h3>
+			<h3>recent posts</h3>
 			<ul>
-				{% for post in site.posts %}
+				{% for post in site.posts limit:10 %}
 					<li><span>{{ post.date | date: "%m-%d-%Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
 				{% endfor %}
 			</ul>

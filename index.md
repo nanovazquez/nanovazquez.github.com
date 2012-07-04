@@ -4,7 +4,7 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 ---
 {% include JB/setup %}
 
-{% for post in site.posts %}
+{% for post in site.posts limit:5 %}
 <div class="entry-content">
 	<article class="unit-article layout-page">
 		<div class="unit-article-inner">
@@ -20,7 +20,7 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 					</div>
 				</header>
 				<div class="entry-content">
-					{{ post.content | strip_html | truncatewords: 100 }}
+					{{ post.content | strip_html | truncatewords: 120 }}
 				</div>
 				<footer class="article-footer">
 					<a class="read-more" href="{{ BASE_PATH }}{{ post.url }}">Read more..</a>
