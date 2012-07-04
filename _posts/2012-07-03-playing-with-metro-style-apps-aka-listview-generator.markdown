@@ -31,7 +31,7 @@ Once the app is launched you'll see a page with several items, separated in thre
 
 * If you want to display a multi-size layout, activate the **cell spanning** switch and modify the **cellWidth** and **cellHeight** values. 
 * If you want to add item styles, type the item number in the first input and the desired width and height, then press the **add** icon (e.g. *Item 0* | *322* | *100*)
-* When you're ready, press the **Update layout** button to see the changes.
+* When you're ready, press the **Update layout** button to see the changes in the ListView.
 
 ![some example of what you may get](https://github.com/nanovazquez/ListView-layout-generator/raw/master/sample.png)
 
