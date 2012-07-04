@@ -50,10 +50,10 @@
 		<div class="about">
 			<h3>about</h3>
 			<ul>
-				<li><span>{{ site.author.name }}</span></li>
-				<li><a href="http://github.com/{{ author.github }}">github.com/{{ site.author.github }}</a></li>
-				<li><a href="http://twitter.com/{{ author.twitter }}">twitter.com/{{ site.author.twitter }}</a></li>
-				<li><a href="mailto:{{ site.author.email }}">email me</a></li>
+				<li class="author-name"><span>{{ site.author.name }}</span></li>
+				<li class="github-icon"><a href="http://github.com/{{ author.github }}"><img src="{{ ASSET_PATH }}/images/github-icon-mini.png" /></a></li>
+				<li class="twitter-icon"><a href="http://twitter.com/{{ author.twitter }}"><img src="{{ ASSET_PATH }}/images/twitter-icon-mini.png" /></a></li>
+				<li class="gmail-icon"><a href="mailto:{{ site.author.email }}"><img src="{{ ASSET_PATH }}/images/gmail-icon-mini.png" /></a></li>
 			</ul>
 		</div>
 		<div class="older-posts">
