@@ -221,11 +221,6 @@ aside .about li{
 	float: left;
 }
 
-aside .about li.author-name{
-	width: 100%;
-}
-
-
 aside .about li img{
 	width: 50px;
 	height: 50px;
