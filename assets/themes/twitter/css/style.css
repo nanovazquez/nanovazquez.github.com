@@ -232,6 +232,10 @@ aside .about li img{
 	margin: 10px 10px 10px 0;
 }
 
+aside .about li.github-icon img{
+ margin-top: 13px;    
+}
+
 aside .about li.twitter-icon img{
  width: 40px;
  height: 40px;  
