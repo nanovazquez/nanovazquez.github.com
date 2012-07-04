@@ -6,7 +6,7 @@ tags : [metroapps, windows8, winjs]
 ---
 {% include JB/setup %}
 
-The past few months I've been working on metro style applications, using the Windows Library for Javascript, [WinJS](http://msdn.microsoft.com/en-US/library/windows/apps/br211377). Fortunately, since most of my work is web-related, not to all the node.js projects I've been involved in (thanks [@woloski](http://twitter.com/woloski)!) - the adaptation wasn't so hard.
+The past few months I've been working on metro style applications, using the Windows Library for Javascript, [WinJS](http://msdn.microsoft.com/en-US/library/windows/apps/br211377). Fortunately, since most of my work is web-related, not to mention all the node.js projects I've been involved in (thanks [@woloski](http://twitter.com/woloski)!) - the adaptation wasn't so hard.
 
 But, leaving the code aside, one of the most *exciting* challenges about Windows 8 apps is the **UI/UX** (after all, we're creating touch-interactive applications). Furthermore, they have its own way of organizing and displaying the content. So you should be very meticulous on topics like what and how (much) to show (there are some useful guidelines about this on msdn, like [this one](http://msdn.microsoft.com/en-us/library/windows/apps/hh465424.aspx)). 
 
