@@ -21,7 +21,7 @@
     {% if page.url contains "/index.html" %}
 		{% assign PAGE_CLASS = "main" %}
     {% else %}
-      {% assign PAGE_CLASS = "page" %}
+      {% assign PAGE_CLASS = "other" %}
     {% endif %}
 	
   {% endif %}
