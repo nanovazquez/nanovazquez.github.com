@@ -249,7 +249,7 @@ aside .about li.twitter-icon img{
 
 /* fixes for devices with small screen resolution */
 
-.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name, aside h3{
+.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name, aside .about h3{
 	display: none;
 }
 
