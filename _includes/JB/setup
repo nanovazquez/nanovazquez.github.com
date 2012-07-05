@@ -21,7 +21,7 @@
     {% if site.JB.ASSET_PATH contains "default" %}
 		{% assign PAGE_CLASS = "main" %}
     {% else %}
-      {% assign PAGE_CLASS = "page" %}
+      {% assign PAGE_CLASS = site.JB.ASSET_PATH %}
     {% endif %}
 	
   {% endif %}
