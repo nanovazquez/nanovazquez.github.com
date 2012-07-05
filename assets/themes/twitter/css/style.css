@@ -245,7 +245,7 @@ aside .about li.twitter-icon img{
 @media screen and (min-width:0px) and (max-width: 999px),
 	   all and (min-device-width: 0px) and (max-device-width: 999px){
 
-	.page aside, .main aside .older-posts{
+	.page aside, .main aside .older-posts, .main aside .about li.author-name{{
 		display: none;
 	}
 	

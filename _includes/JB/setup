@@ -18,10 +18,10 @@
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
     {% endif %}
 
-    {% if page.url contains "default" %}
+    {% if page.url contains "index" %}
 		{% assign PAGE_CLASS = "main" %}
     {% else %}
-      {% assign PAGE_CLASS = page.url %}
+      {% assign PAGE_CLASS = page %}
     {% endif %}
 	
   {% endif %}
