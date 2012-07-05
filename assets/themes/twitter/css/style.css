@@ -155,6 +155,11 @@ footer{
 	margin-top: -10px;
 }
 
+.other .page.row{
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
 /* code */
 
 .highlight{
@@ -239,19 +244,15 @@ aside .about li.twitter-icon img{
  width: 40px;
  height: 40px;  
  margin-top: 17px;    
-}	
+}
 
-/* fixes for cell phones and small laptops */
-@media screen and (min-width:0px) and (max-width: 999px),
-	   all and (min-device-width: 0px) and (max-device-width: 999px){
+/* fixes for devices with small screen resolution */
 
-	.other aside, .main aside .older-posts, .main aside .about li.author-name{{
-		display: none;
-	}
-	
-	.main aside{
-		top: 0;
-		left: 0;
-	}
-	   
+.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name{{
+	display: none;
+}
+
+.thin.main aside{
+	top: 0;
+	left: 0;
 }
