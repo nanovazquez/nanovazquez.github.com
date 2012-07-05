@@ -22,7 +22,7 @@ So let's get into it. The `cmd` script looks like this:
 
 **setup_environment_variables.cmd**
 
-{% highlight ps1 %}
+{% highlight bat %}
 @ECHO off
 %~d0
 CD "%~dp0"
@@ -56,7 +56,7 @@ Now let's dig into the `ps` script.
 
 **set_azure_role_information.ps1**
 
-{% highlight ps1 %}
+{% highlight bat %}
 [Reflection.Assembly]::LoadWithPartialName("Microsoft.WindowsAzure.ServiceRuntime")
 [Environment]::SetEnvironmentVariable("RoleName", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Role.Name, "Machine") 
 [Environment]::SetEnvironmentVariable("RoleInstanceID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Id, "Machine")
