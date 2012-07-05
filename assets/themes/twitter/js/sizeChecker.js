@@ -25,5 +25,5 @@ $(function(){
 			$('body').removeClass('thin');
 		}
 	});
-})();
+});
   
