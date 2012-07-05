@@ -44,7 +44,7 @@ Now let's take a look at the styles to create a polygonal shape.
 
 To make this shape I used two divs: a square element (as usual) that contais the data (if any) and a triangular element. These two elements placed together simulates a polygonal shape:  
 
-{% highlight CSS %}
+{% highlight css %}
 /* The square */
 .item .item-overlay .item-info{
 	width: 140px;
@@ -70,7 +70,7 @@ Notice that the width and the height are set to 0 in the triangle. This is becau
 
 To change the triangle orientation, you need to update the border values. For instance:
 
-{% highlight CSS %}
+{% highlight html %}
 .polygon-left{
 	border-top: solid 70px transparent;
 	border-bottom: solid 130px transparent;
@@ -97,7 +97,7 @@ Now that we've discussed the triangles, it's time for the shadow.
 
 For this, I need to use two separated divs. I styled them using the same **border** technique as before, but in this case I set the **width**. The reason is simple: I need the exact same figure, with the same angle, but moved a little bit to the right (like using high-heels). The **z-index** is lower than the polygon, this is to position the shadow always below the polygon.
 
-{% highlight CSS %}
+{% highlight css %}
 .item .item-overlay .polygon-shadow-top-right{
 	position: absolute;
 	z-index: 1;
@@ -121,7 +121,7 @@ For this, I need to use two separated divs. I styled them using the same **borde
 	
 For other orientations, you need to change the border and width/height values.
 
-{% highlight CSS %}
+{% highlight css %}
 /* Left */
 .polygon-shadow-top-left{
 	width: 10px;

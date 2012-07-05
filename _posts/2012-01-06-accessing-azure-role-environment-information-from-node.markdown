@@ -22,7 +22,7 @@ So let's get into it. The `cmd` script looks like this:
 
 **setup_environment_variables.cmd**
 
-{% highlight powershell %}
+{% highlight PowerShell %}
 @ECHO off
 %~d0
 CD "%~dp0"
@@ -56,7 +56,7 @@ Now let's dig into the `ps` script.
 
 **set_azure_role_information.ps1**
 
-{% highlight powershell %}
+{% highlight PowerShell %}
 [Reflection.Assembly]::LoadWithPartialName("Microsoft.WindowsAzure.ServiceRuntime")
 [Environment]::SetEnvironmentVariable("RoleName", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Role.Name, "Machine") 
 [Environment]::SetEnvironmentVariable("RoleInstanceID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Id, "Machine")
@@ -71,9 +71,10 @@ This is the Startup task that puts everything together.
 
 **ServiceDefinition.csdef**
 
-{% highlight XML %}
+{% highlight html %}
 <Task commandLine="setup_environment_variables.cmd" executionContext="elevated" taskType="simple" />
 {% endhighlight %}
+
 And finally, below is the server.js file that writes the results in the response.
 
 **server.js**
