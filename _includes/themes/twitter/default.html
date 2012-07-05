@@ -24,9 +24,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
   </head>
-
   <body>
-
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
@@ -39,14 +37,11 @@
         </div>
       </div>
     </div>
-
     <div class="container">
-
-      <div class="main content">
-        {{ content }}
-      </div>
-
-	  <aside class="right-panel">
+	<div class="main content">
+		{{ content }}
+	</div>
+	<aside class="right-panel">
 		<div class="about">
 			<h3>about</h3>
 			<ul>
@@ -65,16 +60,12 @@
 			</ul>
 		</div>
 	</aside>
-	  
       <footer>
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        <p>&copy; Theme based on <a href="http://twitter.github.com/bootstrap/" target="_blank" title="Twitter Bootstrap" title="">Twitter Bootstrap</a>
+          . Powered by <a href="https://github.com/mojombo/jekyll/wiki" target="_blank" title="Jekyll">Jekyll</a> and hosted on <a href="http://pages.github.com/" target="_blank" title="GitHub Pages">GitHub</a>
         </p>
       </footer>
-
     </div> <!-- /container -->
-
     {% include JB/analytics %}
   </body>
 </html>
