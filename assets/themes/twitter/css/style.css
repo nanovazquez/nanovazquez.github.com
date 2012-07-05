@@ -124,19 +124,6 @@ div.container{
 	margin: 0;
 }
 
-.right-panel{
-	float: left;
-	width: 300px;
-	position: relative;
-	top: 70px;
-	left: 55px;
-}
-
-.right-panel ul{
-	margin: 5px 0 0 0;
-	list-style-type: none;
-}
-
 footer{
 	width: 100%;
 	float: left;
@@ -217,6 +204,20 @@ img{
 
 /* personal info & social icons */
 
+aside.right-panel{
+	float: left;
+	width: 20%;
+	max-width: 300px;
+	position: relative;
+	top: 70px;
+	left: 55px;
+}
+
+aside.right-panel ul{
+	margin: 5px 0 0 0;
+	list-style-type: none;
+}
+
 aside .about {
 	width: 100%;
 	float: left;
@@ -248,11 +249,12 @@ aside .about li.twitter-icon img{
 
 /* fixes for devices with small screen resolution */
 
-.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name{
+.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name, about h3{
 	display: none;
 }
 
-.thin.main aside{
+.thin.main aside.right-panel{
 	top: 0;
 	left: 0;
+	width: 300px;
 }
