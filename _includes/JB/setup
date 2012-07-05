@@ -18,10 +18,10 @@
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
     {% endif %}
 
-    {% if site.JB.ASSET_PATH contains "default" %}
+    {% if page.url contains "default" %}
 		{% assign PAGE_CLASS = "main" %}
     {% else %}
-      {% assign PAGE_CLASS = site.JB.ASSET_PATH %}
+      {% assign PAGE_CLASS = page.url %}
     {% endif %}
 	
   {% endif %}
