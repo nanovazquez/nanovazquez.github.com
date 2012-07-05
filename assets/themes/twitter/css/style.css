@@ -248,7 +248,7 @@ aside .about li.twitter-icon img{
 
 /* fixes for devices with small screen resolution */
 
-.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name{{
+.thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name{
 	display: none;
 }
 

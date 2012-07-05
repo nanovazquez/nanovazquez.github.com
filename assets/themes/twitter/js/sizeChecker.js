@@ -16,14 +16,21 @@ $(function(){
 		return 0;
 	}
 	
-	$(window).resize(function(e){
+	function checkBrowserWidth(){
 		var browserWidth = getBrowserWidth();
 		
-		if (browserWidth < 900){
+		if (browserWidth < 1000){
 			$('body').addClass('thin'); 
 		}else{
 			$('body').removeClass('thin');
 		}
+	}
+	
+	$(window).resize(function(e){
+		checkBrowserWidth();		
 	});
+	
+	// first time
+	checkBrowserWidth();
 });
   
