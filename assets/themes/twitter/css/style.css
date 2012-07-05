@@ -240,3 +240,18 @@ aside .about li.twitter-icon img{
  height: 40px;  
  margin-top: 17px;    
 }	
+
+/* fixes for cell phones and small laptops */
+@media screen and (min-width:0px) and (max-width: 999px),
+	   all and (min-device-width: 0px) and (max-device-width: 999px){
+
+	.page aside, .main aside .older-posts{
+		display: none;
+	}
+	
+	.main aside{
+		top: 0;
+		left: 0;
+	}
+	   
+}
