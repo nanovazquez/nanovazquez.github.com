@@ -27,6 +27,7 @@ Open `Windows PowerShell for MongoDB Node.js`. First thing will be to download t
  
 When you execute `Add-AzureMongoWorkerRole` command it will copy mongodb binaries from above folder to the worker role created.
 
+
     Get-AzureMongoDBBinaries
 
 Now let's add the mongo worker role that will run the replica set.
@@ -47,26 +48,28 @@ This is what the CmdLet will do:
 
 Now that we have both roles linked, let's add some code to connect to the replica set.
 
-    // Create mongodb azure endpoint
-    // TODO: Replace 'ReplicaSetRole' with your MongoDB role name (ReplicaSetRole is the default)
-    var mongoEndpoints = new AzureEndpoint('ReplicaSetRole', 'MongodPort');
+{% highlight javascript %}
+// Create mongodb azure endpoint
+// TODO: Replace 'ReplicaSetRole' with your MongoDB role name (ReplicaSetRole is the default)
+var mongoEndpoints = new AzureEndpoint('ReplicaSetRole', 'MongodPort');
 
-    // Watch the endpoint for topologyChange events
-    mongoEndpoints.on('topologyChange', function() {
-      if (self.db) {
-        self.db.close();
-        self.db = null;
-      }
-        
-      var mongoDbServerConfig = mongoEndpoints.getMongoDBServerConfig();
-      self.db = new mongoDb('test', mongoDbServerConfig, {native_parser:false});
-      
-      self.db.open(function(){}});
-    });
+// Watch the endpoint for topologyChange events
+mongoEndpoints.on('topologyChange', function() {
+  if (self.db) {
+	self.db.close();
+	self.db = null;
+  }
+	
+  var mongoDbServerConfig = mongoEndpoints.getMongoDBServerConfig();
+  self.db = new mongoDb('test', mongoDbServerConfig, {native_parser:false});
+  
+  self.db.open(function(){}});
+});
 
-    mongoEndpoints.on('error', function(error) {
-      throw error;
-    });
+mongoEndpoints.on('error', function(error) {
+  throw error;
+});
+{% endhighlight %}
 
 The mongoEndpoints will listen the running MongoDB Replica Set nodes and will be updated automatically if one of the nodes come on or off line (either because the instance count of the replica set role was increased/decreased or because the VM is being patched)
 

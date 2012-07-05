@@ -22,28 +22,30 @@ So let's get into it. The `cmd` script looks like this:
 
 **setup_environment_variables.cmd**
 
-	@ECHO off
-	%~d0
-	CD "%~dp0"
+{% highlight powershell %}
+@ECHO off
+%~d0
+CD "%~dp0"
 
-	IF EXIST %WINDIR%\SysWow64 (
-	set powerShellDir=%WINDIR%\SysWow64\windowspowershell\v1.0
-	) ELSE (
-	set powerShellDir=%WINDIR%\system32\windowspowershell\v1.0
-	)
+IF EXIST %WINDIR%\SysWow64 (
+set powerShellDir=%WINDIR%\SysWow64\windowspowershell\v1.0
+) ELSE (
+set powerShellDir=%WINDIR%\system32\windowspowershell\v1.0
+)
 
-	ECHO Setting the Environment variables..
-	CALL %powerShellDir%\powershell.exe -Command Set-ExecutionPolicy unrestricted
-	CALL %powerShellDir%\powershell.exe -Command "& .\set_azure_role_information.ps1"
-	ECHO Done!
+ECHO Setting the Environment variables..
+CALL %powerShellDir%\powershell.exe -Command Set-ExecutionPolicy unrestricted
+CALL %powerShellDir%\powershell.exe -Command "& .\set_azure_role_information.ps1"
+ECHO Done!
 
-	ECHO Restarting IIS..
-	CALL iisreset
-	ECHO Done!
+ECHO Restarting IIS..
+CALL iisreset
+ECHO Done!
 
-	ECHO Starting the W3SVC service..
-	CALL NET START W3SVC
-	ECHO Done!
+ECHO Starting the W3SVC service..
+CALL NET START W3SVC
+ECHO Done!
+{% endhighlight %}
 
 Some things to mention about this code:
 
@@ -54,12 +56,14 @@ Now let's dig into the `ps` script.
 
 **set_azure_role_information.ps1**
 
-	[Reflection.Assembly]::LoadWithPartialName("Microsoft.WindowsAzure.ServiceRuntime")
-	[Environment]::SetEnvironmentVariable("RoleName", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Role.Name, "Machine") 
-	[Environment]::SetEnvironmentVariable("RoleInstanceID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Id, "Machine")
-	[Environment]::SetEnvironmentVariable("RoleDeploymentID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::DeploymentId, "Machine")
-	[Environment]::SetEnvironmentVariable("IsAvailable", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::IsAvailable, "Machine") 
-	[Environment]::SetEnvironmentVariable("CustomVariable", "Some value", "Machine")
+{% highlight powershell %}
+[Reflection.Assembly]::LoadWithPartialName("Microsoft.WindowsAzure.ServiceRuntime")
+[Environment]::SetEnvironmentVariable("RoleName", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Role.Name, "Machine") 
+[Environment]::SetEnvironmentVariable("RoleInstanceID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::CurrentRoleInstance.Id, "Machine")
+[Environment]::SetEnvironmentVariable("RoleDeploymentID", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::DeploymentId, "Machine")
+[Environment]::SetEnvironmentVariable("IsAvailable", [Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment]::IsAvailable, "Machine") 
+[Environment]::SetEnvironmentVariable("CustomVariable", "Some value", "Machine")
+{% endhighlight %}
 
 What we're doing is setting some Environment variables with `RoleEnvironment` property values. Notice that you can also set a custom variable, if you want.
 
@@ -67,26 +71,29 @@ This is the Startup task that puts everything together.
 
 **ServiceDefinition.csdef**
 
-	<Task commandLine="setup_environment_variables.cmd" executionContext="elevated" taskType="simple" />
-
+{% highlight XML %}
+<Task commandLine="setup_environment_variables.cmd" executionContext="elevated" taskType="simple" />
+{% endhighlight %}
 And finally, below is the server.js file that writes the results in the response.
 
 **server.js**
 
-	var http = require('http');
-	var port = process.env.port || 1337;
+{% highlight javascript %}
+var http = require('http');
+var port = process.env.port || 1337;
 
-	http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    
-	res.write("Role Name: " + process.env.RoleName + "\n");
-	res.write("Role InstanceID: " + process.env.RoleInstanceID + "\n");
-	res.write("Role DeploymentID: " + process.env.RoleDeploymentID + "\n");
-	res.write("Is running?: " + process.env.IsAvailable + "\n");
-	res.write("Custom variable: " + process.env.CustomVariable + "\n");
-	
-	res.end();
-	}).listen(port);
+http.createServer(function (req, res) {
+res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+res.write("Role Name: " + process.env.RoleName + "\n");
+res.write("Role InstanceID: " + process.env.RoleInstanceID + "\n");
+res.write("Role DeploymentID: " + process.env.RoleDeploymentID + "\n");
+res.write("Is running?: " + process.env.IsAvailable + "\n");
+res.write("Custom variable: " + process.env.CustomVariable + "\n");
+
+res.end();
+}).listen(port);
+{% endhighlight %}
 
 This is the result you get if you run the sample in the emulator:
 

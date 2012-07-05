@@ -16,34 +16,36 @@ To access blob storage, we used the [Windows Azure SDK for Node.js](https://gith
 
 This is all the code you need to list the containers in your storage account, and show the blobs inside. Because all blobs are stored inside a container, you need to perform two separated calls: one to retrieve all containers in the account and other to retrieve the blobs inside a particular container. 
 
-	var azure = require('azure');
+{% highlight javascript %}
+var azure = require('azure');
 
-	...
+...
 
-	function Home () {
-		this.blobService = azure.createBlobService();
-	};
+function Home () {
+	this.blobService = azure.createBlobService();
+};
 
-	Home.prototype = {
-	    showContainers: function (req, res) {
-	        var self = this;
-	        self.blobService.listContainers(function(err, result){
+Home.prototype = {
+	showContainers: function (req, res) {
+		var self = this;
+		self.blobService.listContainers(function(err, result){
+			// some code here to show the results
+		});
+	},
+	showBlobs: function(req, res){
+		var self = this;
+		var containerName = req.query['containerName'];
+		if (!containerName)
+			self.showContainers(req, res);
+		else
+			self.blobService.listBlobs(containerName, function(err, result){
 				// some code here to show the results
 			});
-	    },
-		showBlobs: function(req, res){
-			var self = this;
-			var containerName = req.query['containerName'];
-			if (!containerName)
-				self.showContainers(req, res);
-			else
-				self.blobService.listBlobs(containerName, function(err, result){
-					// some code here to show the results
-				});
-		},
+	},
 
-		...
-	};
+	...
+};
+{% endhighlight %}
 
 Below is a sample result of what you may get. In this case, we listed only the blob names. Notice that the **listBlobs** operation is returning every blob within the container, using flat blob listing (more info about flat blob listing [here](http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.storageclient.blobrequestoptions.useflatbloblisting.aspx)).
 
@@ -56,59 +58,60 @@ There's nothing wrong with the code above, and it might be sufficient for you an
 You can filter the results of the **listBlob** operation by setting the **prefix** and **delimiter** parameters. The first one is used, as its name claims, to return only the blobs whose names begin with the value specified. The delimiter has two purposes: to skip from the result those blobs whose names contains the delimiter, and to include a **BlobPrefix** element in the [REST API](http://msdn.microsoft.com/en-us/library/windowsazure/dd135734.aspx) response body. 
 This element will act as a placeholder for all blobs whose names begin with the same substring up to the appearance of the delimiter, and will be used to simulate a directory hierarchy (the folders will be listed there).
 
+{% highlight javascript %}
+var azure  = require('azure');
 
-	var azure  = require('azure');
+...
 
+function Home () {
+	this.blobService = azure.createBlobService();
+};
+
+function getFiles(collection){
+	var items = [];
+	for(var key in collection){
+		var item = collection[key];
+		var itemName = item.name.split('/')[item.name.split('/').length - 1];
+		items.push({ 'text': itemName, 'classes': 'file'});
+	}
+	return items;
+}
+
+function getFolders(containerName, collection){
+	var items = [];
+	//if BlobPrefix contains one folder is a simple JSON. Otherwise is an array of JSONs
+	if (collection && !collection.length){
+		temp = collection;
+		collection = [];
+		collection.push(temp);
+	}
+	for(var key in collection){
+		var item = collection[key];
+		var itemName = item.Name.replace(/\/$/, '').split('/')[item.Name.replace(/\/$/, '').split('/').length - 1];
+		items.push({ 'text': itemName, 'classes': 'folder' });
+	}
+	return items;
+}
+
+Home.prototype = {
+	
 	...
 
-	function Home () {
-		this.blobService = azure.createBlobService();
-	};
+	listBlobs: function(containerName, prefix, delimiter, callback){
+		var self = this;
+		self.blobService.listBlobs(containerName,{ 'prefix': prefix, 'delimiter': delimiter}, function(err, result, resultCont, response){
+			if(!err){
+				var files = getFiles(result);
+				var folders = getFolders(containerName, response.body.Blobs.BlobPrefix);
+				var childs = folders.concat(files);
+				// return the childs
+			}
+		});
+	},
 
-	function getFiles(collection){
-		var items = [];
-		for(var key in collection){
-			var item = collection[key];
-			var itemName = item.name.split('/')[item.name.split('/').length - 1];
-			items.push({ 'text': itemName, 'classes': 'file'});
-		}
-		return items;
-	}
-
-	function getFolders(containerName, collection){
-		var items = [];
-		//if BlobPrefix contains one folder is a simple JSON. Otherwise is an array of JSONs
-		if (collection && !collection.length){
-			temp = collection;
-			collection = [];
-			collection.push(temp);
-		}
-		for(var key in collection){
-			var item = collection[key];
-			var itemName = item.Name.replace(/\/$/, '').split('/')[item.Name.replace(/\/$/, '').split('/').length - 1];
-			items.push({ 'text': itemName, 'classes': 'folder' });
-		}
-		return items;
-	}
-
-	Home.prototype = {
-    	
-    	...
-
-    	listBlobs: function(containerName, prefix, delimiter, callback){
-			var self = this;
-			self.blobService.listBlobs(containerName,{ 'prefix': prefix, 'delimiter': delimiter}, function(err, result, resultCont, response){
-				if(!err){
-					var files = getFiles(result);
-					var folders = getFolders(containerName, response.body.Blobs.BlobPrefix);
-					var childs = folders.concat(files);
-					// return the childs
-				}
-			});
-		},
-
-    	...
-	};
+	...
+};
+{% endhighlight %}
 
 This is what we're doing in the lines above:
 

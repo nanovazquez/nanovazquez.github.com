@@ -17,21 +17,23 @@ You start from the basic 'Hello World' template created by the [Windows Azure Po
 Below is the javascript code for a very simple client. Notice that it is cleaning the label that stores the message every time you click the button. This way you can easily tell how much it takes the whole emit-receive flow to complete. 
 Remember to specify the server URL and port.
 
-	<script type="text/javascript">
-        var socket;
-        $(document).ready(function () {
-            $("#startButton").click(function () {
-                $("#returnMessageLabel").empty();
-                if (!socket) {
-                    socket = io.connect("http://<YOUR-SERVER-URL>:<YOUR-PORT>/");
-                    socket.on('helloBack', function (data) {
-                        $("#returnMessageLabel").text(data.message);
-                    });
-                }
-                socket.emit('sendMessage', { message: 'Hello there!' });
-            });
-        });  
-    </script>
+{% highlight javascript %}
+<script type="text/javascript">
+	var socket;
+	$(document).ready(function () {
+		$("#startButton").click(function () {
+			$("#returnMessageLabel").empty();
+			if (!socket) {
+				socket = io.connect("http://<YOUR-SERVER-URL>:<YOUR-PORT>/");
+				socket.on('helloBack', function (data) {
+					$("#returnMessageLabel").text(data.message);
+				});
+			}
+			socket.emit('sendMessage', { message: 'Hello there!' });
+		});
+	});  
+</script>
+{% endhighlight %}
 
 You should get back something like this:
 
@@ -44,28 +46,29 @@ Now, let's look at the server code.
 The Worker role approach is fairly straightforward. You just need to install the [socket.io][] module on the role and replace the code in the server.js file with the following:
 
 **server.js**
+{% highlight javascript %}
+var port = process.env.port || 81;
 
-	var port = process.env.port || 81;
+var app = require('http').createServer(handler)
+  , io = require('socket.io').listen(app)
 
-	var app = require('http').createServer(handler)
-	  , io = require('socket.io').listen(app)
+app.listen(port);
+console.log('socket.io server started on port: ' + port + '\n');
 
-	app.listen(port);
-	console.log('socket.io server started on port: ' + port + '\n');
+function handler (req, res) {
+  res.writeHead(200);
+  res.end('socket.io server started on port: ' + port + '\n');
+}
 
-	function handler (req, res) {
-	  res.writeHead(200);
-	  res.end('socket.io server started on port: ' + port + '\n');
-	}
-
-	io.sockets.on('connection', function (socket) {
-	  console.log('user connected');
-	  
-	  socket.on('sendMessage', function(data){
-		console.log('user sent the message: ' + data.message + '\n');
-		socket.emit('helloBack', { message: 'Hello back!' });
-	  });
-	});
+io.sockets.on('connection', function (socket) {
+  console.log('user connected');
+  
+  socket.on('sendMessage', function(data){
+	console.log('user sent the message: ' + data.message + '\n');
+	socket.emit('helloBack', { message: 'Hello back!' });
+  });
+});
+{% endhighlight %}
 
 There is nothing specific to Windows Azure as you can see.
 We deployed this to an extra small instance on Windows Azure and tested it with Internet Explorer 9 and Google Chrome. 
@@ -84,11 +87,13 @@ To configure the transport, add the dollowing snippet to the `server.js` file wi
 
 **server.js**
 
-	...
-	io.configure(function () { 
-	  io.set("transports", ["xhr-polling"]); 
-	  io.set("polling duration", 10); 
-	});
+{% highlight javascript %}
+...
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+{% endhighlight %}
 
 If you don't add this fix, you will experience some initial delay in browsers that support WebSockets (like Chrome). That delay is generated because it will try to use WebSockets as first option.
 
@@ -98,14 +103,16 @@ Alternatively, you could configure an array of allowed methods (instead of one),
 
 **server.js**
 
-	io.configure(function () { 
-	  io.set('transports', [
-	  	'xhr-polling'
-	  , 'jsonp-polling'
-	  , 'htmlfile'
-	  ]);
-	  io.set("polling duration", 10); 
-	});
+{% highlight javascript %}
+io.configure(function () { 
+  io.set('transports', [
+	'xhr-polling'
+  , 'jsonp-polling'
+  , 'htmlfile'
+  ]);
+  io.set("polling duration", 10); 
+});
+{% endhighlight %}
 
 ## Conclusion
 
@@ -117,4 +124,3 @@ To sum up what we have learnt in this article:
 * If you use a Web role, remember to disable WebSockets transport, as IIS currently doesn't support it. 
 
 [socket.io]: http://socket.io
-
