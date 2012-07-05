@@ -30,7 +30,7 @@ Some new things I'm going to implement and you'll see soon are: an export button
 Once the app is launched you'll see a page with several items, separated in three different groups. Each item contains a specific **css class**, so you can style it if you want using CSS. To avoid refreshing the app every time you update the styles, you edit the ListView by clicking the **Edit ListView** command in the appBar (right-click on the app to display it). A flyout will pop-up, where you can update the ListView settings and add styles for the items. Some key points here:
 
 * If you want to display a multi-size layout, activate the **cell spanning** switch and modify the **cellWidth** and **cellHeight** values. 
-* If you want to add item styles, type the item number in the first input and the desired width and height, then press the **add** icon (e.g. *Item 0* | *322* | *100*)
+* If you want to add item styles, type the item number in the first input and the desired width and height, then press the **add** icon (e.g. `Item 0 | 322 | 100`)
 * When you're ready, press the **Update layout** button to see the changes in the ListView.
 
 ![some example of what you may get](https://github.com/nanovazquez/ListView-layout-generator/raw/master/sample.png)
