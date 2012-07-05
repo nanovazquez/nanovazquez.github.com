@@ -20,7 +20,7 @@ You can use the code above if you want, feel free to modify it to suit your requ
 
 The HTML consist on two main divs, one for the image and another for the title and the triangle (with *item-overlay* class). Notice that the overlay is divided in three more divs, I'm going to explain why I need to do this this later, but basically you have an square element that contains the data (*item-info*) and a triangle at the top to **simulate** a polygonal shape (the one with *polygon* class, not much creativity in the names). The last two elements are for the shadow, and because in this case the triangle oriented to the right, I named the classes *polygon-shadow-top-left* and *polygon-shadow-bottom-right*.
 
-{% highlight HTML %}
+{% highlight html %}
 <div class="item">
 	<div class="item-image">
 		<img src="http://t.wallpaperweb.org/wallpaper/space/1920x1200/38133_1920x1200.jpg" />
@@ -70,7 +70,7 @@ Notice that the width and the height are set to 0 in the triangle. This is becau
 
 To change the triangle orientation, you need to update the border values. For instance:
 
-{% highlight html %}
+{% highlight css %}
 .polygon-left{
 	border-top: solid 70px transparent;
 	border-bottom: solid 130px transparent;
