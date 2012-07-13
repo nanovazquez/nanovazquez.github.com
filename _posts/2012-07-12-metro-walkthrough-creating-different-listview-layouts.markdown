@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Metro Walkthrough: Creating different ListView layouts
+title: Metro Walkthrough - Creating different ListView layouts
 categories: [metro]
 tags : [metroapps, windows8, winjs]
 ---
