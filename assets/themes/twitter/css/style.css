@@ -175,6 +175,7 @@ footer{
 
 blockquote {
 	background:#F7F7FF;
+	border-top:1px solid #C8CDDE;
 	border-bottom:1px solid #D5D5D3;
 	border-left: 4px solid #97CA41;
 	color:#666;
@@ -189,7 +190,6 @@ blockquote > p {
 }
 
 blockquote > p:first-child {
-	border-top:1px solid #C8CDDE;
 	margin-top:0;
 }
 
