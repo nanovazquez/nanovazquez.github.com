@@ -19,7 +19,7 @@ $(function(){
 	function checkBrowserWidth(){
 		var browserWidth = getBrowserWidth();
 		
-		if (browserWidth < 1118){
+		if (browserWidth < 1120){
 			$('body').addClass('thin'); 
 		}else{
 			$('body').removeClass('thin');
