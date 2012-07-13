@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Running socket.io on Windows Azure Web and Worker roles
-category : dev
+categories: [azure, node]
 tags : [azure, node, socket-io]
 ---
 {% include JB/setup %}

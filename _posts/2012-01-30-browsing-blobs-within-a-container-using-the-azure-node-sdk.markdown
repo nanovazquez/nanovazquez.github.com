@@ -1,7 +1,7 @@
 ---
 layout: post
-category : dev
 title: Browsing Blobs within a container using the Windows Azure Node SDK
+categories: [azure, node] 
 tags : [azure, node, azure-storage]
 ---
 {% include JB/setup %}

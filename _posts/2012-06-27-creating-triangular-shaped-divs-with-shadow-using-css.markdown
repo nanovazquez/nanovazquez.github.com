@@ -1,8 +1,8 @@
 ---
 layout: post
-category : dev
 title: Creating Triangular-shaped DIVs with shadow using CSS 
-tags : [css]
+categories: [UI]
+tags : [UI, css]
 ---
 {% include JB/setup %}
 

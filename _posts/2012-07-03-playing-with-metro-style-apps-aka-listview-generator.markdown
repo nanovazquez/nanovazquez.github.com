@@ -1,7 +1,7 @@
 ---
 layout: post
-category : dev
 title: Playing with Metro style apps (aka ListView layout generator)
+categories: [metro]
 tags : [metroapps, windows8, winjs]
 ---
 {% include JB/setup %}
