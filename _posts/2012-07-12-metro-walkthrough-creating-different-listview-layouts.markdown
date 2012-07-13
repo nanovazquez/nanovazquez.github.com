@@ -91,7 +91,7 @@ For this kind of scenarios, one thing that worked for me is **set the cellWidth 
 
 Below you can find an example of this (I updated the data a little bit):
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout-big-screen.png)
 
 One challenge in this kind of scenario is how to set the **maxRows** property, since this property affects all categories. There's no generic answer here, it really depends on the scenario. It's up to you to choose if this is OK or not. 
 
