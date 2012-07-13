@@ -8,7 +8,7 @@ tags : [metroapps, windows8, winjs]
 
 In this post, we are going to walk through some of the most commons scenarios when creating a ListView for your application. We start with the basic layout, a simple list with items of the same size. Then, we modify the ListView to support a layout with proportional-sized items, and we pinpoint some guidelines to render the items properly. Lastly, we analyze a radical scenario where the items have unique styles, and they do not share a (size) relation between each other.
 
-To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback is always welcome :)). Notice that I separated each scenario in 4 different levels, according to its complexity (to name each level, I used the standard (and widely known) [duke nukem difficulty settings](http://dukenukem.wikia.com/wiki/Difficulty). 
+To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback are always welcome ☺). Notice that I separated each scenario in 4 different levels, according to its complexity (to name each level, I used the standard (and widely known) [duke nukem difficulty settings](http://dukenukem.wikia.com/wiki/Difficulty). 
 
 Now that you know these things, let's get our hands dirty.
 
