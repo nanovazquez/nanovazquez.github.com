@@ -57,7 +57,7 @@ It was created using the **groupInfo** values described above and the following 
 
 ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/proportional-item-styles.png)
 
-> Note: Notice that we're adding an extra **10px** in the big items. This is because we need to include the margin between them in the final value. In case we include an item three times bigger than the smallest, we should add to the size the value of two margins. 
+> **Note:** Notice that we're adding an extra **10px** in the big items. This is because we need to include the margin between them in the final value. In case we include an item three times bigger than the smallest, we should add to the size the value of two margins. 
 
 Until now, we didn't discuss about different screen resolutions, or even different screen orientations (landscape or portrait). One of the features of the metro style application is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx), and we must take this into account when designing our ListView. You should start designing your application in a default size resolution, like 1366x768, but you must be prepared to **all** possible scenarios. For this, keep reading.
 
