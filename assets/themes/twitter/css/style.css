@@ -212,6 +212,7 @@ aside.right-panel{
 	position: relative;
 	top: 70px;
 	left: 55px;
+	text-align: left;
 }
 
 aside.right-panel ul{
