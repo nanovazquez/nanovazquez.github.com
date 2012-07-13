@@ -8,11 +8,11 @@ tags : [metroapps, windows8, winjs]
 
 In this post, we are going to walk through some of the most commons scenarios when creating a ListView for your application. We start with the basic layout, a simple list with items of the same size. Then, we modify the ListView to support a layout with proportional-sized items, and we pinpoint some guidelines to render the items properly. Lastly, we analyze a radical scenario where the items have unique styles, and they do not share a (size) relation between each other.
 
-To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback are always welcome ☺). Notice that I separated each scenario in 4 different levels, according to its complexity (to name each level, I used the standard (and widely known) [duke nukem difficulty settings](http://dukenukem.wikia.com/wiki/Difficulty). 
+To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback are always welcome ☺). 
 
 Now that you know these things, let's get our hands dirty.
 
-## Level 0: The basics (piece of cake)
+## Level 0: The basics
 
 The layout of the default ListView (e.g. the one presented in the grid VS templates) expects that all items have the same size. Under the hood, it calculates the total **width** and **height** of the first item, and then arranges the rest using these values. Furthermore, it figures out how many items fit per column using these values (we'll analyze the code that perform these calculations later, when we discuss about the **maxRows** property). 
 
@@ -22,7 +22,7 @@ If you leave the ListView as is, be sure that your items have the same size. Oth
 
 Now let's discuss how you can create a ListView with items of different sizes.
 
-## Level 1: Proportional items (let's rock)
+## Level 1: Proportional items
 
 The next step is to work with items of different sizes, but proportional. This is the most common scenario, you can find it the **windows start screen**, the **Store** app, the **VS templates**, and so on. 
 
@@ -62,7 +62,7 @@ It was created using the **groupInfo** values described above and the following 
 Until now, we didn't discuss about different screen resolutions, or even different screen orientations (landscape or portrait). One of the features of the metro style application is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx)) and we must take this into account when designing our ListView. You should start designing your application in a default size resolution, like 1366x768, but you must be prepared to **all** possible scenarios. For this, keep reading.
 
 
-## Level 2: Handling different resolutions (come get some)
+## Level 2: Handling different resolutions
 
 The ListView is flexible enough to do most of the job for us, like arranging the items per column, calculating the available size. But what happens with your layout on bigger resolutions (which means more items per column)? You might want to maintain the same layout, no matter the free space you have. Luckily, there's a property that comes to the rescue: [maxRows](http://msdn.microsoft.com/en-us/library/windows/apps/br211750.aspx).
 
@@ -83,7 +83,7 @@ So what's going on behind the scenes? When the ListView calculates the items to 
 
 Of course it's always nice to use all the space we have available to display our items. I personally try not to use it unless I'm forced to, like if I'm working with non-squared items or newspaper layouts.
 
-## Level 3: Mash-up (damn i'm good)
+## Level 3: Mash-up
 
 Here we mix everything. For instance, let's suppose we have a **magazine** application that displays different sets of data (news, articles, recent activities and photos) in your hub/groupedItems/landing page. Moreover, each item in the category has its own styles, non-related with the styles of other categories. We want to focus in those cases where you need to take full control over the layout. 
 
