@@ -1,6 +1,7 @@
 /* Override some defaults */
 html, body {
   background-color: #eee;
+  overflow-x: hidden;
 }
 
 .navbar {
