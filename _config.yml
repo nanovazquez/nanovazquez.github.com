@@ -12,7 +12,7 @@ markdown: redcarpet
 # so be sure to set them if your theme uses them.
 #
 title : nanovazquez's blog
-tagline: asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so on ..
+tagline: asp.net, windows azure, node.js, metro style apps, html5, css3 and so on ..
 author :
   name : Mariano Vazquez
   email : marianodvazquez@gmail.com
