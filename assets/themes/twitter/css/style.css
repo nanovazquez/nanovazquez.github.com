@@ -91,8 +91,12 @@ html, body, html body, html body p{
 /* end override */
 
 div.container{
-	margin-left: 50px;
+	/* margin-left: 50px; */
 	width: 100%;
+}
+
+.navbar-inner div.container{
+	margin-left: 50px;
 }
 
 .container > div.content{
@@ -100,6 +104,7 @@ div.container{
 	width: 70%;
 	max-width: 900px;
 	padding-right: 20px;
+	margin-left: 30px;
 }
 
 .container .unit-article-inner .content, .container .content .span12{
@@ -262,7 +267,7 @@ aside .about li.rss-icon img{
 
 .thin.main aside.right-panel{
 	top: 0;
-	left: 0;
+	left: 55px;
 	width: 100%;
 }
 
