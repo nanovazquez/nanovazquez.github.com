@@ -17,14 +17,16 @@ First of all, you need to know that it's designed to work with *square* containe
 
 I've created a W8 metro app that can help you when you're designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following ListView modifications:
 
-* You can enable **multi-sized** items in the layout
-* You can modify the **max-rows** property
-* You can set **custom width** and **height** for a particular group of items
-* <span style="color: green; font-weight: bold">New!</span> You can add several items at once (separated by a comma)
-
+ * You can enable **multi-sized** items in the layout
+ * You can modify the **max-rows** property
+ * You can set **custom width** and **height** for a particular group of items
+ * <span style="color: green; font-weight: bold; font-style:italic">New!</span> You can add several item styles at once (separated by a comma)
+ * <span style="color: green; font-weight: bold; font-style:italic">New!</span> Using item no. and group.no, you can style a single item in the list
+ * <span style="color: green; font-weight: bold; font-style:italic">New!</span> Use asterisk/star to add styles for **all** the items or groups
+ 
 I'm going to be updating the app based on the feedback I received these days. I created a repo on [GitHub](https://github.com/nanovazquez/listview-layout-generator). Feel free to clone it, fork it, modify the content (whatever you want).
 
-Some new things I'm going to implement and you'll see soon are: an export button (so you can easily get the css code), a way to identify a particular item in the list, <strike>add several styles at once</strike>, etc.
+Some new things I'm going to implement and you'll see soon are: an export button (so you can easily get the css code), <strike>a way to identify a particular item in the list</strike>, <strike>add several styles at once</strike>, etc.
 
 ## Basic usage
 
