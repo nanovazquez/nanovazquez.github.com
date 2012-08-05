@@ -186,7 +186,7 @@ blockquote {
 	border-left: 4px solid #97CA41;
 	color:#666;
 	display:block;
-	margin: 0px 0px 15px 0px;
+	margin: 15px 0px 15px 0px;
 }
 
 blockquote > p {
@@ -275,3 +275,9 @@ aside .about li.rss-icon img{
 .thin img{
 	margin: 0;
 } 
+
+/* extras */
+
+iframe{
+	margin: 15px 0 0 15px;
+}
