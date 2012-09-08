@@ -57,14 +57,13 @@ It was created using the **groupInfo** values described above and the following 
 
 ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/proportional-item-styles.png)
 
-> **Note:** Notice that we're adding an extra **10px** in the big items. This is because we need to include the margin between them in the final value. In case we include an item three times bigger than the smallest, we should add to the size the value of two margins. 
+> **Note:** Notice that we're adding an extra **10px** in the big items. This is because we need to include the margin between the items in the final value. For instance, if we want to create an item three times bigger than the smallest, we should add to the desired size the equivalent of two margins. 
 
-Until now, we didn't discuss about different screen resolutions, or even different screen orientations (landscape or portrait). One of the features of the metro style application is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx)) and we must take this into account when designing our ListView. You should start designing your application in a default size resolution, like 1366x768, but you must be prepared to **all** possible scenarios. For this, keep reading.
-
+Until now, we didn't discuss about different screen resolutions, or different screen orientations (landscape or portrait). One of the features of the metro style application is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx)) and we must take this into account when designing our ListView. You usually start designing your application in a default size resolution, like 1366x768, but you should (must) be prepared to **all** possible scenarios. If you're interested in this, keep reading.
 
 ## Level 2: Handling different resolutions
 
-The ListView is flexible enough to do most of the job for us, like arranging the items per column, calculating the available size. But what happens with your layout on bigger resolutions (which means more items per column)? You might want to maintain the same layout, no matter the free space you have. Luckily, there's a property that comes to the rescue: [maxRows](http://msdn.microsoft.com/en-us/library/windows/apps/br211750.aspx).
+The ListView is flexible enough to do most of the job for us, like arranging the items per column, calculating the available size. But what happens with your layout on bigger resolutions? (which means more items per column). You might want to maintain the same layout, no matter the free space you have. Luckily, there's a property that comes to the rescue: [maxRows](http://msdn.microsoft.com/en-us/library/windows/apps/br211750.aspx).
 
 Use **maxRows** to set the max number of items per column in your layout. Add this property to the **gridLayoutOptions** object we defined in the previous code and set it to **2**. This will ensure that no more than 2 items will be stacked per column:
 
@@ -87,18 +86,21 @@ Of course it's always nice to use all the space we have available to display our
 
 Here we mix everything. For instance, let's suppose we have a **magazine** application that displays different sets of data (news, articles, recent activities and photos) in your hub/groupedItems/landing page. Moreover, each item in the category has its own styles, non-related with the styles of other categories. We want to focus in those cases where you need to take full control over the layout. 
 
-For this kind of scenarios, one thing that worked for me is **set the cellWidth and cellHeight to 1**. This will cause that the items will be managed individually, leaving the (item) styles the responsibility of arranging the content. 
+For this kind of scenarios, one thing that worked for me is **set the cellWidth and cellHeight to 1**. This will cause that the items will be managed individually, leaving to the item styles the responsibility of arranging the content. 
 
 Below you can find an example of this (I updated the data a little bit):
 
 ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout.png)
 
-One challenge in this kind of scenario is how to set the **maxRows** property, since this property affects all categories. There's no generic answer here, it really depends on the scenario. It's up to you to choose if this is OK or not. 
+One challenge in this kind of scenario is how to set the **maxRows** property, since this property affects all categories. There's no generic answer here, it really depends on the scenario. It's up to you to choose what is ok and what isn't. 
 
 Check out how the sample looks above in a 27'' screen (2560x1440)
 
 ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout-big-screen.png)
 
+Since some people asked me about the source, I added this **magazine layout** as an example in the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator)). Just activate the appBar and click on the "Go to sample page" command.
+
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/magazine-layout-command.png]
 
 ## Conclusion
 
