@@ -68,8 +68,12 @@
 		<div class="categories">
 			<h3>categories</h3>
 			<ul>
-				{% for category in site.categories order:ascending %}
-					<li> {{ category[0] }} </li>
+				{% for category in site.categories %}
+					<li>
+						<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
+							<span>{{ category[0] }}</span> 
+						</a>
+					</li>
 				{% endfor %}
 			</ul>
 		</div>
