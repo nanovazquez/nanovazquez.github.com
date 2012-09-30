@@ -12,10 +12,7 @@ In this post, I'm going to walk-through the steps to include [azureQuery](http:/
 
 Since this version of azureQuery only works with blob storage (v0.1), I'm going to focus this post on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
 
-
-> **Note:** You can grab a fully-working sample from my github account, [here](https://github.com/nanovazquez/azure-query-sample) is the link (don't forget to start the Azure emulator in your local machine before running it).
-
-All that said, let's get our hands dirty (I love this part).
+> **Note:** You can grab a fully-working sample from my github account. [Here](https://github.com/nanovazquez/azure-query-sample) is the link. Don't forget to start the Azure emulator in your local machine before running it.
 
 ## Set-up AzureQuery in your solution
 
@@ -79,13 +76,13 @@ This are the steps you need to perform to include azureQuery in youer project:
 
 > **Note:** the connection string name must be *default*, because the azureQuery lib currently searches for a connection string with that name (v0.1).
 
-And that's it! Now you need to reference the **azureQuery.js** file in the View you want to use **azureQuery** to display your blobs stored in your account.
+And that's it! Now you only need to reference the **azureQuery.js** file in the View you want to use **azureQuery** to display your blobs stored in your account.
 
-## Query the blobs at client side!
+## Query the blobs at client side
 
-I'll use **azureQuery** to populate a treeView at client-side. For this example, I'm going to use the [jsTree](http://www.jstree.com/) jQuery plugin, but basically all client-side treeView solutions works the same.
+I created a more detailed sample (source [here](https://github.com/nanovazquez/azure-query-sample)) that uses **azureQuery** to retrieve the blobs stored in your account and displays them using treeView, all at client-side. For this example, I'm going to use the [jsTree](http://www.jstree.com/) jQuery plugin, but basically all client-side treeView solutions works the same.
 
-I created a **TreeHelper** class to manage the tree data, creating the nodes they way **jsTree** wants them. For sample purposes, I'll populate the treeView at once (instead of using an on-demand strategy).
+This is the client-side code that performs what I described above:
 
 {% highlight javascript %}
 $(function () {
@@ -115,7 +112,9 @@ $(function () {
 });
 {% endhighlight %}
 
-Notice how easy is to iterate through all the containers, and the blobs inside each one of them. That's all I need to interact with azure blob storage, and to retrive the data I need to populate the treeView. 
+I created the **TreeHelper** class to store & manage the tree data, creating the nodes they way **jsTree** wants them. Notice how easy is to iterate through all the containers in your account, and the blobs inside each one of them. Last, just for sample purposes, I decided to retrieve all the information at once instead of using an on-demand strategy. 
+
+Below is a screenshot of the code in action:
 
 ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-azure-query/blob-storage-jstree.png)
 
