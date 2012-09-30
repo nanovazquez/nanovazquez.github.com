@@ -79,7 +79,7 @@ This are the steps you need to perform to include azureQuery in youer project:
 
 > **Note:** the connection string name must be *default*, because the azureQuery lib currently searches for a connection string with that name (v0.1).
 
-7. Reference azure query at the client-side
+And that's it! Now you need to reference the **azureQuery.js** file in the View you want to use **azureQuery** to display your blobs stored in your account.
 
 ## Query the blobs at client side!
 
