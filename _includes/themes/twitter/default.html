@@ -68,11 +68,12 @@
 		<div class="categories">
 			<h3>categories</h3>
 			<ul>
-				{% for category in categories_list %}
+				{% for category in site.categories_list %}
 					<li>
 						<li>
-							{{ category }}
-						</li>
+						<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] | join: "/" }}-ref">
+							{{ category[0] | join: "/" }} ({{ category[1].size }})</span>
+					</a></li>
 					<span>
 				{% endfor %}
 			</ul>
