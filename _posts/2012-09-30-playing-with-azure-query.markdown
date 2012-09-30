@@ -9,9 +9,11 @@ tags : [metroapps, windows8, xaml/c#, animations]
 
 In this post, I'm going to walk-through the steps to include [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use the fluent, jquery-like API to query your **azure storage account** at client-side.
 
-Since this version of azureQuery only works with blob storage (v0.1), I'm going to focus this post on accessing blobs. As soon as a new version is released (I think the next one is Table storage), I'll update this post to demonstrate its usage.
 
-> **Note:** You can grab the sample from my github account, [here](https://github.com/nanovazquez/azure-query-sample) is the link (don't forget to start the Azure emulator in your local machine before running it).
+Since this version of azureQuery only works with blob storage (v0.1), I'm going to focus this post on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
+
+
+> **Note:** You can grab a fully-working sample from my github account, [here](https://github.com/nanovazquez/azure-query-sample) is the link (don't forget to start the Azure emulator in your local machine before running it).
 
 All that said, let's get our hands dirty (I love this part).
 
@@ -19,8 +21,8 @@ All that said, let's get our hands dirty (I love this part).
 
 This are the steps you need to perform to include azureQuery in youer project:
 
-1. Download the code from the azureQuery's codeplex page (http://azurequery.codeplex.com/).
-2. Unzip it, and copy this three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them in a folder inside your solution (preferably the .js file in the script folder).
+1. Download the code from the azureQuery's codeplex page ([](http://azurequery.codeplex.com/)).
+2. Unzip it, and grab these three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them inside a folder inside your solution.
 3. Add a reference to **azureQueryLib.dll** in your solution.
 4. Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
 
