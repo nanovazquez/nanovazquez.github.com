@@ -2,7 +2,7 @@
 layout: post
 title: Playing with Metro style apps (aka ListView layout generator)
 categories: [metro]
-tags : [metroapps, windows8, winjs]
+tags : [metro, windows8, winjs]
 ---
 {% include JB/setup %}
 

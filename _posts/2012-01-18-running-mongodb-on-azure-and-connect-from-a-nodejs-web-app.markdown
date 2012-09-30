@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Running Mongodb on Azure and connect from a node web app
-categories: [azure, node]
-tags : [azure, node, mongodb]
+categories: [azure, node.js]
+tags : [azure, node.js, mongodb]
 ---
 This post explains how to use MongoDB Replica Sets from a node.js app, all hosted on Windows Azure. For this, we'll use the new [Windows Azure tools for MongoDB and Node.js](http://downloads.mongodb.org/azure/AzureMongoDeploymentCmdlets.msi), which contains some useful `PowerShell` CmdLets that will save valuable time.
 

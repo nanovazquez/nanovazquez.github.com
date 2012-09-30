@@ -2,7 +2,7 @@
 layout: post
 title: Metro Walkthrough - Creating different ListView layouts
 categories: [metro]
-tags : [metroapps, windows8, winjs]
+tags : [metro, windows8, winjs]
 ---
 {% include JB/setup %}
 
