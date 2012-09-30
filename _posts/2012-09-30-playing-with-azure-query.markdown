@@ -28,10 +28,7 @@ This are the steps you need to perform to include azureQuery in youer project:
 
     namespace MvcApplication.Controllers
     {
-        public class BlobController : AzureQueryBlobController
-        {
-           
-        }
+        public class BlobController : AzureQueryBlobController { }
     }
     {% endhighlight %}
 
@@ -58,10 +55,6 @@ This are the steps you need to perform to include azureQuery in youer project:
 
     {% highlight xml %}
     <?xml version="1.0" encoding="utf-8"?>
-    <!--
-      For more information on how to configure your ASP.NET application, please visit
-      http://go.microsoft.com/fwlink/?LinkId=152368
-      -->
     <configuration>
       <connectionStrings>
         <!-- development connection string -->
