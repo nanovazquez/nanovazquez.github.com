@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Playing with azureQuery - The Javascript driver for Windows Azure
-categories: [metro]
-tags : [metroapps, windows8, xaml/c#, animations]
+categories: [azure, javascript]
+tags : [azure, javascript, asp.net mvc]
 ---
 
 {% include JB/setup %}
