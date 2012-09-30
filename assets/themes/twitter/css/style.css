@@ -263,7 +263,7 @@ aside .about li.rss-icon img{
 aside .separator{
 	width: 100%;
 	margin: 3px 0 3px 0;
-	border-bottom: solid 3px rgba(255,255,255,0.5);
+	border-bottom: solid 2px rgba(255,255,255,0.3);
 }
 
 
