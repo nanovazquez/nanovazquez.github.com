@@ -26,59 +26,58 @@ This are the steps you need to perform to include azureQuery in youer project:
 3. Add a reference to **azureQueryLib.dll** in your solution.
 4. Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
 
-{% highlight csharp %}
-using System.Web.Mvc;
-using azureQuery;
+    {% highlight csharp %}
+    using System.Web.Mvc;
+    using azureQuery;
 
-namespace MvcApplication.Controllers
-{
-    public class BlobController : AzureQueryBlobController
+    namespace MvcApplication.Controllers
     {
-       
+        public class BlobController : AzureQueryBlobController
+        {
+           
+        }
     }
-}
-{% endhighlight %}
+    {% endhighlight %}
 
 5. If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
 
-{% highlight csharp %}
-protected void Application_Start()
-{
-    AreaRegistration.RegisterAllAreas();
+    {% highlight csharp %}
+    protected void Application_Start()
+    {
+        AreaRegistration.RegisterAllAreas();
 
-    RouteTable.Routes.MapHttpRoute(
-        name: "BlobApi",
-        routeTemplate: "api/{controller}/{action}/{id}",
-        defaults: new { id = RouteParameter.Optional }
-    );
+        RouteTable.Routes.MapHttpRoute(
+            name: "BlobApi",
+            routeTemplate: "api/{controller}/{action}/{id}",
+            defaults: new { id = RouteParameter.Optional }
+        );
 
-    WebApiConfig.Register(GlobalConfiguration.Configuration);
-    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-    RouteConfig.RegisterRoutes(RouteTable.Routes);
-}
-{% endhighlight %}
+        WebApiConfig.Register(GlobalConfiguration.Configuration);
+        FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+    }
+    {% endhighlight %}
 
 6. Finally, set up your **azure storage account** credentials in the web.config file, as described below:
 
-{% highlight xml %}
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  For more information on how to configure your ASP.NET application, please visit
-  http://go.microsoft.com/fwlink/?LinkId=152368
-  -->
-<configuration>
-  <connectionStrings>
-    <!-- development connection string -->
-    <add name="default" connectionString="UseDevelopmentStorage=true" />
-    <!-- production connection string -->
-    <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
-  </connectionStrings>
-  ...
-</configuration>
-{% endhighlight%}
+    {% highlight xml %}
+    <?xml version="1.0" encoding="utf-8"?>
+    <!--
+      For more information on how to configure your ASP.NET application, please visit
+      http://go.microsoft.com/fwlink/?LinkId=152368
+      -->
+    <configuration>
+      <connectionStrings>
+        <!-- development connection string -->
+        <add name="default" connectionString="UseDevelopmentStorage=true" />
+        <!-- production connection string -->
+        <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
+      </connectionStrings>
+      ...
+    </configuration>
+    {% endhighlight%}
 
-> **Note:** name the connection string as **default**, because the azureQuery lib currently searches for a connection string with that name (v0.1).
-
+> **Note:** the connection string name must be *default*, because the azureQuery lib currently searches for a connection string with that name (v0.1).
 
 7. Reference azure query at the client-side
 
