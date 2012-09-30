@@ -30,51 +30,51 @@ This are the steps you need to perform to include azureQuery in youer project:
     <li>
         Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
 
-    {% highlight csharp %}
-    using System.Web.Mvc;
-    using azureQuery;
+{% highlight csharp %}
+using System.Web.Mvc;
+using azureQuery;
 
-    namespace MvcApplication.Controllers
-    {
-        public class BlobController : AzureQueryBlobController { }
-    }
-    {% endhighlight %}
+namespace MvcApplication.Controllers
+{
+    public class BlobController : AzureQueryBlobController { }
+}
+{% endhighlight %}
     </li>
     <li>
         If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
 
-    {% highlight csharp %}
-    protected void Application_Start()
-    {
-        AreaRegistration.RegisterAllAreas();
+{% highlight csharp %}
+protected void Application_Start()
+{
+    AreaRegistration.RegisterAllAreas();
 
-        RouteTable.Routes.MapHttpRoute(
-            name: "BlobApi",
-            routeTemplate: "api/{controller}/{action}/{id}",
-            defaults: new { id = RouteParameter.Optional }
-        );
+    RouteTable.Routes.MapHttpRoute(
+        name: "BlobApi",
+        routeTemplate: "api/{controller}/{action}/{id}",
+        defaults: new { id = RouteParameter.Optional }
+    );
 
-        WebApiConfig.Register(GlobalConfiguration.Configuration);
-        FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-        RouteConfig.RegisterRoutes(RouteTable.Routes);
-    }
-    {% endhighlight %}
+    WebApiConfig.Register(GlobalConfiguration.Configuration);
+    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+    RouteConfig.RegisterRoutes(RouteTable.Routes);
+}
+{% endhighlight %}
     </li>
     <li>
         Finally, set up your **azure storage account** credentials in the web.config file, as described below:
 
-    {% highlight xml %}
-    <?xml version="1.0" encoding="utf-8"?>
-    <configuration>
-      <connectionStrings>
-        <!-- development connection string -->
-        <add name="default" connectionString="UseDevelopmentStorage=true" />
-        <!-- production connection string -->
-        <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
-      </connectionStrings>
-      ...
-    </configuration>
-    {% endhighlight%}
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <!-- development connection string -->
+    <add name="default" connectionString="UseDevelopmentStorage=true" />
+    <!-- production connection string -->
+    <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
+  </connectionStrings>
+  ...
+</configuration>
+{% endhighlight%}
     </li>
 </ol>
 
