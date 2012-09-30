@@ -15,9 +15,70 @@ Since this version of azureQuery only works with blob storage (v0.1), I'm going 
 
 All that said, let's get our hands dirty (I love this part).
 
-# Include AzureQuery in your solution
+# Set-up AzureQuery in your solution
 
-    ## A brief analysis of how azureQuery works
+This are the steps you need to perform to include azureQuery in youer project:
+
+1. Download the code from the azureQuery's codeplex page (http://azurequery.codeplex.com/).
+2. Unzip it, and copy this three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them in a folder inside your solution (preferably the .js file in the script folder).
+3. Add a reference to **azureQueryLib.dll** in your solution.
+4. Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
+
+{% highlight csharp %}
+using System.Web.Mvc;
+using azureQuery;
+
+namespace MvcApplication.Controllers
+{
+    public class BlobController : AzureQueryBlobController
+    {
+       
+    }
+}
+{% endhighlight %}
+
+5. If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
+
+{% highlight csharp %}
+protected void Application_Start()
+{
+    AreaRegistration.RegisterAllAreas();
+
+    RouteTable.Routes.MapHttpRoute(
+        name: "BlobApi",
+        routeTemplate: "api/{controller}/{action}/{id}",
+        defaults: new { id = RouteParameter.Optional }
+    );
+
+    WebApiConfig.Register(GlobalConfiguration.Configuration);
+    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+    RouteConfig.RegisterRoutes(RouteTable.Routes);
+}
+{% endhighlight %}
+
+6. Finally, set up your **azure storage account** credentials in the web.config file, as described below:
+
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=152368
+  -->
+<configuration>
+  <connectionStrings>
+    <!-- development connection string -->
+    <add name="default" connectionString="UseDevelopmentStorage=true" />
+    <!-- production connection string -->
+    <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
+  </connectionStrings>
+  ...
+</configuration>
+{% endhighlight%}
+
+> **Note:** name the connection string as **default**, because the azureQuery lib currently searches for a connection string with that name (v0.1).
+
+
+7. Reference azure query at the client-side
 
 # Query the blobs at client side!
 
@@ -26,7 +87,6 @@ I'll use **azureQuery** to populate a treeView at client-side. For this example,
 I created a **TreeHelper** class to manage the tree data, creating the nodes they way **jsTree** wants them. For sample purposes, I'll populate the treeView at once (instead of using an on-demand strategy).
 
 {% highlight javascript %}
-
 $(function () {
 
     var treeHelper = new TreeHelper();
@@ -52,7 +112,6 @@ $(function () {
         "plugins": ["themes", "json_data", "ui"]
     });
 });
-
 {% endhighlight %}
 
 Notice how easy is to iterate through all the containers, and the blobs inside each one of them. That's all I need to interact with azure blob storage, and to retrive the data I need to populate the treeView. 
