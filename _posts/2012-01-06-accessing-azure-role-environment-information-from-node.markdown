@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accessing Azure Role Environment information from NodeJS
-categories: [azure, node]
+categories: [azure, node.js]
 tags : [azure, node, startup-tasks]
 ---
 {% include JB/setup %}
