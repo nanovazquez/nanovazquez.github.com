@@ -17,57 +17,70 @@ Since the current version, v0.1, only works with blob storage, I'm going to focu
 
 This are the steps you need to perform to include azureQuery in youer project:
 
-1. Download the code from the azureQuery's codeplex page ([http://azurequery.codeplex.com/]).
-2. Unzip it, and grab these three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them in a new folder inside your solution.
-3. Add a reference to **azureQueryLib.dll** in your solution.
-4. Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
+<ol>
+    <li>
+        Download the code from the azureQuery's codeplex page ([http://azurequery.codeplex.com/]). 
+    </li>
+    <li>
+        Unzip it, and grab these three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them in a new folder inside your solution.
+    </li>
+    <li>
+        Add a reference to **azureQueryLib.dll** in your solution.
+    </li>
+    <li>
+        Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
 
-{% highlight csharp %}
-using System.Web.Mvc;
-using azureQuery;
+        {% highlight csharp %}
+        using System.Web.Mvc;
+        using azureQuery;
 
-namespace MvcApplication.Controllers
-{
-    public class BlobController : AzureQueryBlobController { }
-}
-{% endhighlight %}
+        namespace MvcApplication.Controllers
+        {
+            public class BlobController : AzureQueryBlobController { }
+        }
+        {% endhighlight %}
+    </li>
+    <li>
+        If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
 
-5. If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
+        {% highlight csharp %}
+        protected void Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
 
-{% highlight csharp %}
-protected void Application_Start()
-{
-    AreaRegistration.RegisterAllAreas();
+            RouteTable.Routes.MapHttpRoute(
+                name: "BlobApi",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
 
-    RouteTable.Routes.MapHttpRoute(
-        name: "BlobApi",
-        routeTemplate: "api/{controller}/{action}/{id}",
-        defaults: new { id = RouteParameter.Optional }
-    );
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+        }
+        {% endhighlight %}
+    </li>
+    <li>
+        Finally, set up your **azure storage account** credentials in the web.config file, as described below:
 
-    WebApiConfig.Register(GlobalConfiguration.Configuration);
-    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-    RouteConfig.RegisterRoutes(RouteTable.Routes);
-}
-{% endhighlight %}
-
-6. Finally, set up your **azure storage account** credentials in the web.config file, as described below:
-
-{% highlight xml %}
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <connectionStrings>
-    <!-- development connection string -->
-    <add name="default" connectionString="UseDevelopmentStorage=true" />
-    <!-- production connection string -->
-    <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
-  </connectionStrings>
-  ...
-</configuration>
-{% endhighlight%}
+        {% highlight xml %}
+        <?xml version="1.0" encoding="utf-8"?>
+        <configuration>
+          <connectionStrings>
+            <!-- development connection string -->
+            <add name="default" connectionString="UseDevelopmentStorage=true" />
+            <!-- production connection string -->
+            <!--<add name="default" connectionString="DefaultEndpointsProtocol=http;AccountName=[storage-account-name];AccountKey=[storage-account-key]"/>-->
+          </connectionStrings>
+          ...
+        </configuration>
+        {% endhighlight%}
+    </li>
+</ol>
 
 > **Note:** the connection string name must be *default*, because the azureQuery lib currently searches for a connection string with that name (v0.1).
 
+<br />
 And that's it! Now you only need to reference the **azureQuery.js** file in the View you want to use **azureQuery** to display your blobs stored in your account.
 
 ## Query the blobs at client side
@@ -114,6 +127,6 @@ Below is a screenshot of the code in action:
 
 ## More information
 
-* azureQuery download site: [http://azurequery.codeplex.com/](http://azurequery.codeplex.com/)
-* David Pallmann's post about azureQuery: [http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html](http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html)
-* Cloud Cover Show episode about azureQuery: [http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery](http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery)
+* [azureQuery download site](http://azurequery.codeplex.com/)
+* [David Pallmann's post about azureQuery](http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html)
+* [Cloud Cover Show episode about azureQuery](http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery)
