@@ -260,6 +260,13 @@ aside .about li.rss-icon img{
  margin-right: 0px;    
 }
 
+aside .separator{
+	width: 100%;
+	margin: 3px 0 3px 0;
+	border-bottom: solid 3px rgba(255,255,255,0.5);
+}
+
+
 /* fixes for devices with small screen resolution */
 
 .thin.other aside, .thin.main aside .older-posts, .thin.main aside .about li.author-name, .thin aside .about h3{
