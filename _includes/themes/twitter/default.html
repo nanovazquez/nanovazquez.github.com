@@ -69,9 +69,7 @@
 			<h3>categories</h3>
 			<ul>
 				{% for category in site.categories_list %}
-					<li>
-						<span>{{ category[0] | join: "/" }} ({{ category[1].size }})</span>
-					</li>
+					<li> {{ category[0] }} </li>
 				{% endfor %}
 			</ul>
 		</div>
