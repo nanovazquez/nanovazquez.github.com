@@ -71,9 +71,7 @@
 				{% for category in site.categories %}
 					<li>
 						<li>
-							<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref">
-								{{ category }} ({{ site.categories[category].size }})
-							</a>
+							{{ category }}
 						</li>
 					<span>
 				{% endfor %}
