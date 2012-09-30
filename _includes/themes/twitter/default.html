@@ -68,7 +68,7 @@
 		<div class="categories">
 			<h3>categories</h3>
 			<ul>
-				{% for category in site.categories %}
+				{% for category in site.categories order:name %}
 					<li> {{ category[0] }} </li>
 				{% endfor %}
 			</ul>
