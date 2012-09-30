@@ -7,7 +7,7 @@ tags : [metroapps, windows8, xaml/c#, animations]
 
 {% include JB/setup %}
 
-In this post, I'm going to walk-through the steps to include [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use the fluent, jquery-like API at client-side.
+In this post, I'm going to walk-through the steps to include [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use the fluent, jquery-like API to query your **azure storage account** at client-side.
 
 Since this version of azureQuery only works with blob storage (v0.1), I'm going to focus this post on accessing blobs. As soon as a new version is released (I think the next one is Table storage), I'll update this post to demonstrate its usage.
 
@@ -15,7 +15,7 @@ Since this version of azureQuery only works with blob storage (v0.1), I'm going 
 
 All that said, let's get our hands dirty (I love this part).
 
-# Set-up AzureQuery in your solution
+## Set-up AzureQuery in your solution
 
 This are the steps you need to perform to include azureQuery in youer project:
 
@@ -80,7 +80,7 @@ protected void Application_Start()
 
 7. Reference azure query at the client-side
 
-# Query the blobs at client side!
+## Query the blobs at client side!
 
 I'll use **azureQuery** to populate a treeView at client-side. For this example, I'm going to use the [jsTree](http://www.jstree.com/) jQuery plugin, but basically all client-side treeView solutions works the same.
 
