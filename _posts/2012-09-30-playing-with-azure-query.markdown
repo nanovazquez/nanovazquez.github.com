@@ -7,12 +7,11 @@ tags : [metroapps, windows8, xaml/c#, animations]
 
 {% include JB/setup %}
 
-In this post, I'm going to walk-through the steps to include [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use the fluent, jquery-like API to query your **azure storage account** at client-side.
+In this post, I'm going to walk-through the steps to set-up [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use this fluent, jquery-like API to query your **azure storage account** at client-side.
 
+Since the current version, v0.1, only works with blob storage, I'm going to focus this post initially on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
 
-Since this version of azureQuery only works with blob storage (v0.1), I'm going to focus this post on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
-
-> **Note:** You can grab a fully-working sample from my github account. [Here](https://github.com/nanovazquez/azure-query-sample) is the link. Don't forget to start the Azure emulator in your local machine before running it.
+> **Note:** if you want to go directly to the code, you can grab a fully-working sample from my github account. [Here](https://github.com/nanovazquez/azure-query-sample) is the link. Don't forget to start the Azure emulator in your local machine before running it.
 
 ## Set-up AzureQuery in your solution
 
