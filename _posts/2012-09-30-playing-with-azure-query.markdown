@@ -108,12 +108,12 @@ I created the **TreeHelper** class to store & manage the tree data, creating the
 
 Below is a screenshot of the code in action:
 
-    ![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-azure-query/blob-storage-jstree.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-azure-query/blob-storage-jstree.png)
 
 > **Note:** this post will be updated with new info as soon as a new version of azureQuery is released. Stay tuned!
 
 ## More information
 
-* azureQuery download site: [http://azurequery.codeplex.com/]
-* David Pallmann's post about azureQuery: [http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html]
-* Cloud Cover Show episode about azureQuery: [http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery]
+* azureQuery download site: [http://azurequery.codeplex.com/](http://azurequery.codeplex.com/)
+* David Pallmann's post about azureQuery: [http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html](http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html)
+* Cloud Cover Show episode about azureQuery: [http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery](http://channel9.msdn.com/Shows/Web+Camps+TV/David-Pallmann-Demonstrates-azureQuery)
