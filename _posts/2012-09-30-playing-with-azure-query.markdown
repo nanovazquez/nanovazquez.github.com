@@ -17,7 +17,7 @@ Since the current version, v0.1, only works with blob storage, I'm going to focu
 
 ## Set-up AzureQuery in your solution
 
-This are the steps you need to perform to include azureQuery in youer project:
+These are the steps you need to perform to include azureQuery in your project:
 
 <ol>
     <li>
@@ -118,7 +118,7 @@ $(function () {
 });
 {% endhighlight %}
 
-I created the **TreeHelper** class to store & manage the tree data, creating the nodes they way **jsTree** wants them. Notice how easy is to iterate through all the containers in your account, and the blobs inside each one of them. Last, just for sample purposes, I decided to retrieve all the information at once instead of using an on-demand strategy. 
+I created the **TreeHelper** class to store & manage the tree data, creating the nodes the way **jsTree** wants them. Notice how easy is to iterate through all the containers in your account, and the blobs inside each one of them. Last, just for sample purposes, I decided to retrieve all the information at once instead of using an on-demand strategy. 
 
 Below is a screenshot of the code in action:
 
