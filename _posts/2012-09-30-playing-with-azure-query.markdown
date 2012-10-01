@@ -7,7 +7,9 @@ tags : [azure, javascript, asp.net mvc]
 
 {% include JB/setup %}
 
-In this post, I'm going to walk-through the steps to set-up [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use this fluent, jquery-like API to query your **azure storage account** at client-side.
+A few months ago, [David Pallman](http://davidpallmann.blogspot.com.ar/2012/07/introducing-azurequery-javascript.html) introduces us a way to access to Windows Azure via client-side (javascript) code, named azureQuery. By combining the powerful [ASP.NET Web API](http://www.asp.net/web-api) with a fluent, jQuery-like chaining API, you can easily grab data from your azure storage account with a single line of code like, for instance, ´aq.storage.container('orders').blobs()´ that retrieves all the blobs within the 'orders' container.
+
+In this post, I'm going to walk-through the steps to set-up [azureQuery](http://azurequery.codeplex.com/) in your project and how you can use this API to query your azure storage account at client-side.
 
 Since the current version, v0.1, only works with blob storage, I'm going to focus this post initially on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
 
