@@ -22,13 +22,13 @@ This are the steps you need to perform to include azureQuery in youer project:
         Download the code from the azureQuery's codeplex page ([http://azurequery.codeplex.com/]). 
     </li>
     <li>
-        Unzip it, and grab these three files located in the root: **azureQueryLib.dll**, **azureQueryLib.pdb** and **azureQuery.js**. Paste them in a new folder inside your solution.
+        Unzip it, and grab these three files located in the root: <strong>azureQueryLib.dll</strong>, <strong>azureQueryLib.pdb</strong> and <strong>azureQuery.js</strong>. Paste them in a new folder inside your solution.
     </li>
     <li>
-        Add a reference to **azureQueryLib.dll** in your solution.
+        Add a reference to <strong>azureQueryLib.dll</strong> in your solution.
     </li>
     <li>
-        Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from **AzureQueryBlobController**, like the sample code below:
+        Create a new controller to manage the azureQuery's requests to blob storage. For this, the controller must inherit from <strong>AzureQueryBlobController</strong>, like the sample code below:
 
 {% highlight csharp %}
 using System.Web.Mvc;
@@ -41,7 +41,7 @@ namespace MvcApplication.Controllers
 {% endhighlight %}
     </li>
     <li>
-        If you're working with an ASP.NET MVC project, register a new route for the **BlobApi** in the **Application_Start()** method:
+        If you're working with an ASP.NET MVC project, register a new route for the <strong>BlobApi</strong> in the <strong>Application_Start()</strong> method:
 
 {% highlight csharp %}
 protected void Application_Start()
@@ -61,7 +61,7 @@ protected void Application_Start()
 {% endhighlight %}
     </li>
     <li>
-        Finally, set up your **azure storage account** credentials in the web.config file, as described below:
+        Finally, set up your azure storage account credentials in the <strong>web.config</strong> file, as described below:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
