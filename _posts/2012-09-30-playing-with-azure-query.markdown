@@ -13,7 +13,7 @@ In this post, I'm going to walk-through the steps to set-up [azureQuery](http://
 
 Since the current version, v0.1, only works with blob storage, I'm going to focus this post initially on accessing blobs. As soon as a new version is released (I think the next one will focus on Table storage), I'll update this post to demonstrate its usage.
 
-> **Note:** if you want to go directly to the code, you can grab a fully-working sample from my github account. [Here](https://github.com/nanovazquez/azure-query-sample) is the link. Don't forget to start the Azure emulator in your local machine before running it.
+> **Note:** if you want to go directly to the code, you can grab [this](https://github.com/nanovazquez/azure-query-sample) sample from my github account, that demonstrates how you can query blobs within a container. Don't forget to start the Azure emulator in your local machine before running it.
 
 ## Set-up AzureQuery in your solution
 
