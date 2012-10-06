@@ -226,39 +226,39 @@ aside.right-panel ul{
 	list-style-type: none;
 }
 
-aside .about {
+.about {
 	width: 100%;
 	float: left;
 }
 
-aside .about li{
+.about li{
 	float: left;
 }
 
-aside .about li.author-name{
-	width: 100%;
-}
+	.about li.author-name{
+		width: 100%;
+	}
 
-aside .about li img{
-	width: 50px;
-	height: 50px;
-	margin: 10px 10px 10px 0;
-}
+	.about li img{
+		width: 50px;
+		height: 50px;
+		margin: 10px 10px 10px 0;
+	}
 
-aside .about li.github-icon img{
- margin-top: 13px;    
-}
+	.about li.github-icon img{
+	 margin-top: 13px;    
+	}
 
-aside .about li.twitter-icon img{
- width: 40px;
- height: 40px;  
- margin-top: 17px;    
-}
+	.about li.twitter-icon img{
+	 width: 40px;
+	 height: 40px;  
+	 margin-top: 17px;    
+	}
 
-aside .about li.rss-icon img{
- margin-top: 13px;
- margin-right: 0px;    
-}
+	.about li.rss-icon img{
+	 margin-top: 13px;
+	 margin-right: 0px;    
+	}
 
 aside .separator{
 	width: 100%;
