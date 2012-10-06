@@ -103,7 +103,7 @@ div.container{
 .container > div.content{
 	float: left;
 	width: 70%;
-	max-width: 900px;
+	/*max-width: 900px;*/
 	padding-right: 20px;
 	margin-left: 30px;
 }
@@ -273,14 +273,9 @@ aside .separator{
 .thin.main aside .older-posts, 
 .thin.main aside .about li.author-name, 
 .thin aside .about h3,
-.thin.main aside .categories{
-	display: none;
-}
-
+.thin.main aside .categories,
 .thin.main aside.right-panel{
-	top: 0;
-	left: 55px;
-	width: 100%;
+	display: none;
 }
 
 .thin img{
