@@ -6,12 +6,16 @@ group: navigation
 ---
 {% include JB/setup %}
 
-<div class="about">
+<div class="about-title">
+	Hi! My name is Mariano Vazquez. I'm a software dev from Argentina. You can find more info about me in the links below.
+</div>
+
+<div class="links">
 	<ul>
-		<li class="author-name"><a href="http://about.me/nanovazquez"> about.me/{{ site.author.aboutMe }}</a></li>
-		<li class="github-icon"><a href="http://github.com/{{ site.author.github }}"><img src="{{ ASSET_PATH }}/twitter/images/github-icon-mini.png" /></a></li>
-		<li class="twitter-icon"><a href="http://twitter.com/{{ site.author.twitter }}"><img src="{{ ASSET_PATH }}/twitter/images/twitter-icon-mini.png" /></a></li>
-		<li class="gmail-icon"><a href="mailto:{{ site.author.email }}"><img src="{{ ASSET_PATH }}/twitter/images/gmail-icon-mini.png" /></a></li>
-		<li class="rss-icon"><a href="http://feeds.feedburner.com/{{ site.author.feedburner }}"><img src="{{ ASSET_PATH }}/twitter/images/rss-icon-mini.png" /></a></li>
+		<li class="link"><a href="http://about.me/nanovazquez">about.me page</a></li>
+		<li class="link"><a href="http://jsfiddle.net/user/nanovazquez/fiddles/">my jsFiddles</a></li>
+		<li class="link"><a href="http://github.com/{{ site.author.github }}"></a>github page</li>
+		<li class="link"><a href="http://twitter.com/{{ site.author.twitter }}">twitter</a></li>
+		<li class="link"><a href="mailto:{{ site.author.email }}">email</a></li>
 	</ul>
 </div>
