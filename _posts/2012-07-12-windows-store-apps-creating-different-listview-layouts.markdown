@@ -8,7 +8,7 @@ tags : [windows store apps, metro, windows8, winjs]
 
 In this post, we are going to walk through some of the most commons scenarios when creating a ListView for your application. We start with the basic layout, a simple list with items of the same size. Then, we modify the ListView to support a layout with proportional-sized items, and we pinpoint some guidelines to render the items properly. Lastly, we analyze a radical scenario where the items have unique styles, and they do not share a (size) relation between each other.
 
-To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback are always welcome ☺). 
+To create all the scenarios, I'm going to use the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator) app I introduced in my prior [post](http://nanovazquez.github.com/dev/2012/07/03/playing-with-windows-store-apps-aka-listview-generator/). I suggest that, after you read this, play with it (suggestions/feedback are always welcome ☺). 
 
 Now that you know these things, let's get our hands dirty.
 
@@ -18,7 +18,7 @@ The layout of the default ListView (e.g. the one presented in the grid VS templa
 
 If you leave the ListView as is, be sure that your items have the same size. Otherwise something like this could happen:
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/default-settings-issue.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/default-settings-issue.png)
 
 Now let's discuss how you can create a ListView with items of different sizes.
 
@@ -51,15 +51,15 @@ Some things to mention here:
 
 For example, take a look at this layout:
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/proportional-sized-items.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/proportional-sized-items.png)
 
 It was created using the **groupInfo** values described above and the following item styles:
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/proportional-item-styles.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/proportional-item-styles.png)
 
 > **Note:** Notice that we're adding an extra **10px** in the big items. This is because we need to include the margin between the items in the final value. For instance, if we want to create an item three times bigger than the smallest, we should add to the desired size the equivalent of two margins. 
 
-Until now, we didn't discuss about different screen resolutions, or different screen orientations (landscape or portrait). One of the features of the metro style application is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx)) and we must take this into account when designing our ListView. You usually start designing your application in a default size resolution, like 1366x768, but you should (must) be prepared to **all** possible scenarios. If you're interested in this, keep reading.
+Until now, we didn't discuss about different screen resolutions, or different screen orientations (landscape or portrait). One of the features of the Windows Store apps is the ability to adapt to different views and orientations (i.e. [a flexible layout](http://msdn.microsoft.com/en-us/library/windows/apps/hh465386.aspx)) and we must take this into account when designing our ListView. You usually start designing your application in a default size resolution, like 1366x768, but you should (must) be prepared to **all** possible scenarios. If you're interested in this, keep reading.
 
 ## Level 2: Handling different resolutions
 
@@ -78,7 +78,7 @@ listView.layout = new ui.GridLayout(gridLayoutOptions);
 
 So what's going on behind the scenes? When the ListView calculates the items to display per column (performing its own *computations* or using the values you provide in the **groupInfo** property), it uses **maxRows** to limit the max number of items.
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/max-rows-usage.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/max-rows-usage.png)
 
 Of course it's always nice to use all the space we have available to display our items. I personally try not to use it unless I'm forced to, like if I'm working with non-squared items or newspaper layouts.
 
@@ -90,17 +90,17 @@ For this kind of scenarios, one thing that worked for me is **set the cellWidth 
 
 Below you can find an example of this (I updated the data a little bit):
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/random-layout.png)
 
 One challenge in this kind of scenario is how to set the **maxRows** property, since this property affects all categories. There's no generic answer here, it really depends on the scenario. It's up to you to choose what is ok and what isn't. 
 
 Check out how the sample looks above in a 27'' screen (2560x1440)
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/random-layout-big-screen.png)
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/random-layout-big-screen.png)
 
 Since some people asked me about the source, I added this **magazine layout** as an example in the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator)). Just activate the appBar and click on the "Go to sample page" command.
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/metro-walkthrough-creating-different-listview-layouts/magazine-layout-command.png]
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/magazine-layout-command.png]
 
 ## Conclusion
 

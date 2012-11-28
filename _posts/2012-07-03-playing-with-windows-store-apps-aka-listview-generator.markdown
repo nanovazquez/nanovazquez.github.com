@@ -6,7 +6,7 @@ tags : [windows store apps, metro, windows8, winjs]
 ---
 {% include JB/setup %}
 
-The past months I've been working on metro style applications, using the Windows Library for Javascript, [WinJS](http://msdn.microsoft.com/en-US/library/windows/apps/br211377). Fortunately, since most of my work is web-related, not to mention all the node.js projects I've been involved in (thanks [@woloski](http://twitter.com/woloski)!) the adaptation wasn't so hard.
+The past months I've been working on creating new, exciting Windows Store apps, using the Windows Library for Javascript, [WinJS](http://msdn.microsoft.com/en-US/library/windows/apps/br211377). Fortunately, since most of my work is web-related, not to mention all the node.js projects I've been involved in (thanks [@woloski](http://twitter.com/woloski)!) the adaptation wasn't so hard.
 
 But leaving the code aside, one of the most *exciting* challenges about Windows 8 apps is the **UI/UX** (after all, we're creating touch-interactive applications). Furthermore, they have its own way of organizing and displaying the content. So you should be very meticulous on topics like what and how (much) to show (there are some useful guidelines about this on msdn, like [this one](http://msdn.microsoft.com/en-us/library/windows/apps/hh465424.aspx)). 
 
@@ -17,7 +17,7 @@ First of all, you need to know that it's designed to work with *square* containe
 
 (find the source code [here](https://github.com/nanovazquez/listview-layout-generator))
 
-I've created a W8 metro app that can help you when you're designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following ListView modifications:
+I've created a Windows Store app that can help you for designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following ListView modifications:
 
  * You can enable **multi-sized** items in the layout
  * You can modify the **max-rows** property
