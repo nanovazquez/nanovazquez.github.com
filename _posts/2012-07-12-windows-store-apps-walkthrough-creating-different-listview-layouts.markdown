@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Metro Walkthrough - Creating different ListView layouts
-categories: [metro]
-tags : [metro, windows8, winjs]
+title: Windows Store apps - Creating different ListView layouts
+categories: [windows store apps, metro]
+tags : [windows store apps, metro, windows8, winjs]
 ---
 {% include JB/setup %}
 

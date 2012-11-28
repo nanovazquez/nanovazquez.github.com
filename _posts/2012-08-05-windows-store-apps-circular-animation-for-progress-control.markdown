@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Metro - Circular animation for Progress control (XAML/C#)
-categories: [metro]
-tags : [metroapps, windows8, xaml/c#, animations]
+title: Windows Store apps - Circular animation for Progress control (XAML/C#)
+categories: [windows store apps, metro]
+tags : [windows store apps, metroapps, windows8, xaml/c#, animations]
 ---
 {% include JB/setup %}
 
