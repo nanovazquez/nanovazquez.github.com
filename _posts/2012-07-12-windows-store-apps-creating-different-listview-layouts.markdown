@@ -100,7 +100,7 @@ Check out how the sample looks above in a 27'' screen (2560x1440)
 
 Since some people asked me about the source, I added this **magazine layout** as an example in the [ListViewGenerator](https://github.com/nanovazquez/listview-layout-generator)). Just activate the appBar and click on the "Go to sample page" command.
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/magazine-layout-command.png]
+![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/windows-store-apps-creating-different-listview-layouts/magazine-layout-command.png)
 
 ## Conclusion
 
