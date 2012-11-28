@@ -15,7 +15,7 @@ First of all, you need to know that it's designed to work with *square* containe
 
 ## ListView layout generator
 
-(find the source code [here](https://github.com/nanovazquez/listview-layout-generator))
+> **Note:** you can find the source code [here](https://github.com/nanovazquez/listview-layout-generator)
 
 I've created a Windows Store app that can help you for designing ListView layouts (specifically [GridLayouts](http://msdn.microsoft.com/en-us/library/windows/apps/br211751.aspx)). It still needs a lot of work, but the basic functionality is there. Currently, it supports the following ListView modifications:
 
