@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Playing with Windows Store apps apps (aka ListView layout generator)
+title: Playing with Windows Store apps (aka ListView layout generator)
 categories: [windows store apps, metro]
 tags : [windows store apps, metro, windows8, winjs]
 ---
