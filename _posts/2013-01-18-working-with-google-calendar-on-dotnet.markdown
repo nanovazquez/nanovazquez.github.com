@@ -17,7 +17,7 @@ One thing to notice is that the sample doesn't reference the [Google Client Libr
 
 Also, take a look at the **GoogleAuthorizationHelper** class. It contains methods to get the URL to obtain the **authorization code**, as well as the code to create an **OAuth2Authenticator**. Lastly, it includes a method to refresh a (short-lived) **access token** using a **refresh token**. You'll notice that the sample app stores the authenticator in Session, while the refresh token is being saved in a more persistent storage (a local DB).
 
-![](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/browsing-blobs-within-a-container-using-the-azure-node-sdk/google-calendar-sample.png "GoogleCalendar sample")
+![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/working-with-google-calendar-on-dotnet/google-calendar-sample.png "GoogleCalendar sample")
 
 Hope this is useful for your development. Happy coding!
 
