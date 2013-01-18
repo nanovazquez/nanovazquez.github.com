@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Windows Store apps - Circular animation for Progress control (XAML/C#)
-categories: [windows store apps, metro]
-tags : [windows store apps, metroapps, windows8, xaml/c#, animations]
+categories: [windows store apps]
+tags : [windows store apps, windows8, xaml/c#, animations]
 ---
 {% include JB/setup %}
 
