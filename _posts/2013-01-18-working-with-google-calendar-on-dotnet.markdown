@@ -18,11 +18,9 @@ Some things to notice about this sample:
 * It doesn't reference the [Google API Client Library for .NET](http://docs.google-api-dotnet-client.googlecode.com/hg/docs/Index.html) assemblies, but an abstraction of them. Take a look at the files inside the **GoogleApiUtils** project, specifically the **GoogleAuthenticator.cs** and the **GoogleCalendarServiceProxy.cs**. These two custom classes are an abstraction of two Google's Library components: the *OAuth2Authenticator* and the *CalendarService*, and they work together the same way the Google's Library components work (actually, they wrap them). 
 * It uses the **GoogleAuthorizationHelper** class to get the URL to obtain the **authorization code**, as well as to refresh a (short-lived) **access token** using a **refresh token**. You'll notice that the sample app stores the authenticator (that holds an access token) in Session, while the refresh token is being saved in a more persistent storage (a local DB).
 
-
-Happy coding!!
-
-
 ![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/working-with-google-calendar-on-dotnet/google-calendar-sample.png "GoogleCalendar sample")
+
+Happy coding!
 
 
 > **Note:** Remember that you can grab the sample from [here](https://github.com/nanovazquez/google-calendar-sample).
