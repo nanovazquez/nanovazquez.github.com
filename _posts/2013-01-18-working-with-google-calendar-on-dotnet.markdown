@@ -19,7 +19,7 @@ Some things to notice about this sample:
 * It uses the **GoogleAuthorizationHelper** class to get the URL to obtain the **authorization code**, as well as to refresh a (short-lived) **access token** using a **refresh token**. You'll notice that the sample app stores the authenticator (that holds an access token) in Session, while the refresh token is being saved in a more persistent storage (a local DB).
 
 
-Hope the sample is useful for your development. Happy coding!
+Happy coding!!
 
 
 ![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/working-with-google-calendar-on-dotnet/google-calendar-sample.png "GoogleCalendar sample")
