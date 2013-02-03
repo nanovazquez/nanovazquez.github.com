@@ -13,7 +13,7 @@ For those who are not familiar with this project, the goal is to provide written
 
 > Note: For more information about the project and its scope, please refer to [Blaine's](http://blogs.msdn.com/b/blaine/archive/2012/12/13/prism-on-net-4-5-and-the-road-to-windows-8-apps.aspx) post.
 
-<br />
+<div style="height:10px"></div>
 
 We are early in the project so **we need your review & feedback**. Also, expect regular updates of the bits, that will include new features and code improvements. Stay tuned!
 
