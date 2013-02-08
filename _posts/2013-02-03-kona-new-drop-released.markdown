@@ -1,13 +1,13 @@
 ---
 layout: post
-title: p&amp;p Kona Guidance - New drop Released!
+title: Kona Guidance - New drop Released!
 categories: [windows store apps]
 tags : [windows store apps, windows8, xaml/c#, kona]
 ---
 
 {% include JB/setup %}
 
-A few days ago we have published a new drop of the first drop of the [patterns & practices Kona Guidance](http://konaguidance.codeplex.com/) on Codeplex. 
+A few days ago we have published a new drop of the first drop of the [Patterns & Practices Kona Guidance](http://konaguidance.codeplex.com/) on Codeplex. 
 
 For those who are not familiar with this project, the goal is to provide written guidance as well as reference implementation to describe recommended practices for building LOB Windows 8 client apps using WinRT and .NET. This guidance will focus on how to create apps that are maintainable and testable, porting some of the best practices of previous versions of [Prism](http://compositewpf.codeplex.com/) and [MVVM](http://msdn.microsoft.com/en-us/library/gg405484.aspx). 
 
