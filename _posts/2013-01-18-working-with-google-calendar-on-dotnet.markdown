@@ -9,7 +9,8 @@ tags : [Google API, Google Calendar API v3, ASP.NET MVC 4]
 
 A couple of weeks ago I've been given the task of developing a Calendar in a [CRM](http://en.wikipedia.org/wiki/Customer_relationship_management), that also synchronizes with the user's [Google Calendar](https://www.google.com/calendar). To fully understand the flow, I developed a simple sample that covers the full experience in C#, using the [Google API Client Library for .NET](http://docs.google-api-dotnet-client.googlecode.com/hg/docs/Index.html). It consists of an [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4) app that demonstrates how to perform CRUD operations in your Calendar, but also addresses other tasks of the flow, like asking for an **authorization code** to create an **access token**, or using a **refresh token** to get a new access token, in case the old token expires. All of this in an ASP.NET MVC 4 environment. 
 
-You can grab the sample from here: [https://github.com/nanovazquez/google-calendar-sample](https://github.com/nanovazquez/google-calendar-sample).
+You can grab the sample from here: [https://github.com/nanovazquez/google-calendar-sample](https://github.com/nanovazquez/google-calendar-sample)
+
 Just remember that you need to setup your *ClientId*, *ClientSecret* and *ReturnUrl* in the **Web.config** file (you can generate/find this information in the [Google API Console](https://code.google.com/apis/console) page).
 
 ![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/working-with-google-calendar-on-dotnet/web-config-file.png "Web.config file")
