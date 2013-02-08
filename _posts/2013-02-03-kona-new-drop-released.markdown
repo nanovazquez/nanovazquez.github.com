@@ -15,7 +15,7 @@ For those who are not familiar with this project, the goal is to provide written
 
 <div style="height:10px"></div>
 
-We are early in the project so **we need your review & feedback**. Also, expect regular updates of the bits, that will include new features and code improvements. Stay tuned!
+We are early in the project so **we need your review and feedback**. Also, expect regular updates of the bits, that will include new features and code improvements. Stay tuned!
 
 
 ![](http://i3.codeplex.com/Download?ProjectName=konaguidance&DownloadId=603169 "Kona LOB sample app")
