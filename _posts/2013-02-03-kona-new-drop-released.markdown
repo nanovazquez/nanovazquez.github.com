@@ -1,6 +1,6 @@
 ---
 layout: post
-title: p&p Kona Guidance - New drop Released!
+title: p&amp;p Kona Guidance - New drop Released!
 categories: [windows store apps]
 tags : [windows store apps, windows8, xaml/c#, kona]
 ---
