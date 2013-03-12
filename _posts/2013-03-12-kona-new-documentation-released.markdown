@@ -32,13 +32,13 @@ Below you can find our proposed table of contents of the project docs (items in 
 
 <br />
 
-[Download documentation]("http://konaguidance.codeplex.com/releases/view/103263")
+[Download documentation](http://konaguidance.codeplex.com/releases/view/103263)
 
-[Download latest bits]("http://konaguidance.codeplex.com/releases/view/103143")
+[Download latest bits](http://konaguidance.codeplex.com/releases/view/103143)
 
 <br />
 
-As usual, any [feedback]("http://konaguidance.codeplex.com/discussions") at this stage is greatly appreciated. Stay tuned!
+As usual, any [feedback](http://konaguidance.codeplex.com/discussions) at this stage is greatly appreciated. Stay tuned!
 
 
 
