@@ -4,7 +4,6 @@ title: Kona Guidance - New drop Released!
 categories: [windows store apps]
 tags : [windows store apps, windows8, xaml/c#, kona]
 ---
-
 {% include JB/setup %}
 
 A few days ago we have published a new drop of the first drop of the [Patterns & Practices Kona Guidance](http://konaguidance.codeplex.com/) on Codeplex. 

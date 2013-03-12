@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Kona Guidance: Documentation released!
+title: Kona Guidance - Documentation released!
 categories: [windows store apps]
 tags : [windows store apps, windows8, xaml/c#, kona]
 ---
-
 {% include JB/setup %}
 
 In addition to the reusable components and the reference app, we are releasing an extensive documentation explaining some of the best practices for developing Windows Store LOB apps.
@@ -33,13 +32,13 @@ Below you can find our proposed table of contents of the project docs (items in 
 
 <br />
 
-<a href="http://konaguidance.codeplex.com/releases/view/103263">Download documentation</a>
+[Download documentation]("http://konaguidance.codeplex.com/releases/view/103263")
 
-<a href="http://konaguidance.codeplex.com/releases/view/103143">Download latest bits</a>
+[Download latest bits]("http://konaguidance.codeplex.com/releases/view/103143")
 
 <br />
 
-As usual, any <a href="http://konaguidance.codeplex.com/discussions">feedback</a> at this stage is greatly appreciated. Stay tuned!
+As usual, any [feedback]("http://konaguidance.codeplex.com/discussions") at this stage is greatly appreciated. Stay tuned!
 
 
 
