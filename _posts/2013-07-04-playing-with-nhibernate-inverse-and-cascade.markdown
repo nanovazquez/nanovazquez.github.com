@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Playing with NHibernate: Inverse and Cascade mapping attributes
+title: Playing with NHibernate - Inverse and Cascade mapping attributes
 categories: [nhibernate]
 tags : [nhibernate, c#]
 ---
