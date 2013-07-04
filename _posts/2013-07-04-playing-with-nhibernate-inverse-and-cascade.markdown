@@ -85,9 +85,9 @@ If you are facing the 'not-nullable' scenario, consider changing the **Inverse**
 
 To sum up what we've explained:
 
-* The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. `inverse=false` means that it should manage the relationship.
-* The **Cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
-* Which value you use for these two properties depends on your scenario. For instance: 
-	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with `inverse=false` and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
-	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with `inverse=true` and a cascade value different than 'none'. In this case, you'll need to set up the association in the child before saving the parent.
+* The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. `inverse=false` means that it should update the relationship, while `inverse=true` means that 'it does not have to do anything'.
+* The **Cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the child object. For instance, `cascade=save-update` tells NHibernate that when the Parent is saved/updated, it also needs to needs to insert the Parent's childs.
+* Depending on the scenario you should decide which value to use on these two properties. For instance:
+	* **(one-to-many scenario)** If your foreign-key allows nullable values, you can use a collection with `inverse=false` and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
+	* **(one-to-many scenario)** If you have a not-nullable constraint in the DB, you can use a collection with `inverse=true` and a cascade value different than 'none'. In this case, you'll only need to associate the child with its parent in code before saving the parent.
 
