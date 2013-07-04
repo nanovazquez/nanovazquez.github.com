@@ -31,15 +31,15 @@ Next, we are going to create mappings for these classes. Let's start with the de
 
 We are going to run a simple test case that creates a Category with 3 Products and saves everything in the DB. For this, we are setting the **Product.Category** property of each product before saving the data. Notice that we need to do everything ourselves: we have to associate the Category on each Product and we also have to save each entity in the session separately (and in a specific order, as we will be see later):
 
-> **Note:** you can find the full solution with all the test cases [here](https://github.com/nanovazquez/nhibernate-inverse-cascade-samples)
+> **Note:** you can find the solution with all the test cases [here](https://github.com/nanovazquez/nhibernate-inverse-cascade-samples).
 
 ![Basic mapping - Using Product.Category](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-using-product-category.png)
 
-Using this approach, NHibernate will generate the expected SQL statements (3 INSERTS), as you can see in the image above. There is an important caveat on this approach: you need to make sure that you're saving the entities <u>in the right order</u>. If you save the Products in the session before saving the Category, when committing the transaction NHibernate will behave as follows:
+As you can see in the image above, NHibernate generates the expected SQL statements (3 INSERTS). But there is an important caveat on this approach: you need to make sure that you're saving the entities **in the right order**. If you save the Products in the session before saving the Category, when committing the transaction NHibernate will behave as follows:
 
-* First, it will execute an INSERT statement for each Product, using NULL in the CategoryId (notice that this only works if the column is nullable).
+* First, it will execute an INSERT statement for each Product, setting NULL in the *CategoryId* (which will only work if this column is nullable).
 * Then, it will execute an INSERT statement to save the Category.
-* And finally, it will execute an UPDATE statement for each Product to set the newly generated CategoryId.
+* Finally, it will execute an UPDATE statement for each Product to set the newly generated *CategoryId*.
 
 Usually you should tend to avoid doing things on your own, like associating each Product with the Category or saving the entities in the session in the right order (that's why we use an ORM in the first place, right? :)). Fortunately, NHibernate can handle this, so let's try to remove some of our repetitive code by taking advantage of the **Inverse** and **Cascade** mapping attributes. 
 
