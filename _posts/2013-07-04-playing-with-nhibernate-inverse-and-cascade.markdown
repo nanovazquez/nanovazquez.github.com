@@ -10,7 +10,7 @@ Although I'm a big fan of [Entity Framework](http://www.asp.net/entity-framework
 
 Consider the explanation of the *inverse* mapping (taken from the map collection):
 
-	*inverse* (optional - defaults to false) mark this collection as the "inverse" end of a bidirectional association.
+> **Inverse**: (optional - defaults to false) mark this collection as the "inverse" end of a bidirectional association.
 
 If you think this explanation is incomplete, that makes two of us. Of you couse if you navigate through the docs you will see more detailed explanations of the concept, but there isn't a complete example nor one that analyzes how you set this attribute and the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) explain this in a simple way.
 
@@ -82,6 +82,6 @@ To sum up:
 * The **inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
 * The **cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
 * Which value you use for these two properties depends on your scenario. For instance: 
-	* (one-to-many) If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to none to simplify your code.
-	* (one-to-many) If not, you can use "inverse=true" and and a cascade value different to none (in this case, you'll need to save the association in the child).
+	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to none to simplify your code.
+	* **(one-to-many)** If not, you can use "inverse=true" and and a cascade value different to none (in this case, you'll need to save the association in the child).
 
