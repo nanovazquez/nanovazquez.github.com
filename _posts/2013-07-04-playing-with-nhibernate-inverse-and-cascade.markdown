@@ -41,7 +41,7 @@ As you can see in the image above, NHibernate generates the expected SQL stateme
 * Then, it will execute an INSERT statement to save the Category.
 * Finally, it will execute an UPDATE statement for each Product to set the newly generated *CategoryId*.
 
-Usually you should tend to avoid doing things on your own, like associating each Product with the Category or saving the entities in the session in the right order (that's why we use an ORM in the first place, right? :)). Fortunately, NHibernate can handle this, so let's try to remove some of our repetitive code by taking advantage of the **Inverse** and **Cascade** mapping attributes. 
+Usually you should try to avoid doing things on your own, like saving the entities in the session in the right order or associating each Product with its Category individually (that's why we use an ORM in the first place, right?). To make things easier, NHibernate can handle this, so in the next few lines we'll to remove some of our repetitive code by taking advantage of the **Inverse** and **Cascade** mapping attributes. 
 
 ## Setting Inverse to 'false' (default)
 
