@@ -33,7 +33,7 @@ We are going to run a simple test case that creates a Category with 3 Products a
 
 ![Basic mapping - Using Product.Category](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-using-product-category.png)
 
-Using this approach, NHibernate will generate the expected SQL statements (3 INSERTS), as you can see in the image above. There is an important caveat on this approach: you need to make sure that you're saving the entities <u>in the right order</u>. If you save the Products in the session before saving the Category, when commiting the transaction NHibernate will behave as follows:
+Using this approach, NHibernate will generate the expected SQL statements (3 INSERTS), as you can see in the image above. There is an important caveat on this approach: you need to make sure that you're saving the entities <u>in the right order</u>. If you save the Products in the session before saving the Category, when committing the transaction NHibernate will behave as follows:
 
 * First, it will execute an INSERT statement for each Product, using NULL in the CategoryId (notice that this only works if the column is nullable).
 * Then, it will execute an INSERT statement to save the Category.
@@ -68,7 +68,7 @@ Now, we can safely remove the code that saves the products. By only saving the C
 
 ![Cascade mapping - Setting cascade mapping attribute](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-mapping-saving-category-only.png)
 
-Again, NHibernate will use the INSERT/UPDATE techique, which means that it won't work if the Product.CategoryId column is not-nullable.
+Again, NHibernate will use the INSERT/UPDATE technique, which means that it won't work if the Product.CategoryId column is not-nullable.
 
 ## Setting Inverse to 'true'
 
