@@ -64,7 +64,7 @@ A way to improve this approach is by setting the **Cascade** mapping attribute t
 
 The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with "cascade=save-update", which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
 
-Let's update the mappings of the Category class by setting the **cascade** value to **all*:
+Let's update the mappings of the Category class by setting the **cascade** value to **all**:
 
 ![Cascade mapping - Setting cascade mapping attribute](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-mapping-setting-cascade-mapping-attribute.png)
 
