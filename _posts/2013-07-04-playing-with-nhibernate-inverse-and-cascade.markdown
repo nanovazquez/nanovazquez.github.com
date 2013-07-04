@@ -12,7 +12,7 @@ Consider the explanation of the *inverse* mapping (taken from the map collection
 
 > **Inverse**: (optional - defaults to false) mark this collection as the "inverse" end of a bidirectional association.
 
-If you think this explanation is incomplete, that makes two of us. Of you couse if you navigate through the docs you can see more examples of the concept, but there isn't a complete one that fully explains what this concept means and how you can use it together with the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) do this.
+If you think this explanation is incomplete, that makes two of us. Navigating throught the docs you'll find more examples of the concept, but I couldn't find one that fully explains what this concept means and how you can use it together with the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) do this.
 
 ## Scenario - One to many relationship 
 
