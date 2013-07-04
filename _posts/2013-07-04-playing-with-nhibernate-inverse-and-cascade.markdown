@@ -14,7 +14,7 @@ Consider the explanation of the *inverse* mapping (taken from the map collection
 
 If you think this explanation is incomplete, that makes two of us. Navigating throught the docs you'll find more examples of the concept, but I couldn't find one that fully explains what this concept means and how you can use it together with the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) do this.
 
-## Scenario - One to many relationship 
+## Scenario - One-to-many relationship 
 
 Let's define a simple scenario in which you have Products and Categories. And one Category can have many Products (i.e. a one-to-many relationship). 
 In this case, the Database diagram and the model classes should look similar to this:
@@ -73,7 +73,7 @@ Now, we can safely remove the code that saves the products individually. By only
 
 ![Cascade mapping - Setting cascade mapping attribute](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-mapping-saving-category-only.png)
 
-Again, NHibernate will use the INSERT/UPDATE technique, which means that it won't work if the Product.CategoryId column is not-nullable. 
+Again, NHibernate will use the INSERT/UPDATE technique, which means that this approach won't work if the **Product.CategoryId** column is not-nullable. 
 
 ## Setting Inverse to 'true'
 
