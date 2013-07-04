@@ -25,7 +25,7 @@ In this case, the Database diagram and the model classes should look similar to 
 
 ## Basic mapping (default values)
 
-Next, we are going to create mappings for these classes. Let's start with the default mapping values, just to see how NHibernate behaves as is (notice that the Products bag in the Category mapping does not have the inverse attribute set):
+Next, we are going to create mappings for these classes. Let's start with the default mapping values, just to see how NHibernate behaves as is:
 
 ![Basic mapping](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping.png)
 
