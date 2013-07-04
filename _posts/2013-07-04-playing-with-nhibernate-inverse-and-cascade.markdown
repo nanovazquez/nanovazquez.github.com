@@ -47,18 +47,18 @@ Usually you should try to avoid doing things on your own, like saving the entiti
 
 Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to add the 3 Products inside the **Category.Products** collection instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we set the **Inverse** attribute in the **Category.Products** mapping to **false** (default value). So what Inverse does? It tells NHibernate that the Parent is responsible (or not) of saving the **association** to its childs. The *inverse=false* mapping means that when you save the Category you will also save the association of each Product that is inside the **Category.Products** collection. In constrast, setting this value to *true* basically means that *"the Parent does not have the responsibility of saving the association"*. 
 
-Check the following code. Notice that instead of setting the **Product.Category** property we are now adding the Product to the **Category.Products** collection (and it works!)
+Check the following code. Notice that instead of setting the **Product.Category** property we are now adding the Product to the **Category.Products** collection (and it works!):
 
 ![Basic mapping - Using Category.Products](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-using-category-product.png)
 
-Although we've reduced the code a little bit, there are two problems with this approach (AND the current mapping):
+Although we've reduced the code a little bit, there are two problems with this approach (if we use the current mapping):
 
-1. To save the association when saving the Category, NHibernate will use an INSERT/UPDATE approach for the Products (same as before), which won't work if we have a null constraint on the Product.CategoryId column.
-1. Inverse can be used only to save entity association information, not data. Hence, we still need to save each item individually. If we save the category only, NHibernate will throw the following **TransientObjectException**, simply because we are using the default **cascade** mapping value, which is **none**:
+1. To save the association, NHibernate will use an INSERT/UPDATE strategy for each Product (same as before), which won't work if we have a null constraint on the **Product.CategoryId** column.
+1. **Inverse** can be used only to save entity association info, not data. Hence, we still need to save each item individually. If we save only the Category (the Parent), NHibernate will throw the following **TransientObjectException**:
 
 ![Basic mapping - Saving the Category only will throw an exception](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-saving-category-only.png)
 
-A way to improve this approach is by setting the **cascade** mapping attribute to other value than 'none', something that we are going to do in the next section.
+A way to improve this approach is by setting the **cascade** mapping attribute to a value different to 'none' (default). And that's what we are going to do in the next section.
 
 ## Setting Cascade mapping attribute
 
