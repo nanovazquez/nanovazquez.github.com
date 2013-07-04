@@ -12,17 +12,14 @@ Consider the explanation of the *inverse* mapping (taken from the map collection
 
 > **Inverse**: (optional - defaults to false) mark this collection as the "inverse" end of a bidirectional association.
 
-If you think this explanation is incomplete, that makes two of us. Of you couse if you navigate through the docs you will see more detailed explanations of the concept, but there isn't a complete example nor one that analyzes how you set this attribute and the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) explain this in a simple way.
+If you think this explanation is incomplete, that makes two of us. Of you couse if you navigate through the docs you can see more examples of the concept, but there isn't a complete one that fully explains what this concept means and how you can use it together with the **cascade** (another mapping attribute). In the next few lines, I'm going to (try to) do this.
 
 ## Scenario - One to many relationship 
 
-Let's analyze an scenario in which you have Products and Categories, in a way that one Category can have many Products (one-to-many relationship). 
-
+Let's define a simple scenario in which you have Products and Categories. And one Category can have many Products (i.e. a one-to-many relationship). 
 In this case, the Database diagram and the model classes should look similar to this:
 
 ![Database diagram](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/database-diagram.png)
-
-<br />
 
 ![Model classes](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/model-classes.png)
 
