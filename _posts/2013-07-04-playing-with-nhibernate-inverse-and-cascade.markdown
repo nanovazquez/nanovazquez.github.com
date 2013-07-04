@@ -45,7 +45,7 @@ Usually you should try to avoid doing things on your own, like saving the entiti
 
 ## Setting Inverse to 'false' (default)
 
-Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to add the 3 Products inside the **Category.Products** collection instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we set the **Inverse** attribute in the **Category.Products** mapping to **false** (default value). So what Inverse does? It tells NHibernate that the Parent is responsible (or not) of saving the **association** to its childs. The *inverse=false* mapping means that when you save the Category you will also save the association of each Product that is inside the **Category.Products** collection. In constrast, setting this value to *true* basically means that *"the Parent does not have the responsibility of saving the association"*. 
+Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to add the 3 Products inside the **Category.Products** collection instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we set the **Inverse** attribute in the **Category.Products** mapping to **false** (default value). So what Inverse does? It tells NHibernate that the Parent is responsible (or not) of saving the **association** to its childs. The `inverse=false` mapping means that when you save the Category you will also save the association of each Product that is inside the **Category.Products** collection. In constrast, setting this value to *true* basically means that *"the Parent does not have the responsibility of saving the association"*. 
 
 Check the following code. Notice that instead of setting the **Product.Category** property we are now adding the Product to the **Category.Products** collection (and it works!):
 
@@ -62,7 +62,8 @@ A way to improve this approach is by setting the **Cascade** mapping attribute t
 
 ## Setting Cascade mapping attribute
 
-The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with "cascade=save-update", which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
+ mapping means that when you save the Category you will also save the association of each Product that is inside the **Category.Products** collection. In constrast, setting this value to *true* basically means that *"the Parent does not have the responsibility of saving the association"*. 
+The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with `cascade=save-update`, which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
 
 Let's update the mappings of the Category class by setting the **cascade** value to **all**:
 
@@ -84,9 +85,9 @@ If you are facing this scenario, consider changing the **Inverse** property to *
 
 To sum up what we've explained:
 
-* The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
+* The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. `inverse=false` means that it should manage the relationship.
 * The **Cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
 * Which value you use for these two properties depends on your scenario. For instance: 
-	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
-	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with "inverse=true" and a cascade value different than 'none'. In this case, you'll need to set up the association in the child before saving the parent.
+	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with `inverse=false` and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
+	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with `inverse=true` and a cascade value different than 'none'. In this case, you'll need to set up the association in the child before saving the parent.
 
