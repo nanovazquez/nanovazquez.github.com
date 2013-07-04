@@ -63,21 +63,21 @@ A way to improve this approach is by setting the **Cascade** mapping attribute t
 ## Setting Cascade mapping attribute
 
  mapping means that when you save the Category you will also save the association of each Product that is inside the **Category.Products** collection. In constrast, setting this value to *true* basically means that *"the Parent does not have the responsibility of saving the association"*. 
-The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with `cascade=save-update`, which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
+The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with `cascade=save-update`, which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
 
 Let's update the mappings of the Category class by setting the **cascade** value to **all**:
 
 ![Cascade mapping - Setting cascade mapping attribute](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-mapping-setting-cascade-mapping-attribute.png)
 
-Now, we can safely remove the code that saves the products. By only saving the Category in the session will be enough, since now we've instructed NHibernate to save the products in cascade.
+Now, we can safely remove the code that saves the products individually. By only saving the Category in the session will be enough since now we've instructed NHibernate to save the products "in cascade".
 
 ![Cascade mapping - Setting cascade mapping attribute](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-mapping-saving-category-only.png)
 
-Again, NHibernate will use the INSERT/UPDATE technique, which means that it won't work if the Product.CategoryId column is not-nullable.
+Again, NHibernate will use the INSERT/UPDATE technique, which means that it won't work if the Product.CategoryId column is not-nullable. 
 
 ## Setting Inverse to 'true'
 
-If you are facing this scenario, consider changing the **Inverse** property to *true*, which means that the Category is no longer responsible to take care of the relationship. Then, update the Products.Category property (because the Product class is now the only owner of the association) and then save your Category as before.
+If you are facing the 'not-nullable' scenario, consider changing the **Inverse** property to **true**. Which means that the Category is no longer responsible to manage of the relationship. Then, update your code to associate the Products and the Categories using the **Products.Category** property (because the Product class is now the only *owner* of the association). Finally, you only need to save the Category in session (as before).
 
 ![Cascade-Inverse mapping - Setting cascade and inverse mapping attributes](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/cascade-inverse-mapping-saving-category-only.png)
 
