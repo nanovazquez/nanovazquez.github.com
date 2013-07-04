@@ -19,7 +19,7 @@ If you think this explanation is incomplete, that makes two of us. Navigating th
 Let's define a simple scenario in which you have Products and Categories. And one Category can have many Products (i.e. a one-to-many relationship). 
 In this case, the Database diagram and the model classes should look similar to this:
 
-![Database diagram](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/database-diagram.png)
+<img alt="Database diagram" src="https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/database-diagram.png" style="margin-bottom:0px" />
 
 ![Model classes](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/model-classes.png)
 
