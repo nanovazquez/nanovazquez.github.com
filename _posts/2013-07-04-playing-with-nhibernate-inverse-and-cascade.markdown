@@ -44,7 +44,7 @@ Using this approach, NHibernate will generate the expected SQL statements (3 INS
 
 Usually you should tend to avoid doing things on your own, like associating each Product with the Category or saving the entities in the session in the right order (that's why we use an ORM in the first place, right? :)). Fortunately, NHibernate can handle this, so let's try to remove some of our repetitive code by taking advantage of the **Inverse** and **Cascade** mapping attributes. 
 
-## Using Inverse=false (default)
+## Setting Inverse to 'false' (default)
 
 Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to set the **Category.Products** collection with the 3 Products, instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we are using the default value of the **Inverse** attribute in the Category.Products mapping, which is *false*. This attribute tells NHibernate if the Parent is responsible of saving the **association** to its childs. The "inverse=false" mapping means that when you save the Category, you will also save the association of each Product inside the Category.Products collection with the Category (in NHibernate words, the Category.Product collection "is not the inverse end of the bidirectional association", so it has to do something). In this case it makes sense to use the default value, but in other scenarios is useful to have a way to define who's responsible of manage the association (who's the "owner"). 
 
@@ -73,7 +73,7 @@ Now, we can safely remove the code that saves the products. By only saving the C
 
 Again, NHibernate will use the INSERT/UPDATE techique, which means that it won't work if the Product.CategoryId column is not-nullable.
 
-## Changing Inverse to true
+## Setting Inverse to 'true'
 
 If you are facing this scenario, consider changing the **Inverse** property to *true*, which means that the Category is no longer responsible to take care of the relationship. Then, update the Products.Category property (because the Product class is now the only owner of the association) and then save your Category as before.
 
@@ -83,8 +83,8 @@ If you are facing this scenario, consider changing the **Inverse** property to *
 
 To sum up what we've explained:
 
-* The **inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
-* The **cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
+* The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
+* The **Cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
 * Which value you use for these two properties depends on your scenario. For instance: 
 	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
 	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with "inverse=true" and a cascade value different to 'none'. In this case, you'll need to set up the association in the child before saving the parent.
