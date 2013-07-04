@@ -29,7 +29,9 @@ Next, we are going to create mappings for these classes. Let's start with the de
 
 ![Basic mapping](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping.png)
 
-We are going to run a simple test case that creates a Category with 3 Products and saves everything in the DB. For this, we are setting the **Product.Category** property of each product before saving the data. Notice that we need to do everything ourselves: we have to associate the Category on each Product and we also have to save each entity in the session separately (and in a specific order):
+We are going to run a simple test case that creates a Category with 3 Products and saves everything in the DB. For this, we are setting the **Product.Category** property of each product before saving the data. Notice that we need to do everything ourselves: we have to associate the Category on each Product and we also have to save each entity in the session separately (and in a specific order, as we will be see later):
+
+> **Note:** you can find the full solution with all the test cases [here](https://github.com/nanovazquez/nhibernate-inverse-cascade-samples)
 
 ![Basic mapping - Using Product.Category](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-using-product-category.png)
 
