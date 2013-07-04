@@ -20,21 +20,21 @@ Let's analyze an scenario in which you have Products and Categories, in a way th
 
 In this case, the Database diagram and the model classes should look similar to this:
 
-![Database diagram](playing-with-nhibernate-inverse-and-cascade-mappings\database-diagram.png)
+![Database diagram](database-diagram.png)
 
 <br />
 
-![Model classes](playing-with-nhibernate-inverse-and-cascade-mappings\model-classes.png)
+![Model classes](model-classes.png)
 
 ## Basic mapping (default values)
 
 Next, we are going to create mappings for these classes. Let's start with a basic mapping, just to see how NHibernate behaves by default (notice that the Products bag in the Category mapping does not have the inverse attribute set):
 
-![Basic mapping](playing-with-nhibernate-inverse-and-cascade-mappings\basic-mapping.png)
+![Basic mapping](basic-mapping.png)
 
 We are going to run a simple test case that creates a Category with 3 Products and saves everything in the DB. For this, we are setting the **Product.Category** property of each product before saving the data. Notice that we need to do everything ourselves: we have to associate the Category on each Product and we also have to save each entity in the session separately (and in a specific order):
 
-![Basic mapping - Using Product.Category](playing-with-nhibernate-inverse-and-cascade-mappings\basic-mapping-using-product-category.png)
+![Basic mapping - Using Product.Category](basic-mapping-using-product-category.png)
 
 Using this approach, NHibernate will generate the expected SQL statements (3 INSERTS), as you can see in the image above. There is an important caveat on this approach: you need to make sure that you're saving the entities <u>in the right order</u>. If you save the Products in the session before saving the Category, when commiting the transaction NHibernate will behave as follows:
 
@@ -48,14 +48,14 @@ Usually you should tend to avoid doing things on your own, like associating each
 
 Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to set the **Category.Products** collection with the 3 Products, instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we are using the default value of the **Inverse** attribute in the Category.Products mapping, which is *false*. This attribute tells NHibernate if the Parent is responsible of saving the **association** to its childs. The "inverse=false" mapping means that when you save the Category, you will also save the association of each Product inside the Category.Products collection with the Category (in NHibernate words, the Category.Product collection "is not the inverse end of the bidirectional association", so it has to do something). In this case it makes sense to use the default value, but in other scenarios is useful to have a way to define who's responsible of manage the association (who's the "owner"). 
 
-![Basic mapping - Using Category.Products](playing-with-nhibernate-inverse-and-cascade-mappings\basic-mapping-using-category-product.png)
+![Basic mapping - Using Category.Products](basic-mapping-using-category-product.png)
 
 Although we've reduced the code a little bit, there are two problems with this approach (if we use the current mapping):
 
 1. To save the association when saving the Category, NHibernate will use an INSERT/UPDATE approach for the Products (same as before), which won't work if we have a null constraint on the Product.CategoryId column.
 1. Inverse can be used only to save entity association information, not data. Hence, we still need to save each item individually. If we save the category only, NHibernate will throw the following **TransientObjectException**, simply because we are using the default **cascade** mapping value, which is **none**:
 
-![Basic mapping - Saving the Category only will throw an exception](playing-with-nhibernate-inverse-and-cascade-mappings\basic-mapping-saving-category-only.png)
+![Basic mapping - Saving the Category only will throw an exception](basic-mapping-saving-category-only.png)
 
 A way to improve this approach is by setting the **cascade** mapping attribute to other value than 'none', something that we are going to do in the next section.
 
@@ -65,15 +65,15 @@ The **Cascade** mapping attribute helps NHibernate to decide which operations sh
 
 Let's update the mappings of the Category class by setting the **cascade** value to **all*:
 
-![Cascade mapping - Setting cascade mapping attribute](playing-with-nhibernate-inverse-and-cascade-mappings\cascade-mapping-setting-cascade-mapping-attribute.png)
+![Cascade mapping - Setting cascade mapping attribute](cascade-mapping-setting-cascade-mapping-attribute.png)
 
 Now, we can safely remove the code that saves the products. By only saving the Category in the session will be enough, since now we've instructed NHibernate to save the products in cascade.
 
-![Cascade mapping - Setting cascade mapping attribute](playing-with-nhibernate-inverse-and-cascade-mappings\cascade-mapping-saving-category-only.png)
+![Cascade mapping - Setting cascade mapping attribute](cascade-mapping-saving-category-only.png)
 
 Again, NHibernate will use the INSERT/UPDATE techique, which means that it won't work if the Product.CategoryId column is not-nullable. If you are facing this scenario, consider changing the **Inverse** property to *true*, which means that the Category is no longer responsible to take care of the relationship. Then, update the Products.Category property (because the Product class is now the only owner of the association) and then save your Category as before.
 
-![Cascade-Inverse mapping - Setting cascade and inverse mapping attributes](playing-with-nhibernate-inverse-and-cascade-mappings\cascade-inverse-mapping-saving-category-only.png)
+![Cascade-Inverse mapping - Setting cascade and inverse mapping attributes](cascade-inverse-mapping-saving-category-only.png)
 
 ## Summary
 
