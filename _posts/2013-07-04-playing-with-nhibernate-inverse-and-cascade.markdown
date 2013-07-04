@@ -2,7 +2,7 @@
 layout: post
 title: Playing with NHibernate - Inverse and Cascade mapping attributes
 categories: [nhibernate]
-tags : [nhibernate, c#]
+tags : [nhibernate, c#, nhibernate-mappings]
 ---
 {% include JB/setup %}
 
@@ -58,11 +58,11 @@ Although we've reduced the code a little bit, there are two problems with this a
 
 ![Basic mapping - Saving the Category only will throw an exception](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/basic-mapping-saving-category-only.png)
 
-A way to improve this approach is by setting the **cascade** mapping attribute to a value different to 'none' (default). And that's what we are going to do in the next section.
+A way to improve this approach is by setting the **Cascade** mapping attribute to a value different than 'none' (default). And that's what we are going to do in the next section.
 
 ## Setting Cascade mapping attribute
 
-The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. Collections mapped with a value different to 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with "cascade=save-update", which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
+The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the Parent object to the Child object. Collections mapped with a value different than 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with "cascade=save-update", which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
 
 Let's update the mappings of the Category class by setting the **cascade** value to **all*:
 
@@ -87,6 +87,6 @@ To sum up what we've explained:
 * The **Inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
 * The **Cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
 * Which value you use for these two properties depends on your scenario. For instance: 
-	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
-	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with "inverse=true" and a cascade value different to 'none'. In this case, you'll need to set up the association in the child before saving the parent.
+	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
+	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with "inverse=true" and a cascade value different than 'none'. In this case, you'll need to set up the association in the child before saving the parent.
 
