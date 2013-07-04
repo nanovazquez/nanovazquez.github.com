@@ -81,11 +81,11 @@ If you are facing this scenario, consider changing the **Inverse** property to *
 
 ## Summary
 
-To sum up:
+To sum up what we've explained:
 
 * The **inverse** attribute tells NHibernate if the collection is responsible to manage the relationship. "inverse=false" means that it should manage the relationship.
 * The **cascade** attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. For instance, it tells NHibernate that it needs to insert the child after inserting the parent.
 * Which value you use for these two properties depends on your scenario. For instance: 
-	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to none to simplify your code.
-	* **(one-to-many)** If not, you can use "inverse=true" and and a cascade value different to none (in this case, you'll need to save the association in the child).
+	* **(one-to-many)** If your foreign-key allows nullable values, you can use a collection with "inverse=false" and a cascade value different to 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
+	* **(one-to-many)** If you have a not-nullable constraint in the DB, you can use a collection with "inverse=true" and a cascade value different to 'none'. In this case, you'll need to set up the association in the child before saving the parent.
 
