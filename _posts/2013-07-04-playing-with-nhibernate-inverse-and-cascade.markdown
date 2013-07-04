@@ -26,7 +26,7 @@ In this case, the Database diagram and the model classes should look similar to 
 
 ![Model classes](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/playing-with-nhibernate-inverse-and-cascade/model-classes.png)
 
-## Basic mapping (default values)
+### Basic mapping (default values)
 
 Next, we are going to create mappings for these classes. Let's start with a basic mapping, just to see how NHibernate behaves by default (notice that the Products bag in the Category mapping does not have the inverse attribute set):
 
@@ -44,7 +44,7 @@ Using this approach, NHibernate will generate the expected SQL statements (3 INS
 
 Usually you should tend to avoid doing things on your own, like associating each Product with the Category or saving the entities in the session in the right order (that's why we use an ORM in the first place, right? :)). Fortunately, NHibernate can handle this, so let's try to remove some of our repetitive code by taking advantage of the **Inverse** and **Cascade** mapping attributes. 
 
-## Using Inverse = false (default)
+### Using Inverse = false (default)
 
 Let's analyze the way we are associating the Products with the Category. I know that some folks will prefer to set the **Category.Products** collection with the 3 Products, instead of setting the Category on each individual Product. What if I tell you that with the current mapping you can use both approaches? This is because we are using the default value of the **Inverse** attribute in the Category.Products mapping, which is *false*. This attribute tells NHibernate if the Parent is responsible of saving the **association** to its childs. The "inverse=false" mapping means that when you save the Category, you will also save the association of each Product inside the Category.Products collection with the Category (in NHibernate words, the Category.Product collection "is not the inverse end of the bidirectional association", so it has to do something). In this case it makes sense to use the default value, but in other scenarios is useful to have a way to define who's responsible of manage the association (who's the "owner"). 
 
@@ -59,7 +59,7 @@ Although we've reduced the code a little bit, there are two problems with this a
 
 A way to improve this approach is by setting the **cascade** mapping attribute to other value than 'none', something that we are going to do in the next section.
 
-## Setting Cascade mapping attribute
+### Setting Cascade mapping attribute
 
 The **Cascade** mapping attribute helps NHibernate to decide which operations should be cascaded from the parent object to the associated object. Collections mapped with a value different to 'none' will perform extra tasks in addition to saving the entity. For instance, you can set the collection with "cascade=save-update", which means that when the object is saved/updated, NHibernate will check the associations and save/update any object that require it (for a complete explanation of all **cascade** values go here [here](http://ayende.com/blog/1890/nhibernate-cascades-the-different-between-all-all-delete-orphans-and-save-update))
 
@@ -73,7 +73,7 @@ Now, we can safely remove the code that saves the products. By only saving the C
 
 Again, NHibernate will use the INSERT/UPDATE techique, which means that it won't work if the Product.CategoryId column is not-nullable.
 
-## Changing Inverse to true
+### Changing Inverse to true
 
 If you are facing this scenario, consider changing the **Inverse** property to *true*, which means that the Category is no longer responsible to take care of the relationship. Then, update the Products.Category property (because the Product class is now the only owner of the association) and then save your Category as before.
 
