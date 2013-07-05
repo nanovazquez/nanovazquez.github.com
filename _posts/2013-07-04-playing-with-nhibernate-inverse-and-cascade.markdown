@@ -8,7 +8,7 @@ tags : [nhibernate, c#, nhibernate-mappings]
 
 Although I'm a big fan of [Entity Framework](http://www.asp.net/entity-framework), I have to admit that [NHibernate](http://nhforge.org/) provides a really flexible way of handling class inheritance and parent-child relationship. That said, I've noticed that these two important concepts are not very well explained in the [documentation](http://nhforge.org/doc/nh/en/), which leads to a several discussions and debates in the community about the proper way of mapping your tables (and sometimes to explanations that state the opposite). 
 
-Consider the explanation of the *inverse* mapping (taken from the map collection):
+Consider the explanation of the **inverse** mapping (taken from the [NHibernate](http://nhforge.org/doc/nh/en/) docs):
 
 > **Inverse**: (optional - defaults to false) mark this collection as the "inverse" end of a bidirectional association.
 
