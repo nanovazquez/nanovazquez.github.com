@@ -2,7 +2,7 @@
 layout: post
 title: Playing with NHibernate - Inverse and Cascade mapping attributes
 categories: [nhibernate]
-tags : [nhibernate mappings, ASP.NET]
+tags : [NHibernate mappings, ASP.NET]
 ---
 {% include JB/setup %}
 

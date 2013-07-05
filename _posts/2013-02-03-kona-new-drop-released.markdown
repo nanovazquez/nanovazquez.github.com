@@ -2,7 +2,7 @@
 layout: post
 title: Kona Guidance - New drop released!
 categories: [windows store apps]
-tags : [windows store apps, windows8, c#/xaml, kona]
+tags : [windows store apps, c#/xaml, Prism for the Windows Runtime]
 ---
 {% include JB/setup %}
 

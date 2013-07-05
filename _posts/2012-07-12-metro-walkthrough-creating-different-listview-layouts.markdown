@@ -2,7 +2,7 @@
 layout: post
 title: Windows Store apps - Creating different ListView layouts
 categories: [windows store apps]
-tags : [windows store apps, metro, windows8, WinJS]
+tags : [windows store apps, WinJS]
 ---
 {% include JB/setup %}
 
