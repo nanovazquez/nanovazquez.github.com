@@ -2,7 +2,7 @@
 layout: post
 title: Playing with azureQuery - The Javascript driver for Windows Azure
 categories: [azure, javascript]
-tags : [azure, javascript, asp.net mvc]
+tags : [windows azure, javascript, ASP.NET MVC]
 ---
 
 {% include JB/setup %}

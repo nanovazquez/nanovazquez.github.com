@@ -2,7 +2,7 @@
 layout: post
 title: Playing with Windows Store apps (aka ListView layout generator)
 categories: [windows store apps]
-tags : [windows store apps, metro, windows8, winjs]
+tags : [windows store apps, windows8, WinJS]
 ---
 {% include JB/setup %}
 
