@@ -2,7 +2,7 @@
 layout: post
 title: Jugando con NHibernate - Atributos de mapeo Inverse y Cascade
 categories: [nhibernate]
-lang: es
+lang: esp
 tags : [NHibernate mappings, ASP.NET]
 ---
 {% include JB/setup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creando DIVs triangulares con sombra usando CSS 
-lang: es
+lang: esp
 categories: [UI]
 tags : [UI, css]
 ---

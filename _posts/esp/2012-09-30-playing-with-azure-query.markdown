@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jugando con azureQuery - El driver en javascript para Windows Azure
-lang: es
+lang: esp
 categories: [azure, javascript]
 tags : [windows azure, javascript, ASP.NET MVC]
 ---

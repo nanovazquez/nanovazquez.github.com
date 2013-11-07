@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jugando con Windows Store apps (aka ListView layout generator)
-lang: es
+lang: esp
 categories: [windows store apps]
 tags : [windows store apps, WinJS]
 ---

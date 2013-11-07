@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Usando socket.io en un web y en un worker role de Windows Azure
-lang: es
+lang: esp
 categories: [azure, node.js]
 tags : [windows azure, node.js, socket-io]
 ---

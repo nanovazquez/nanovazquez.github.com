@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Windows Store apps - Animacion circular para un control de progreso (XAML/C#)
-lang: es
+lang: esp
 categories: [windows store apps]
 tags : [windows store apps, c#/xaml, animations]
 ---

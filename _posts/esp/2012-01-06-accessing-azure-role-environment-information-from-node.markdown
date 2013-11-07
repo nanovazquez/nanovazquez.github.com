@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Accediendo a la información de entorno (environment) de un Azure role desde node.js
-lang: es
+title: Accediendo a la informacion de entorno (environment) de un Azure role desde node.js
+lang: esp
 categories: [azure, node.js]
 tags : [windows azure, node.js, startup-tasks]
 ---

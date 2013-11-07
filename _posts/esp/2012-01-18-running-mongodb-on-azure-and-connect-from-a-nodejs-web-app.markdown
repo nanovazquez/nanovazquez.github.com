@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Corriendo Mongodb en Azure y conectándose desde node.js
-lang: es
+title: Hosteando Mongodb en Azure y conectandose desde node.js
+lang: esp
 categories: [azure, node.js]
 tags : [windows azure, node.js, mongodb]
 ---
