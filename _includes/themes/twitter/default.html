@@ -67,19 +67,18 @@
 		<div class="older-posts">
 			<h3>recent posts</h3>
 			<ul>
-				{% assign limit = 0 %}
+				{% assign postLimit = 0 %}
 				{% for post in site.posts %}
-				{% if limit >= 5 %}
-				{% break %}
+				{% assign categoryLimit = categoryLimit | plus: 1 %}
+				{% if categoryLimit == 10 %}{% break %}
 				{% else %}
-				{% assign limit = limit + 1 %}
-					<li>
-						<div class="lang-{{ post.lang }}" style="display: none">
-							<span>{{ post.date | date: "%m-%d-%Y" }}</span> &raquo; 
-							<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-							<div class="separator"></div>
-						</div>
-					</li>
+				<li>
+					<div class="lang-{{ post.lang }}" style="display: none">
+						<span>{{ post.date | date: "%m-%d-%Y" }}</span> &raquo; 
+						<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+						<div class="separator"></div>
+					</div>
+				</li>
 				{% endif %}
 				{% endfor %}
 			</ul>
@@ -88,12 +87,12 @@
 			<h3>categories</h3>
 			<ul>
 				{% for category in site.categories %}
-					<li>
-						<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
-							<span>{{ category[0] }} ({{ category[1].size }})</span> 
-						</a>
-						<div class="separator"></div>
-					</li>
+				<li>
+					<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
+						<span>{{ category[0] }} ({{ category[1].size | divided_by: 2 }})</span> 
+					</a>
+					<div class="separator"></div>
+				</li>
 				{% endfor %}
 			</ul>
 		</div>

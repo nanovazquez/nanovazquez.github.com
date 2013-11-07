@@ -4,12 +4,11 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 ---
 {% include JB/setup %}
 
-{% assign limit = 0 %}
+{% assign postLimit = 0 %}
 {% for post in site.posts %}
-{% if limit >= 5  %}
-{% break %}
+{% assign postLimit = postLimit | plus: 1 %}
+{% if postLimit == 10 %}{% break %}
 {% else %}
-{% assign limit = limit + 1 %}
 <div class="entry-content lang-{{ post.lang }}" style="display: none">
 	<article class="unit-article layout-page">
 		<div class="unit-article-inner">
