@@ -70,7 +70,7 @@
 				{% assign postLimit = 0 %}
 				{% for post in site.posts %}
 				{% assign categoryLimit = categoryLimit | plus: 1 %}
-				{% if categoryLimit == 10 %}{% break %}
+				{% if categoryLimit == 11 %}{% break %}
 				{% else %}
 				<li>
 					<div class="lang-{{ post.lang }}" style="display: none">

@@ -7,7 +7,7 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 {% assign postLimit = 0 %}
 {% for post in site.posts %}
 {% assign postLimit = postLimit | plus: 1 %}
-{% if postLimit == 10 %}{% break %}
+{% if postLimit == 11 %}{% break %}
 {% else %}
 <div class="entry-content lang-{{ post.lang }}" style="display: none">
 	<article class="unit-article layout-page">
