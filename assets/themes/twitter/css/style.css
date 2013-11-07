@@ -297,3 +297,11 @@ iframe{
 .links li{
    margin: 0 0 10px 0;
 }
+
+.navbar .navbar-inner .container select{
+	width: 90px;
+	position: relative;
+	top: 6px;
+	right: 40px;
+	float: right;
+}

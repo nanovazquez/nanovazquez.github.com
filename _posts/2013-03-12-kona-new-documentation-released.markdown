@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Kona Guidance - Documentation released!
+lang: eng
 categories: [windows store apps]
 tags : [windows store apps, c#/xaml, Prism for the Windows Runtime]
 ---

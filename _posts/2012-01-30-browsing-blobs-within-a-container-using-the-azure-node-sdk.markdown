@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Browsing Blobs within a container using the Windows Azure Node SDK
+lang: eng
 categories: [azure, node.js] 
 tags : [windows azure, node.js, windows azure blob storage]
 ---

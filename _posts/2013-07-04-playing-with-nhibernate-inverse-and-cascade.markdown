@@ -2,6 +2,7 @@
 layout: post
 title: Playing with NHibernate - Inverse and Cascade mapping attributes
 categories: [nhibernate]
+lang: eng
 tags : [NHibernate mappings, ASP.NET]
 ---
 {% include JB/setup %}
@@ -90,4 +91,3 @@ To sum up what we've explained:
 * Depending on the scenario you should decide which value to use on these two properties. For instance:
 	* **(one-to-many scenario)** If your foreign-key allows nullable values, you can use a collection with `inverse=false` and a cascade value different than 'none'. When you save the Parent, NHibernate will take care of saving both childs and association. 
 	* **(one-to-many scenario)** If you have a not-nullable constraint in the DB, you can use a collection with `inverse=true` and a cascade value different than 'none'. In this case, you'll only need to associate the child with its parent in code before saving the parent.
-

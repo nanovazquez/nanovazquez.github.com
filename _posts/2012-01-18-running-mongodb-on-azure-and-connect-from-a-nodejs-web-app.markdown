@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Running Mongodb on Azure and connect from a node web app
+lang: eng
 categories: [azure, node.js]
 tags : [windows azure, node.js, mongodb]
 ---

@@ -3,10 +3,13 @@
 permalink: /:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
 pygments: true
 safe: true
 markdown: redcarpet
+
+# Configuration for the jekyll-multiple-languages-plugin
+# see https://github.com/screeninteraction/jekyll-multiple-languages-plugin
+languages: ["eng", "esp"]
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.

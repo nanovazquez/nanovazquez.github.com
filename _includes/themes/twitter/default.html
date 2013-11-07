@@ -42,6 +42,10 @@
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
+          <select id="languageCombo">        
+            <option id="eng" value="eng">English</option>
+            <option id="esp" value="esp">Spanish</option>
+          </select>
         </div>
       </div>
     </div>
@@ -63,12 +67,20 @@
 		<div class="older-posts">
 			<h3>recent posts</h3>
 			<ul>
-				{% for post in site.posts limit:5 %}
+				{% assign limit = 0 %}
+				{% for post in site.posts %}
+				{% if limit >= 5 %}
+				{% break %}
+				{% else %}
+				{% assign limit = limit + 1 %}
 					<li>
-						<span>{{ post.date | date: "%m-%d-%Y" }}</span> &raquo; 
-						<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-						<div class="separator"></div>
+						<div class="lang-{{ post.lang }}" style="display: none">
+							<span>{{ post.date | date: "%m-%d-%Y" }}</span> &raquo; 
+							<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+							<div class="separator"></div>
+						</div>
 					</li>
+				{% endif %}
 				{% endfor %}
 			</ul>
 		</div>
@@ -94,4 +106,40 @@
     </div> <!-- /container -->
     {% include JB/analytics %}
   </body>
+  <script type="text/javascript">
+	(function($){
+		var c_name = 'currentLanguage';
+		var setCurrentLanguage = function(langToStore){
+			var date = new Date();
+			date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days
+			var expires = "; expires=" + date.toGMTString();
+			document.cookie = c_name + "=" + langToStore + expires + "; path=/";
+		};
+
+		var getCurrentLanguage = function(){
+			if (document.cookie.length == 0) return '';
+			var c_start = document.cookie.indexOf(c_name + "=");
+			if (c_start == -1) return '';
+			c_start = c_start + c_name.length + 1;
+			var c_end = document.cookie.indexOf(";", c_start);
+			if (c_end == -1) c_end = document.cookie.length;
+			return unescape(document.cookie.substring(c_start, c_end));
+		};
+		
+		var currentLanguage = getCurrentLanguage();
+		
+		// Set default current language if empty
+		if(currentLanguage === '') setCurrentLanguage('eng');
+		
+		// Show current language items
+		$('.lang-' + currentLanguage).show();
+		
+		// Change combo option values depending on the current language
+		$('#languageCombo').val(currentLanguage)
+						   .change(function(){
+								setCurrentLanguage($(this).val());
+								window.location.reload();
+						   });
+	})(jQuery);
+ </script>
 </html>

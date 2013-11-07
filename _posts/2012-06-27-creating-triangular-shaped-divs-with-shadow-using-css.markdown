@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Creating Triangular-shaped DIVs with shadow using CSS 
+lang: eng
 categories: [UI]
 tags : [UI, css]
 ---

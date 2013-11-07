@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Accessing Azure Role Environment information from NodeJS
+lang: eng
 categories: [azure, node.js]
 tags : [windows azure, node.js, startup-tasks]
 ---

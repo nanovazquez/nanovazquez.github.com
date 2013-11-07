@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Working with Google Calendar v3 on ASP.NET MVC 4
+lang: eng
 categories: [google api]
 tags : [Google API, ASP.NET, ASP.NET MVC]
 ---

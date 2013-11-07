@@ -4,8 +4,13 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 ---
 {% include JB/setup %}
 
-{% for post in site.posts limit:5 %}
-<div class="entry-content">
+{% assign limit = 0 %}
+{% for post in site.posts %}
+{% if limit >= 5  %}
+{% break %}
+{% else %}
+{% assign limit = limit + 1 %}
+<div class="entry-content lang-{{ post.lang }}" style="display: none">
 	<article class="unit-article layout-page">
 		<div class="unit-article-inner">
 			<div class="content">
@@ -29,4 +34,5 @@ tagline: "asp.net, windows azure, node.js, metro style apps, HTML5/CSS3 and so o
 		</div>
 	</article>
 </div>
+{% endif %}
 {% endfor %}

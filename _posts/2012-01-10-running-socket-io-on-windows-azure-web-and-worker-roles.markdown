@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Running socket.io on Windows Azure Web and Worker roles
+lang: eng
 categories: [azure, node.js]
 tags : [windows azure, node.js, socket-io]
 ---

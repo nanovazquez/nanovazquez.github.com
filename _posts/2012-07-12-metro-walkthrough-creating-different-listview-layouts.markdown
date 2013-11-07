@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Windows Store apps - Creating different ListView layouts
+lang: eng
 categories: [windows store apps]
 tags : [windows store apps, WinJS]
 ---
