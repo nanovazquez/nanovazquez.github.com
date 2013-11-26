@@ -128,7 +128,10 @@
 		var currentLanguage = getCurrentLanguage();
 		
 		// Set default current language if empty
-		if(currentLanguage === '') setCurrentLanguage('eng');
+		if(currentLanguage === '') {
+			currentLanguage = 'eng';
+			setCurrentLanguage(currentLanguage);
+		}
 		
 		// Show current language items
 		$('.lang-' + currentLanguage).show();
