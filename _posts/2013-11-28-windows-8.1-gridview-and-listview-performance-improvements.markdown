@@ -17,7 +17,7 @@ Let's take a look on each topic in detail:
 
 ## Startup time improvements 
 
-The Windows 8.0 approach to manage different visual states on a GridView/ListView's item is to define an **item container template** containing all the elements needed in all the posible states. Although this approach is simple, it's really expensive in time and memory at startup (to put this in numbers, 50 items in a GridView require the creation of 1050 objects). Even worse, if you disable selection in your GridView these items will be created anyway, so you're paing a price for something you're not going to use.
+The Windows 8.0 approach to manage different visual states on a GridView/ListView's item is to define an **item container template** containing all the elements needed in all the possible states. Although this approach is simple, it's really expensive in time and memory at startup (to put this in numbers, 50 items in a GridView require the creation of 1050 objects). Even worse, if you disable selection in your GridView these items will be created anyway, so you're paying a price for something you're not going to use.
 
 This was solved in Windows 8.1 with the creation of the **GridViewItemPresenter** class, who has the job of drawing the same visuals that were created by the 8.0 template, but only when they're needed (using optimized code, which makes the process really fast). This way you save memory and time creating all the objects at startup and you only pay the price when these items are needed. This is something that you'll get **for free** in 8.1.
 
@@ -27,15 +27,15 @@ The XAML folks created the presenter in a way you can customize the default item
 
 ## Panning improvements - UI Virtualization
 
-Windows 8.0 uses **group virtualization** to improve the panning experience: instead of loading all items at once, it renders all the items in the groups which are on the screen. This is indeed an improvement, but it does not provide a great improvement on large data scenarios. For instance, let's say that you have 2 groups on screen with 1000 elements each. In that case, you'll create 2000 elements *but* you will display ~10-20 items to the user. The XAML folks noticed this and decided to use a different approach in Windows 8.1: instead of rendering the whole group why not rendering each group *piece by piece*, creating only the elements that are near the viewport (the section of the page that the user actually sees), regardless of what group they are. This is named **item virtualization** and it's provided **for free** in 8.1 because now the GridView/ListView use **ItemsWrapGrid**/**ItemStackPanel** as the default ItemsPane (of course, if you've overrided the ItemsPane you'll still be using the Windows 8.0 approach). Sweet!
+Windows 8.0 uses **group virtualization** to improve the panning experience: instead of loading all items at once, it renders all the items in the groups which are on the screen. This is indeed an improvement, but it does not provide a great improvement on large data scenarios. For instance, let's say that you have 2 groups on screen with 1000 elements each. In that case, you'll create 2000 elements *but* you will display ~10-20 items to the user. The XAML folks noticed this and decided to use a different approach in Windows 8.1: instead of rendering the whole group why not rendering each group *piece by piece*, creating only the elements that are near the viewport (the section of the page that the user actually sees), regardless of what group they are. This is named **item virtualization** and it's provided **for free** in 8.1 because now the GridView/ListView use **ItemsWrapGrid**/**ItemStackPanel** as the default ItemsPane (of course, if you've overridden the ItemsPane you'll still be using the Windows 8.0 approach). Sweet!
 
 ![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/windows-8.1-gridview-and-listview-performance-improvements/group-virtualization-vs-item-virtualization.png "Group virtualization vs item virtualization")
 
-Another difference betweeen the v8.0 and the v8.1 GridViews/ListViews is the **ShowsScrollingPlaceholders** property that indicates whether the view shows placeholder UI for items during scrolling or not. This is useful to show the user that there are more items to display that will come out later. And again, since it defaults to *true*, all apps running on Windows 8.1 get this **for free**.
+Another difference between the v8.0 and the v8.1 GridViews/ListViews is the **ShowsScrollingPlaceholders** property that indicates whether the view shows placeholder UI for items during scrolling or not. This is useful to show the user that there are more items to display that will come out later. And again, since it defaults to *true*, all apps running on Windows 8.1 get this **for free**.
 
 ![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/windows-8.1-gridview-and-listview-performance-improvements/showsscrollingplaceholders-property.png "ShowsScrollingPlaceholders property")
 
-The last thing I want to show you is the new ability to incrementally updating the data template. This is very useful for scenarios when rendering items is expensive, and you want to divide the rendering of the item in pieces (to display at least some content to the user). For this, they've added a new event named **ContainerContentChanging** and separated the item rendering in **phases**. On each phase, you can update some part of all items that need to be rendered in the UI (it's strongly recommended that you perform very little work on each phase, specially on phase 0).
+The last thing I want to show you is the new ability to incrementally updating the data template. This is very useful for scenarios when rendering items is expensive, and you want to divide the rendering of the item in pieces (to display at least some content to the user). For this, they've added a new event named **ContainerContentChanging** and separated the item rendering in **phases**. On each phase, you can update some part of all items that need to be rendered in the UI (it's strongly recommended that you perform very little work on each phase, especially on phase 0).
 
 Let's take a look at the code. In XAML, you just only need to handle the **ContainerContentChanging** event:
 
@@ -61,7 +61,7 @@ Let's take a look at the code. In XAML, you just only need to handle the **Conta
 
 And then you can manipulate which elements to show in this event, which is fired when the user scrolls through the GridView. Notice 2 things:
 
-* We set the **args.Handled** to *true*. This is to tell the framework to not set the content on the eleemnt (we are going to handle this manually). 
+* We set the **args.Handled** to *true*. This is to tell the framework to not set the content on the element (we are going to handle this manually). 
 * We use the **RegisterUpdateCallback** method to register the call that needs to be done in the next phase. In this case, phase 1 shows title, phase 2 shows subtitle, etc.
 
 {% highlight csharp %}
