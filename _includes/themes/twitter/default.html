@@ -139,6 +139,7 @@
 		// Change combo option values depending on the current language
 		$('#languageCombo').val(currentLanguage)
 						   .change(function(){
+								alert($(this).val());
 								setCurrentLanguage($(this).val());
 								window.location.reload();
 						   });
