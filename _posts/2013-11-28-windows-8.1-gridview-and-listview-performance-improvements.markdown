@@ -8,6 +8,7 @@ tags : [windows store apps, c#/xaml]
 
 {% include JB/setup %}
 
+
 One of the things you may notice in Windows 8.1 is the performance improvements made in GridViews and ListViews. To begin with, the startup time was greatly reduced but they've also improved the logic that decides which items to render, improving the panning experience, in a way you can even customize the rendering order of the elements in your DataTemplate. To sum up, they've added some improvements **for free** and also a way to customize the item virtualization, based on your own scenario, to improve performance even further (or try not to damage it a lot :)). 
 
 Let's take a look on each topic in detail:
