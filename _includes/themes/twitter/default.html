@@ -144,7 +144,7 @@
 								
 								// Refresh page
 								var currentPage = window.location.href;
-								if (languageSelected == 'esp'){
+								if (currentPage.indexOf('http://nanovazquez.com/20') != -1 && languageSelected == 'esp'){
 									if (currentPage[currentPage.length -1] === '/'){
 										// Remove slash
 										currentPage = currentPage.slice(0, -1);
