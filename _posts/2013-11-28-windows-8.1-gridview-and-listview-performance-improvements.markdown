@@ -12,7 +12,7 @@ One of the things you may notice in Windows 8.1 is the performance improvements 
 
 Let's take a look on each topic in detail:
 
-> **Note:** this post is based in the //build 2013 video [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](http://channel9.msdn.com/Events/Build/2013/3-158) by [Chipalo Street](http://channel9.msdn.com/Events/Speakers/chipalo-street) with some tweaks taken from the [patterns & practices: Prism for the Windows Runtime](http://prismwindowsruntime.codeplex.com/) library. Anybody looking to improve the panning performance of their app should check these resources. 
+> **Note:** this post is based in the *//build 2013* video [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](http://channel9.msdn.com/Events/Build/2013/3-158) (by [Chipalo Street](http://channel9.msdn.com/Events/Speakers/chipalo-street)), with some tweaks taken from the [p&p: Prism for the Windows Runtime](http://prismwindowsruntime.codeplex.com/) library. Anybody looking to improve the panning performance of their app should check these resources. 
 
 ## Startup time improvements 
 
@@ -60,8 +60,8 @@ Let's take a look at the code. In XAML, you just only need to handle the **Conta
 
 And then you can manipulate which elements to show in this event, which is fired when the user scrolls through the GridView. Notice 2 things:
 
-	* We set the **args.Handled** to *true*. This is to tell the framework to not set the content on the eleemnt (we are going to handle this manually). 
-	* We use the **RegisterUpdateCallback** method to register the call that needs to be done in the next phase. In this case, phase 1 shows title, phase 2 shows subtitle, etc.
+* We set the **args.Handled** to *true*. This is to tell the framework to not set the content on the eleemnt (we are going to handle this manually). 
+* We use the **RegisterUpdateCallback** method to register the call that needs to be done in the next phase. In this case, phase 1 shows title, phase 2 shows subtitle, etc.
 
 {% highlight csharp %}
 
@@ -123,7 +123,10 @@ private void ShowSubtitle(ListViewBase sender, ContainerContentChangingEventArgs
 
 {% endhighlight %}
 
-This code can be easily simplified by using the **Blend Behaviors SDK** which is now supported in Windows 8.1. This library, which can be found in the Windows extensions, provides a built-in behavior to support incremental updates on items named [IncrementalUpdateBehavior](http://msdn.microsoft.com/en-us/library/windows/apps/dn458551.aspx). 
+<br/>
+
+Ok, this is a lot of code behind, but do not fear my friend. It can be easily simplified by using the **Blend Behaviors SDK** which is now supported in Windows 8.1. This library, which can be found in the Windows extensions, provides a built-in behavior to support incremental updates on items named [IncrementalUpdateBehavior](http://msdn.microsoft.com/en-us/library/windows/apps/dn458551.aspx). 
+
 
 {% highlight xml %}
 
