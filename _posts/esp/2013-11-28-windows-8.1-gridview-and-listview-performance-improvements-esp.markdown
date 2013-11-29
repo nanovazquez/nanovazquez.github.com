@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Windows 8.1 - Mejoras en performance en GridView y ListView
+title: Windows 8.1 - Mejoras de performance en GridView y ListView
 categories: [windows store apps]
 lang: esp
 tags : [windows store apps, c#/xaml]
