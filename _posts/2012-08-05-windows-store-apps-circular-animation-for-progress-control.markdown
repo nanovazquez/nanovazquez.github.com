@@ -3,13 +3,14 @@ layout: post
 title: Windows Store apps - Circular animation for Progress control (XAML/C#)
 lang: eng
 categories: [windows store apps]
-tags : [windows store apps, c#/xaml, animations]
+tags : [windows store apps, c#/xaml, ui]
 ---
 {% include JB/setup %}
 
 In this post, I'm going to show you how you can create a circular animation in a metro style application (XAML/C#). In my case, we needed to animate a circular progress arc that fires when the user waits for some process to complete. In this case, we're going to use a full 360° animation, but take into account that you can go up to any angle you want (if that's your scenario).
 
-I developed a sample so you can test this approach, you can find it [here](https://github.com/nanovazquez/metro-arc-animation-sample). Feel free to use it in your app, modify it (and do whatever you want).
+> **Note:** I developed a sample so you can test this approach, you can find it [here](https://github.com/nanovazquez/metro-arc-animation-sample). 
+> Feel free to use it in your app, modify it (or do whatever you want).
 
 ## The XAML
 
