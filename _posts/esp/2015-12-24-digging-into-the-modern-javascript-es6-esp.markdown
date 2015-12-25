@@ -10,7 +10,7 @@ tags : [javascript, es6, babel]
 
 Como muchos desarrolladores, estamos en el proceso de migrar nuestros productos a las nuevas tecnologías, como ES6/Babel, Angular2, React and Webpack.
 
-En este proceso donde uno trata de encontrar las mejores herramientas para utilizar en nuestro trabajo diario (y no solamente adoptar algo por ser novedoso), un miembro de nuestro equipo nos compartió el siguiente tweet de [@ericdfields](twitter.com/ericdfields) sobre 'Javascript Modern':
+En este proceso donde uno trata de encontrar las mejores herramientas para utilizar en nuestro trabajo diario (y no solamente adoptar algo por ser novedoso), un miembro de nuestro equipo nos compartió el siguiente tweet de [@ericdfields](twitter.com/ericdfields) sobre "Javascript Moderno":
 
 ![WTF tweet](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/digging-into-the-modern-javascript-es6/tweet.png)
 
@@ -239,7 +239,8 @@ Finalmente, `cost` se utiliza para referenciar las variables que no deben cambia
 
 ### Y qué hay sobre el '@'?
 
-Recuerdan esta línea del tweet `@connect(state ==> ({ .... })`?
-Remember this line? `@connect(state ==> ({ .... })`. Well, the '@' syntax is used for **ES7 Decorators** and it's used to add behavior to a given object, independently of other instances of the same class. You could think that it's too soon to use ES7, but since Babel supports it, some libraries like [Redux](http://redux.js.org/) are already using it. You cand find a very good explanation of decorators [here](https://github.com/wycats/javascript-decorators).
+Recuerdan esta línea del tweet `@connect(state ==> ({ .... })`? Bueno, el `@` se utiliza para definir un **ES7 Decorator**, los cuales se utilizan para agregarle comportamiento a un objeto determinado, independientemente de otras instancias del mismo tipo (o clase). Uno podría pensar que es muy pronto para hablar de ES7, pero dado que Babel soporta esta sintaxis, algunas librerías como [Redux](http://redux.js.org/) ya lo están utilizando. Pueden encontrar una muy buena explicación sobre decoradores [here](https://github.com/wycats/javascript-decorators).
 
-And I think that's pretty much it for now. Hope you enjoyed reading, happy coding!
+<br>
+
+Y eso es todo por ahora. Espero que hayan disfrutado la lectura. Happy coding!

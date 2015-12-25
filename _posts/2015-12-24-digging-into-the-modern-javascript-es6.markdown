@@ -240,4 +240,6 @@ Finally, `const` is used for any variable where the reference should never be ch
 
 Remember this line in the tweet `@connect(state ==> ({ .... })`? Well, the '@' syntax is used for **ES7 Decorators** and it's used to add behavior to a given object, independently of other instances of the same class. You could think that it's too soon to use ES7, but since Babel supports it, some libraries like [Redux](http://redux.js.org/) are already using it. You cand find a very good explanation of decorators [here](https://github.com/wycats/javascript-decorators).
 
+<br>
+
 And I think that's pretty much it for now. Hope you enjoyed reading, happy coding!
