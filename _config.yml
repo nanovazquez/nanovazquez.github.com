@@ -15,7 +15,7 @@ languages: ["eng", "esp"]
 # so be sure to set them if your theme uses them.
 #
 title : nanovazquez's blog
-tagline: asp.net, windows azure, node.js, windows store apps, C#/XAML, HTML5/CSS3 and so on..
+#tagline: asp.net, azure, javascript, node.js..
 author :
   name : Mariano Vazquez
   email : marianodvazquez@gmail.com
