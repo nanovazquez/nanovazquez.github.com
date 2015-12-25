@@ -8,25 +8,25 @@ tags : [javascript, es6, babel]
 
 {% include JB/setup %}
 
-As many JS developers nowadays, I'm in the process of adopting new technologies to our existent products, like ES6/Babel, Angular2, React and Webpack.
+Como muchos desarrolladores, estamos en el proceso de migrar nuestros productos a las nuevas tecnologías, como ES6/Babel, Angular2, React and Webpack.
 
-In this amazing journey of trying to find the best tools for our daily jobs (and not new sexy things that just reinvent the wheel), the other day a coworker shared with us a tweet of [@ericdfields](twitter.com/ericdfields) about Modern Javascript:
+En este proceso donde uno trata de encontrar las mejores herramientas para utilizar en nuestro trabajo diario (y no solamente adoptar algo por ser novedoso), un miembro de nuestro equipo nos compartió el siguiente tweet de [@ericdfields](twitter.com/ericdfields) sobre 'Javascript Modern':
 
 ![WTF tweet](https://github.com/nanovazquez/nanovazquez.github.com/raw/master/_posts/digging-into-the-modern-javascript-es6/tweet.png)
 
-After the WFT moment, I realized that it is a good moment to start writing some posts in a way to ease the path to this "new modern world" for the ones with no clue of that syntax (like me a few weeks ago). In this post, I'm going to explain some of the features of the next/current/upcoming Javascript generation, using the code of this tweet as introduction, leaving the React stuff for a next post. That said, let's get started:
+Luego de las risas y los chistes obligados, este tweet me hizo darme cuenta de que es una buena idea empezar a escribir algunos posts sobre las nuevas tecnologías que se vienen (cada vez con más fuerza), como una manera de allanar el camino para quienes no tienen ni idea sobre la sintaxis de arriba (como yo hace unas semanas). En las lineas siguientes de este post, voy a explicar algunos de las mejoras de la siguiente/actual/próxima generación de JavaScript. Me voy a enfocar específicamente en la sintaxis de ES6 del tweet de arriba, dejando el código de React para un nuevo post. Dicho esto, empecemos
 
-## ES6/Babel introduction
+## Introducción de ES6/Babel
 
-ECMAScript 2015, ECMAScript Harmony, or simply ES6, is the sixth edition of the ECMAScript specification. While his predecesor (ES5) is [widely adopted](http://kangax.github.io/compat-table/es5/) by browser and other JS engines, the implementation of the ES6 spec is still in progress. Instead of waiting, we can use tools like [Babel](http://babeljs.io/) that traduce our hand-made ES6 (and even ES7!) code into ES5 compliant code. This *transpiler* help us to adopt the latest tools in our code without worrying about if it's supported by browsers or servers: as long as they supports ES5 (and most of them do) our code will work. There are a lot of transpilers out there, you can find a more complete list [here](https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS).
+ECMAScript 2015, ECMAScript Harmony, o simplemente ES6, es la sexta edición de la especificación de ECMAScript. Mientras su predecesor (ES5) está [casi completamente adoptado](http://kangax.github.io/compat-table/es5/) por navegadores y otros engines de JS, la implementación de ES6 se encuentra actualmente en progreso. En vez de esperar a que este completa, los desarrolladores podemos usar herramientas como [Babel](http://babeljs.io/) para traducir nuestro código escrito en ES6 (y hasta en ES7!) a su equivalente código en ES5. Estos *transpilers* nos ayudan a adoptar las últimas herramientas en nuestro código sin preocuparnos sobre si están soportadas por navegadores o servidores: mientras estos soporten ES5 (y muchos de ellos lo hacen), nuestro código va a funcionar. Hay muchos transpilers en el ecosistema de JavaScript, pueden encontrar una lista bastante completa [aqui](https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS).
 
-Now that we know about what Babel is and what it does, let's dig into some of the features of ES6 used in the code snippet.
+Ahora que conocemos Babel y sabemos qué hace, podemos saltar a algunos de los features de ES6 usados en el tweet de arriba:
 
-## ES6 Features
+## Mejoras de ES6
 
-### Classes
+### Clases
 
-ES6 introduces language support for classes, via the `class` and `constructor` keywords. While in ES5 you had to use something like this:
+ES6 agrega soporte nativo para clases, via los keywords `class` y `constructor`. Mientras en ES5, uno tenía que escribir algo asi:
 
 {% highlight js %}
 
@@ -45,7 +45,7 @@ var Car = (function () {
 
 {% endhighlight %}
 
-In ES6, you can simply do:
+En ES6, uno simplemente tiene que hacer lo siguiente para obtener el mismo resultado:
 
 {% highlight js %}
 
@@ -62,11 +62,11 @@ class Car {
 
 {% endhighlight %}
 
-And produce the same result. You also have other features like class inheritance (via the `extends` keyword), static members (via the `static` keyword) and getters/setters (via the `get` and `set` keywords). You get the point.
+También hay otras mejoras como herencia, (via el keyword `extends`), miembro estáticos (via el keyword `static`) y getters/setters (via los keywords `get` y `set` keywords). Bastante simple y obvio.
 
 ## Arrow Functions
 
-A simple way to create closures with the addition of *auto* context handling (i.e. you don't have to worry about saving the `this`). In ES5, it's often to see something like this:
+En ES6 existe una mejor manera de crear closures, con la adición de que el contexto es manejado automáticamente (i.e. no tenes que preocuparte por guardar el `this`). Actualmente es muy común ver algo como esto en el código (notar que estamos implementando un nuevo miembro par la clase Car).
 
 
 {% highlight js %}
@@ -81,7 +81,7 @@ Car.prototype.accelerate = function accelerate() {
 
 {% endhighlight %}
 
-Now in ES6 you can implement the same using this code (notice that we are adding a new member to the Car class).
+Ahora con ES6 uno puede hacer lo mismo usando el siguiente código:
 
 {% highlight js %}
 
@@ -94,7 +94,7 @@ accelerate(){
 
 {% endhighlight %}
 
-And even this:
+Y aún esto, lo que mejora la legibilidad de nuestro código:
 
 {% highlight js %}
 
@@ -105,13 +105,12 @@ accelerate(){
 
 {% endhighlight %}
 
-Which makes our code more readable.
 
 ### Modules
 
-This is a huge improvement for client-side apps: the ability to organize code as independent modules and decide what to expose between them (just like Node!). This will be provided natively in the browsers, meaning that we don't have to use custom libraries, like [RequireJS](http://requirejs.org/) as we do today. 
+Esto es una *gran** mejora para las aplicaciones client-side: la abilidad para organizar nuestro código en módulos independientes y poder elegir que exponer entre ellos (como en Node!). Y soportado nativamente, lo que significa que no vamos a tener que agregar librerías externas para esto como hacemos actualmente, como [RequireJS](http://requirejs.org/).
 
-There are several combinations to import/export, let's analyze the basic ones:
+Hay muchas combinaciones para importar/exportar cosas (variables, funciones, objetos, etc), analicemos primero las más básicas:
 
 {% highlight js %}
 
@@ -132,25 +131,25 @@ add(a, b); // 2 + 3 = 5
 
 {% endhighlight %}
 
-Now, let's analyze each one of them:
+En detalle:
 
-* First, `import add from './module1.js'` will import the **add** function declared in `module.1js` to the 'main.js' file.
-* Similarly, `import multiply from './module1.js'` will import the *default export* of the 'module1.js' file to the variable **multiply** of the 'main.js' file. Note that there can be only one default export per module, but n named exports, which makes sense.
-* Then `import {customValue, otherValue} from './module1.js'` will import the **customValue** and **otherValue** variables to the 'main.js' file. This syntax is named *Destructuring Assignment* and is another feature provided by ES6, we'll get to that in the next section.
-* Finally, `import {customValue: a, otherValue: b} from './module1.js'` (again the 'main.js' file) wil import `customValue` and `otherValue` to the 'main.js' file, but this time by assigning their values to the local **a** and **b** variables.
+* `import add from './module1.js'` va a importar la función  **add** declarada en el archivo `module.1js` al archivo 'main.js' (archivo y módulo pasan a ser equivalentes).
+* `import multiply from './module1.js'` va a importar la función declarada como *default export* en el archivo 'module1.js' en la variable **multiply** del archivo 'main.js'. Puede haber sólo un default export por módulo, pero varios exports con nombre (como el de arriba), lo cual tiene sentido.
+* `import {customValue, otherValue} from './module1.js'` va a importar las variables **customValue** y **otherValue** al archivo 'main.js'. La sintaxis utilizada para ello se llama *Destructuring Assignment*, otra nueva herramienta que nos provee ES6. Veremos más sobre ella en la siguiente sección.
+* `import {customValue: a, otherValue: b} from './module1.js'` (again the 'main.js' file) importará las variables `customValue` y `otherValue` en el archivo 'main.js', pero esta vez serán asignadas a variables de nombre **a** y **b** respectivamente.
 
-One more thing. Alternatively, you can use `import * from './module1.js'` to import the whole module namespace object into another file, and access them via their names.
+Una cosa más. Alternativamente, uno puede usar un comodín para importar el módulo completo en otro archivo/módulo, por ejemplo `import * from './module1.js'`.
 
-> **Note:** Babel translates the `import` lines above to something similar to this:
+> **Note:** Babel traduce los `import` en algo similar a esto:
 > {% highlight js %}
   var $ = require('lib/jquery');
   {% endhighlight %}
     
->   This is because browsers currently do not support `import`/`export` syntax and thus Babel fallsback is `CommonJS` module syntax, which is natively supported in node  applications. To make your client-side code to understand this, you should use an external module loader library than supports [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) module syntax, like [Webpack](https://webpack.github.io/) or [JSPM](http://jspm.io/).
+> Esto es porque los browsers actualmente no soportarn esta funcionalidad. Babel entonces traduce los `import`/`export` en sintaxis [CommonJS](http://wiki.commonjs.org/wiki/CommonJS), la cual es soportada nativamente en aplicaciones node (server-side). Pero para que una aplicación web entienda esta sintaxis, uno debe usar una librería externa para cargar módulos que soporte [CommonJS](http://wiki.commonjs.org/wiki/CommonJS), como [Webpack](https://webpack.github.io/) or [JSPM](http://jspm.io/).
 
 ### Destructuring assignment
 
-ES6 introduces a new syntax to easily extract data from arrays or objects that is similar to the syntax used for constructing arrays of objects. For instance:
+ES6 introduce una nueva sintaxis para extraer información de arrays u objetos muy similar a la utilizada para construirlos. Por ejemplo, para objetos:
 
 {% highlight js %}
 
@@ -158,7 +157,11 @@ ES6 introduces a new syntax to easily extract data from arrays or objects that i
 var item = { id: 1, name: 'bike', qty: 10 };
 var { id, name, qty } = item;
 
-// ES5 (translated)
+{% endhighlight %}
+
+{% highlight js %}
+
+// ES5 equivalent
 var item = { id: 1, name: 'bike', qty: 10 };
 var id = item.id;
 var name = item.name;
@@ -166,7 +169,7 @@ var qty = item.qty;
 
 {% endhighlight %}
 
-In case of arrays:
+En el caso de arrays: 
 
 {% highlight js %}
 
@@ -174,20 +177,24 @@ In case of arrays:
 var items = [ 1, 2, 3 ];
 var [ a, , c] = items;
 
-// ES5 (translated)
+{% endhighlight %}
+
+{% highlight js %}
+
+// ES5 equivalent
 var items = [1, 2, 3];
 var a = items[0];
 var c = items[2];
 
 {% endhighlight %}
 
-You can do a lot of other things, like deep matching, swapping variables, multiple-value returns (returning an array and set its elements to n variables in just one line), etc.
+Se pueden hacer muchas otras cosas, como "deep matching" (obtener valores de propiedades anidadas), swap de variables en una línea (`[a, b] = [b, a]`), separar los valores de un array retornado por una función en varias variables (todo en una sola línea), etc.
 
 ### Spread Operator
 
-The spread operator (...iterableObj) allows an expression to be expanded in places where multiple arguments/elements are expected. This operator simplifies the need of concatenating arrays, splitting strings or pushing items to an array.
+Este operador (...iterableObj) permite expandir una expresión para utilizarla en lugares donde se espera recibir varios argumentos/elementos, removiendo la necesidad de, por ejemplo, concatenar arrays, separar strings o agregar items a un array para realizar otra tarea.
 
-Let's see some examples:
+Veamos un par de ejemplos:
 
 {% highlight js %}
 
@@ -195,8 +202,8 @@ var elements = ['a', 1, false];
 var other = [1, 2, ...params] // [1, 2, 'a', 1, false]
 doSomething(1, 2, ...params); // doSomething.apply(null, [1, 2, 'a', 1, false])
 
-var sayHello = 'Hello!';
-var chars = [...sayHello] // ['H', 'e', 'l', 'l', 'o', '!']
+var hello = 'Hello!';
+var chars = [...hello] // ['H', 'e', 'l', 'l', 'o', '!']
 
 var items = [1, 2, 3];
 var otherItems = [4, 5, 6];
@@ -204,11 +211,11 @@ items.push(...otherItems); // [1, 2, 3, 4, 5, 6]
 
 {% endhighlight %}
 
-Weird, but much simpler, right?
+Si, es raro. Pero simplifica bastante.
 
 ### Variable declaration
 
-ES6 adds two new keywords for declaring variables: `let` and `const`, which could, in time, replace the `var` keyword. The difference is scoping: while `var` is scoped to the nearest function block, `let` is scoped to the nearest enclosing block (for instance, a `for` loop or an `if` statement), improving the encapsulation of our code. 
+En ES6 se agregan dos nuevas formas para declarar variables, `let` and `const`, las cuales podrían en algún momento reemplazar completamente a `var`. La diferencia reside en el **scope**: mientras que `var` es visible dentro de toda la función donde fue definida (o es global), `let` sólo es visible en el bloque donde fue definida (por ejemplo, un `if` o un ciclo `for`), mejorando la encapsulación de nuestro código. Notar también que `let` puede usarse de la misma manera que actualmente usamos `var`, sólo es cuestión de subir la declaración a un bloque superior.
 
 {% highlight js %}
 
@@ -227,10 +234,12 @@ console.log(b); // Throws ReferenceError
 
 {% endhighlight %}
 
-Finally, `const` is used for any variable where the reference should never be changed, and mantains the same scoping rules as let. Of course there are differences depending on the value: if we use `const` in a primitive we are not allowing a change of the value, while if we use it in an array we are just allowing a change in the reference, but we can add or remove elements inside the array.
+Finalmente, `cost` se utiliza para referenciar las variables que no deben cambiar nunca (son constantes), y mantiene las mismas reglas de scope que `let`.`Por supuesto, hay una diferencia si designamos a una primitiva o a un array como constante: para la primera no se va a permitir que se cambie su valor mientras que para el segundo caso sólo estamos definiendo como constante la referencia al array, pudiendo agregar o remover valores de éste.
 
-### Wait wait ..what about the '@'?
 
+### Y qué hay sobre el '@'?
+
+Recuerdan esta línea del tweet `@connect(state ==> ({ .... })`?
 Remember this line? `@connect(state ==> ({ .... })`. Well, the '@' syntax is used for **ES7 Decorators** and it's used to add behavior to a given object, independently of other instances of the same class. You could think that it's too soon to use ES7, but since Babel supports it, some libraries like [Redux](http://redux.js.org/) are already using it. You cand find a very good explanation of decorators [here](https://github.com/wycats/javascript-decorators).
 
 And I think that's pretty much it for now. Hope you enjoyed reading, happy coding!
