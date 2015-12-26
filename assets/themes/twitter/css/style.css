@@ -38,7 +38,6 @@ html, body {
   background-color: #f5f5f5;
   padding: 20px 20px 10px;
   margin: -20px -20px 20px;
-  display: none;
 }
 
 .topbar .btn {
@@ -84,13 +83,15 @@ html, body {
 /* this overrides bootstrap settings */
 
 html, body, html body, html body p{
-	font-family: 'Segoe UI', Helvetica, Garuda, Arial, sans-serif !important;
+	font-family: 'Lato', Arial, sans-serif !important;
 	color: #666;
 	font-size: 14px;
 	line-height: 19px;
 }
 
-/* end override */
+body.main .page-header {
+	display: none;
+}
 
 div.container{
 	/* margin-left: 50px; */
