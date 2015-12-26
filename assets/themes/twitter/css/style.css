@@ -83,7 +83,7 @@ html, body {
 /* this overrides bootstrap settings */
 
 html, body, html body, html body p{
-	font-family: 'Lato', Arial, sans-serif !important;
+	font-family: 'Segoe UI', Helvetica, Garuda, Arial, sans-serif !important;
 	color: #666;
 	font-size: 14px;
 	line-height: 19px;
