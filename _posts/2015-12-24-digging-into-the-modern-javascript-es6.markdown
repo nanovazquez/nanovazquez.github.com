@@ -34,7 +34,7 @@ var Car = (function () {
   function Car(model) {
     this.model = model;
     this.currentSpeed = 0;
-  }
+  }i
 
   Car.prototype.printCurrentSpeed = function printCurrentSpeed() {
     console.log(this.model + ' is going ' + this.currentSpeed + ' km/h');
@@ -138,7 +138,7 @@ In detail:
 * `import {customValue, otherValue} from './module1.js'` will import the **customValue** and **otherValue** variables to the 'main.js' file. This syntax is named *Destructuring Assignment* and is another feature provided by ES6, we'll get to that in the next section.
 * `import {customValue: a, otherValue: b} from './module1.js'` wil import `customValue` and `otherValue` to the 'main.js' file, but this time by assigning their values to the variables named **a** and **b**, respectively.
 
-One last thing. Alternatively, you can use a wildcard to import the whole module namespace object into another file/module, using a single line. For instance, `import * from './module1.js'`. 
+One last thing. Alternatively, you can use a wildcard to import the whole module namespace into another file/module, using a single line. For instance, `import * as module1 from './module1.js'` will give you access to the whole module via `module1` (e.g. `module1.customValue`). 
 
 > **Note:** Babel translates the `import` lines to something similar to the example below:
 > {% highlight js %}
