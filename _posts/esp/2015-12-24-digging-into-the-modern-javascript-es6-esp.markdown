@@ -138,7 +138,7 @@ En detalle:
 * `import {customValue, otherValue} from './module1.js'` va a importar las variables **customValue** y **otherValue** al archivo 'main.js'. La sintaxis utilizada para ello se llama *Destructuring Assignment*, otra nueva herramienta que nos provee ES6. Veremos más sobre ella en la siguiente sección.
 * `import {customValue: a, otherValue: b} from './module1.js'` (again the 'main.js' file) importará las variables `customValue` y `otherValue` en el archivo 'main.js', pero esta vez serán asignadas a variables de nombre **a** y **b** respectivamente.
 
-Una cosa más. Alternativamente, uno puede usar un comodín para importar el módulo completo en otro archivo/módulo, por ejemplo `import * from './module1.js'`.
+Una cosa más. Alternativamente, uno puede usar un comodín para importar el módulo completo en otro archivo/módulo. Por ejemplo, si usamos `import * as module1 from './module1.js'` tendremos acceso a todo el namespace del módulo 1 (e.g. `module1.customValue`).
 
 > **Note:** Babel traduce los `import` en algo similar a esto:
 > {% highlight js %}
