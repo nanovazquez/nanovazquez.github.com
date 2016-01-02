@@ -75,7 +75,7 @@ En ES6 existe una mejor manera de crear closures, con la adición de que el cont
 Car.prototype.accelerate = function accelerate() {
   var self = this;
   setInterval(function () {
-    this.currentSpeed++;
+    self.currentSpeed++;
   }, 1000);
 };
 
