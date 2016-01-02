@@ -75,7 +75,7 @@ A simple way to create closures with the addition of *auto* context handling (i.
 Car.prototype.accelerate = function accelerate() {
   var self = this;
   setInterval(function () {
-    this.currentSpeed++;
+    self.currentSpeed++;
   }, 1000);
 };
 
