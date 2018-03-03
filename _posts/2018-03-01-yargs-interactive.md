@@ -2,12 +2,15 @@
 
 One of the most amazing things about Node.js is that you can use it to create a wide variety of applications, like powerful, real-time applications, but also simple command line interfaces (CLI) tools.
 
-When creating CLI tools, the first challenge to solve is usability. In other words, “How can I help users to use this tool effectively?”. And for CLI tools, this usually means what and how many configuration arguments it has. These are the challenges I love to solve because, if you do it, right, your tool is definitely going to be a game changer in the open source community. Now, what I don’t like is to spend my time looking for the right library that will prepare the ground, but not solve, my business logic. This is usually a repetitive, annoying task that you need to do every time you start a new project, no matter which technology you use.
+When creating CLI tools, the first challenge to solve is usability. In other words, **How can I help users to use this tool effectively?**. And for CLI tools, this usually means *what and how many configuration arguments it has*. 
 
-Fortunately, in the Node.js world, some de-facto tools help you with the setup of your CLI. [Yargs](https://www.npmjs.com/package/yargs) is one of them, in charge of parsing the arguments and generating a basic user interface with help and documentation. This simplifies the adoption of your tool for simple scenarios. But, as your CLI becomes more complex, more flags and commands will be added, making its use surprisingly difficult for humans. Not only that, what happens when there are some values that you cannot default, like passwords or any other sensitive information, and you need direct intervention from users?
+These are the challenges I love to solve because, if you do it, right, your tool is definitely going to be a game changer in the open source community. Now, what I don’t like is to spend my time looking for the right library that will prepare the ground, but not solve, my business logic. This is usually a repetitive, annoying task that you need to do every time you start a new project, no matter which technology you use.
 
-[Inquirer](https://www.npmjs.com/package/inquirer) is a useful tool for those cases. It provides a helpful set of prompts to ask questions, like lists, checkboxes, confirms, etc.
-In the world we live in, we usually need to automate tasks in CI tools (where _yarn_ shines). But we also need useful tools for humans (what _inquirer_ does best). What can you when you need a combination of both worlds? (interactive & non-interactive CLIs)
+Fortunately, in the Node.js world, some de-facto tools help you with the setup of your CLI. [Yargs](https://www.npmjs.com/package/yargs) is one of them, in charge of parsing the arguments and generating a basic user interface with help and documentation. This simplifies the adoption of your tool for simple scenarios. 
+
+But, as your CLI becomes more complex, more flags and commands will be added, making its use surprisingly difficult for humans. Not only that, *what happens when there are some values that you cannot set by default*, like passwords or any other sensitive information, and/or *when you need direct intervention from users*? [Inquirer](https://www.npmjs.com/package/inquirer) is a useful tool for these cases. It provides a helpful set of prompts to ask questions, like lists, checkboxes, confirms, etc.
+
+In the world we live in, we usually need to automate tasks in CI tools (where *yarn* shines). But we also need useful tools for humans (what *inquirer* does best). **What can you when you need a combination of both worlds? (interactive & non-interactive CLIs).**
 
 # Introducing yargs-interactive
 
@@ -78,4 +81,4 @@ If you have set the ` --interactive` argument to `true` by default, don't forg
 
 ![Basic usage](https://raw.githubusercontent.com/nanovazquez/yargs-interactive/master/assets/basic-usage.gif)
 
-> **Note:** [there is an open issue in Yargs](https://github.com/yargs/yargs/issues/286#issuecomment-364217260) to include some level of interactive support in the tool. If you want to see this happening, and/or want to help, please chime in.
+> **Note:** [there is an open issue in Yargs](https://github.com/yargs/yargs/issues/286#issuecomment-364217260) to include some level of interactive support in the tool. If you want to see this happening, and/or want to help with making it happen, please chime in.
