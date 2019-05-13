@@ -1,0 +1,167 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.home-page {
+}
+
+.pic {
+  flex: 2;
+  background-image: url("../images/nano1.jpg");
+  min-height: 100%;
+  background-size: cover;
+  background-position: 49.25% 39.3858%;
+  background-repeat: no-repeat;
+}
+
+.bio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 70px;
+}
+
+/* Bio Header */
+
+.bio-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bio-header-name {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: 0 0 10px 0;
+}
+
+.bio-header-tagline {
+  margin: 0;
+}
+
+.bio-header-action,
+.bio-heaer-action:link,
+.bio-header-action:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  margin: 40px 0;
+  width: calc(100% - 60px);
+  height: 50px;
+
+  background-color: #F76B1D;
+  color: white;
+  padding: 0 25px;
+  box-shadow: inset 0 0 0 100px hsla(0,0%,100%,0);
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bio Info */
+
+.bio-info {
+
+}
+
+/* Bio organizer */
+
+.bio-organizer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;;
+}
+
+.bio-organizer-title {
+  width: 100%;
+}
+
+.bio-organizer-orgs {
+  display: flex;
+  flex-direction: row;
+}
+
+.bio-organizer-org {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+  background-color: gainsboro;
+  background-size: 50px 50px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.bio-organizer-org:hover {
+  opacity: 0.75;
+}
+
+.bio-organizer-org.react-ba {
+  background-image: url("../images/react-ba.jpg");
+}
+
+.bio-organizer-org.vopen {
+  background-image: url("../images/vopen.png");
+}
+
+.bio-organizer-org.devday-ar {
+  background-image: url("../images/devday-ar.jpg");
+}
+
+/* Bio Social links */
+
+.bio-social-links {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-end;
+  justify-content: center;
+  margin: 40px 0 0 0;
+}
+
+.bio-social-link {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  margin: 0 30px 0 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.bio-social-link:hover {
+  opacity: 1;
+}
+
+.bio-social-link.linkedin {
+  background-image: url("../images/social/linkedin.png");
+}
+
+.bio-social-link.github {
+  background-image: url("../images/social/github.png");
+
+}
+
+.bio-social-link.twitter {
+  background-image: url("../images/social/twitter.png");
+
+}
+
+.bio-social-link.facebook {
+  background-image: url("../images/social/facebook.png");
+
+}
