@@ -9,9 +9,6 @@ html, body {
   font-family: 'Lato', sans-serif;
 }
 
-.home-page {
-}
-
 .pic {
   flex: 2;
   background-image: url("../images/nano1.jpg");
@@ -25,8 +22,7 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding: 70px;
+  padding: 70px 70px 50px 70px;
 }
 
 /* Bio Header */
@@ -163,5 +159,23 @@ html, body {
 
 .bio-social-link.facebook {
   background-image: url("../images/social/facebook.png");
+}
 
+@media only screen and (max-width: 800px) {
+
+  .home-page {
+    flex-direction: column;
+    height: auto;
+    min-height: 0%;
+  }
+
+  .pic {
+    flex: none;
+    height: 300px;
+    min-height: 0%;
+  }
+
+  .bio {
+    flex: 1;
+  }
 }
