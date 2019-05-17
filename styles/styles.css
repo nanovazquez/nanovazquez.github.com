@@ -161,7 +161,9 @@ html, body {
   background-image: url("../images/social/facebook.png");
 }
 
-@media only screen and (max-width: 800px) {
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
 
   .home-page {
     flex-direction: column;
