@@ -1,0 +1,171 @@
+---
+layout: post
+title: Windows 8.1 - Mejoras de performance en GridView y ListView
+categories: [windows store apps]
+lang: esp
+tags : [windows store apps, c#/xaml]
+---
+
+{% include JB/setup %}
+
+Una de las cosas que más se pueden apreciar en Windows 8.1 es la mejora en cuanto a performance de las GridViews y las ListViews. Se realizaron mejoras tanto en el tiempo de carga inicial de los datos como en la lógica que decide qué elementos (y cuántos) se cargan, mejorando notablemente la experiencia de navegación entre los items. Esta lógica se actualizó de tal manera que permite la configuración del orden de carga de los controles en el DataTemplate. Lo mejor de todo esto es que estas mejoras se tienen ni bien uno compila el código a 8.1, siempre y cuando use los valores por defecto de estos controles.
+
+Vamos a analizar cada mejora en detalle:
+
+> **Nota:** este post está basado en el video de *//build 2013* [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](http://channel9.msdn.com/Events/Build/2013/3-158) (de [Chipalo Street](http://channel9.msdn.com/Events/Speakers/chipalo-street)), y contiene algunas actualizaciones que se tomaron de la librería de [p&p: Prism for the Windows Runtime](http://prismwindowsruntime.codeplex.com/). Si estas buscando mejorar la performance en estos controles, en especial si trabajas con muchos datos, recomiendo chequear esos recursos.
+
+## Mejoras en la carga inicial
+
+Windows 8.0 utiliza un **template** para los items de la GridView/ListView el cual contiene **todos** los controles necesarios para mostrar todos los estados de un elemento (seleccionado, presionado, etc). Aunque esta estrategia es muy simple, es muy costosa en cuanto a tiempo y memoria para la carga inicial de los elementos (para dar un ejemplo en números, 50 items en la grilla requieren la creación de 1050 elementos visuales al inicio). Aún peor, si se configura la grilla para no admitir selección de los items, los elementos necesarios para el estado visual 'seleccionados' serán cargados en memoria, por lo que se está pagando un costo inicial por algo que no se va a usar.
+
+Estos problemas fueron resueltos en Windows 8.1 con la creación de la clase **GridViewItemPresenter**, que tiene el trabajo de mostrar lo mismo que muestra el control (v8.0), pero sólo cuando es necesario mostrarlo (y para ello utiliza código optimizado, lo que hace que la creación de objetos sea muy rápida). De esta manera, se ahorra tanto en memoria como en tiempo de carga inicial, pagando sólo el costo de carga cuando los elementos se necesitan. Esto también es algo que se obtiene automáticamente al migrar a 8.1.
+
+![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/windows-8.1-gridview-and-listview-performance-improvements/item-template-vs-presenters.png "Visual trees: 8.0 item template vs 8.1 GridViewItemPresenter")
+
+Un dato más: el equipo de XAML de Windows creo la clase presenter de una manera tal que se puede customizar tanto los estilos como la estructura de los items (usando el método **GoToElementStateCore**). Para más información, podes observar las especificaciones de la clase [GridViewItemPresenter](http://msdn.microsoft.com/library/windows/apps/dn279298).
+
+## Mejoras en Panning - UI Virtualization
+
+Windows 8.0 usa **group virtualization** para mejorar la carga mientras el usuario "scrollea": en lugar de cargar todos los items al inicio para ser utilizados cuando se los necesite sólo se cargan los items de los grupos que son visibles en la pantalla. Esto es una mejora ciertamente para escenarios con datos relativamente pequeños, no así en los casos de grupos con muchos items en ellos. Por ejemplo, consideremos el escenario donde tenemos 2 grupos en pantalla en el cual cada uno contiene 1000 items. En este escenario, estamos creando 20000 elementos *pero* sólo mostraremos entre 10 y 20 items al usuario. El equipo de XAML de Windows notó este problema y decidió utilizar un enfoque diferente para 8.1: en vez de cargar a los grupos visibles completos, se cargan *pieza por pieza*, creando sólo los elementos que estan cerca de los visibles, sin importar a qué grupo pertenecen. Esta estrategia se llama **item virtualization** y es aplicada por las GridViews/ListViews de Windows 8.1 que utilizan los paneles **ItemsWrapGrid**/**ItemStackPanel** (panel por defecto).
+
+![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/windows-8.1-gridview-and-listview-performance-improvements/group-virtualization-vs-item-virtualization.png "Group virtualization vs item virtualization")
+
+Otra diferencia entre 8.0 y 8.1 es la propiedad **ShowsScrollingPlaceholders**, que indica si las grillas deben mostrar **placeholders** para los items aún por cargar o sólo un espacio vacío. Téngase en cuenta que el placeholder sirve para que el usuario note que aún faltan mostrar más items, que serán cargados en algún futuro cercano. Esta propiedad está configurada en *true* por defecto,
+
+![](https://raw.github.com/nanovazquez/nanovazquez.github.com/master/_posts/windows-8.1-gridview-and-listview-performance-improvements/showsscrollingplaceholders-property.png "ShowsScrollingPlaceholders property")
+
+Una cosa más que se agregó en 8.1 es la abilidad para actualizar incrementalmente un DataTemplate, lo que es muy útil en escenarios donde la carga de items es muy costosa debido a un elemento en particular (por ejemplo, una imagen). Para esto, se agregó un nuevo evento llamado **ContainerContentChanging**, que es llamado ni bien el usuario scrollea la grilla. Y además se separó el rendering de un item en **phases**. En cada una de estas fases, uno puede elegir qué porción del item se va a cargar (nota, es recomendado que se haga muy poco trabajo en cada fase, en especial en la fase 0).
+
+Veamos un poco de código sobre esto. Primero el XAML:
+
+{% highlight xml %}
+
+<GridView x:Name="myGridView"
+          ItemsSource="{Binding Items}"
+          Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+          ContainerContentChanging="MyGridView_ContainerContentChanging">           
+    <GridView.ItemTemplate>
+        <DataTemplate>
+            <StackPanel Height="100" Width="100">
+                <Rectangle x:Name="placeholderRectangle" Opacity="0"/>
+                <TextBlock x:Name="titleTextBlock" Text="{Binding Title}" />
+                <TextBlock x:Name="subtitleTextBlock" Text="{Binding Subtitle}" />
+                <TextBlock x:Name="descriptionTextBlock" Text="{Binding Description}"  />
+            </StackPanel>
+        </DataTemplate>
+    </GridView.ItemTemplate>
+</GridView>
+
+{% endhighlight %}
+
+Y ahora mostraremos el handler del evento ContainerContentChanging. Noten 2 cosas del código que se mostrará a continuación:
+
+* Setea la propiedad **args.Handled** en *true*. Esto sirve para decirle al framework que nosotros vamos a ocuparnos del rendering de los items (y no él)
+* Usamos el método **RegisterUpdateCallback** para registrar el método que va a ser llamado en la próxima fase. En este caso, la fase 1 muestra el títlo, la fase 2 el subtítulo, etc (se pueden definir infinitas fases).
+
+{% highlight csharp %}
+
+// Display each item incrementally to improve performance.
+private void MyGridView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    args.Handled = true;
+
+    if (args.Phase != 0)
+    {
+        throw new Exception("Not in phase 0.");
+    }
+
+    // First, show the items' placeholders.
+    StackPanel templateRoot = (StackPanel)args.ItemContainer.ContentTemplateRoot;
+    Rectangle placeholderRectangle = (Rectangle)templateRoot.FindName("placeholderRectangle");
+    TextBlock titleTextBlock = (TextBlock)templateRoot.FindName("titleTextBlock");
+    TextBlock subtitleTextBlock = (TextBlock)templateRoot.FindName("subtitleTextBlock");
+    TextBlock descriptionTextBlock = (TextBlock)templateRoot.FindName("descriptionTextBlock");
+
+    // Make the placeholder rectangle opaque.
+    placeholderRectangle.Opacity = 1;
+
+    // Make everything else invisible.
+    titleTextBlock.Opacity = 0;
+    subtitleTextBlock.Opacity = 0;
+    descriptionTextBlock.Opacity = 0;
+
+    // Show the items' titles in the next phase.
+    args.RegisterUpdateCallback(ShowTitle);
+}
+
+// Show the items' titles.
+private void ShowTitle(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    if (args.Phase != 1)
+    {
+        throw new Exception("Not in phase 1.");
+    }
+
+    // Next, show the items' titles. Keep everything else invisible.
+    MyItem myItem = (MyItem)args.Item;
+    SelectorItem itemContainer = (SelectorItem)args.ItemContainer;
+    StackPanel templateRoot = (StackPanel)itemContainer.ContentTemplateRoot;
+    TextBlock titleTextBlock = (TextBlock)templateRoot.FindName("titleTextBlock");
+
+    titleTextBlock.Text = myItem.Title;
+    titleTextBlock.Opacity = 1;
+    
+    // Show the items' subtitles in the next phase.
+    args.RegisterUpdateCallback(ShowSubtitle);
+}
+
+// Show the items' subtitles.
+private void ShowSubtitle(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+	...
+}
+
+{% endhighlight %}
+
+### Un pequeño tweak usando el Blend behaviors SDK
+
+El principal problema de esto es la cantidad de code behind necesario para realizar el rendering manualmente. Por suerte, esto puede ser fácilmente refactoreado y simplificado usando el **Blend Behaviors SDK** que es soportado en Windows 8.1 :D. Esta librería, que puede encontrarse en las extensiones de Windows, provee out-of-the-box un behavior para manejar las actualizaciones incrementales de los items: [IncrementalUpdateBehavior](http://msdn.microsoft.com/en-us/library/windows/apps/dn458551.aspx). 
+
+{% highlight xml %}
+
+<Page
+    ...
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+
+    ...
+	<GridView x:Name="myGridView"
+          ItemsSource="{Binding Items}"
+          Background="{StaticResource ApplicationPageBackgroundThemeBrush}">           
+	    <GridView.ItemTemplate>
+	    	<DataTemplate>
+				<StackPanel Height="100" Width="100">
+					<Rectangle>
+	                    <interactivity:Interaction.Behaviors>
+	                        <core:IncrementalUpdateBehavior Phase="0"/>
+	                    </interactivity:Interaction.Behaviors>
+	                </Rectangle>
+	                <TextBlock Text="{Binding Title}">
+	                    <interactivity:Interaction.Behaviors>
+	                        <core:IncrementalUpdateBehavior Phase="1"/>
+	                    </interactivity:Interaction.Behaviors>
+	                </TextBlock>
+	                <TextBlock Text="{Binding Subtitle}">
+	                   <interactivity:Interaction.Behaviors>
+	                        <core:IncrementalUpdateBehavior Phase="2"/>
+	                    </interactivity:Interaction.Behaviors>
+	                </TextBlock>
+	                <TextBlock Text="{Binding Description}">
+	                    <interactivity:Interaction.Behaviors>
+	                        <core:IncrementalUpdateBehavior Phase="3"/>
+	                    </interactivity:Interaction.Behaviors>
+	                </TextBlock>
+	            </StackPanel>
+	        </DataTemplate>
+	    </GridView.ItemTemplate>
+	</GridView>
+</Page>
+
+{% endhighlight %}
+
+> **Note:** también pueden observar esta técinca en la [implementación de ejemplo de la librería de p&p Prism for the Windows Runtime](http://http://prismwindowsruntime.codeplex.com/), específicamente en las páginas GroupDetailPage y SearchResultsPage.
