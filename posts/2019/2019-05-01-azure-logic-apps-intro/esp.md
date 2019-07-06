@@ -1,5 +1,3 @@
----
-
 # Azure Logic Apps: o por qué ser vago es ser inteligente al desarrollar apps
 
 ![](https://cdn-images-1.medium.com/max/1600/1*dwqsoUh9MJck5so4Z-OgwQ.png)
