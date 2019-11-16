@@ -8,9 +8,9 @@ With Azure Logic Apps, you can quickly build scalable workflows that integrate a
 
 In this series of posts, we are going to show you how easy, but yet powerful, this service is. We’ll cover three scenarios:
 
-1.  Easy connecting with know services and send automated replies to emails, based on criteria defined by you.
-2.  Automating repetitive job tasks to increase productivity
-3.  Connecting to different Public Social APIs to develop a piece of your app.
+1. [How to connect with know services and send automated replies to emails, based on customized criteria defined by you.](../2019-06-15-azure-logic-apps-email-automation/eng.md)
+1. [How to automate repetitive job tasks to increase productivity.](../2019-11-16-azure-logic-apps-sfdc-automation/eng.md)
+1. How to connect to different Public Social APIs to develop a piece of your app.
 
 But before diving into the examples, let’s try to answer some basic questions.
 

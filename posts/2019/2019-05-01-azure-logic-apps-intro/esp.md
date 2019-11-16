@@ -8,9 +8,9 @@ Con Azure Logic apps, uno puede construir workflows escalables que integran apli
 
 En esta serie de posts, vamos a mostrarte cuán simple, pero poderoso, es este servicio. Vamos a realizar estos tres escenarios:
 
-1.  Cómo conectarse fácilmente con servicios para enviar respuestas a emails de manera automática, en base a un criterio definido por el usuario.
-2.  Cómo automatizar una tarea repetitiva para incrementar la productividad.
-3.  Cómo conectar diferentes APIs sociales públicas para desarrollar una parte de tu aplicación.
+1. [Cómo automatizar el envío de emails y respuestas en unos pocos pasos, basado en criterios customizables.](../2019-06-15-azure-logic-apps-email-automation/esp.md))
+2. [Cómo automatizar tareas repetitivas para incrementar tu productividad.](../2019-11-16-azure-logic-apps-sfdc-automation/esp.md)
+3. Cómo conectar diferentes APIs sociales públicas para desarrollar una parte de tu aplicación.
 
 Pero antes de meternos en los ejemplos, vamos a tratar de responder algunas preguntas básicas.
 

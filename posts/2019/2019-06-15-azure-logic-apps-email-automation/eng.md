@@ -6,9 +6,9 @@
 
 With Azure Logic Apps, you can quickly build scalable workflows that integrate apps and data of several cloud services and on-premises systems. This post is the second delivery of a series of posts about Azure Logic Apps:
 
-1. [Intro of Azure Logic Apps](./2019-05-01-azure-logic-apps-intro/eng.md).
+1. [Intro of Azure Logic Apps](../2019-05-01-azure-logic-apps-intro/eng.md).
 1. **Easy connecting with know services and send automated replies to emails**, based on customized criteria defined by you.
-1. Automating repetitive job tasks to increase productivity.
+1. [Automating repetitive job tasks to increase productivity.](../2019-11-16-azure-logic-apps-sfdc-automation/eng.md)
 1. Connecting to different Public Social APIs to develop a piece of your app.
 
 In this post, you will learn how to develop a fully-working application in just a couple of minutes.

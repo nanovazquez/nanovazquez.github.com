@@ -8,7 +8,7 @@ Con Azure Logic Apps uno puede construir rápidamente Workflows escalables para 
 
 1. [Introducción a Azure Logic Apps](./2019-05-01-azure-logic-apps-intro/esp.md).
 1. **Automatiza el envío de emails y respuestas en unos pocos pasos**, basado en criterios customizables.
-1. Cómo automatizar las tareas repetitivas de tu trabajo e incrementa tu productividad.
+1. [Cómo automatizar tareas repetitivas para incrementar tu productividad.](../2019-11-16-azure-logic-apps-sfdc-automation/esp.md)
 1. Cómo conectarse a diferentes APIs sociales para desarrollar una pieza de tu aplicación.
 
 En este post, vamos a aprender cómo desarrollar una aplicación completamente funcional en unos minutos.
@@ -43,7 +43,7 @@ Aunque parezca un montón de trabajo sólo para enviar una respuesta automática
 
    > **Note:** si quieres seguir una explicación "paso a paso" sobre cómo crear una Azure Logic App, haz click [aquí](https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow).
 
-1. Ahora te encuentras en el **Logic apps designer**. Como mencionamos anteriormente, la aplicación comenzará cuando llegue un email a tu casilla de correo de Gmal. Para esto, devbes crear un **Trigger** de Gmail. Puedes hacer eso fácilmente tipeando _"gmail"_ y luego eligiendo la primera opción que se muestra en la sección inferior.
+1. Ahora te encuentras en el **Logic apps designer**. Como mencionamos anteriormente, la aplicación comenzará cuando llegue un email a tu casilla de correo de Gmal. Para esto, debes crear un **Trigger** de Gmail. Puedes hacer eso fácilmente tipeando _"gmail"_ y luego eligiendo la primera opción que se muestra en la sección inferior.
 
    ![Create Gmail trigger](./images/gmail-connector.png)
 
